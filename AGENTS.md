@@ -13,7 +13,7 @@ When installing an npm package, you MUST use npm, and not another package manage
 
 I already configured tailwindcss to work with vite. It is FORBIDDEN to change my tailwindcss setup without presenting me beforehand why it is needed. Specifically, we don't need postcss here, tailwindcss is configured as a vite plugin.
 
-I configured a venv with python and playwright installed, so that you can run the verification you need (cf. jules-scratch folder).
+I setup the environment so that python has playwright installed, so you can run the verification you need (cf. jules-scratch folder).
 
 # Rules
 
