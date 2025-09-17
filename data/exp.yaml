@@ -1,0 +1,113 @@
+- period: "Projet de création d'entreprise - Surpreat"
+  dates: "2025 - en cours"
+  missions:
+    - title: "Développement d’une application mobile pour la restauration"
+      problem: "Le secteur de la restauration faisait face à des difficultés pour fluidifier l’expérience client et optimiser les opérations internes."
+      solution: "Conception et développement d’une application mobile avec un parcours utilisateur intuitif et des fonctionnalités adaptées aux restaurateurs."
+      result: "Première version opérationnelle facilitant la gestion des commandes et améliorant la satisfaction client (impact à préciser)."
+      technical_skills: ["React Native", "Expo", "Android", "conception produit", "intégration API"]
+      soft_skills: ["Esprit entrepreneurial", "autonomie", "créativité", "gestion de projet", "vision utilisateur"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+- period: "Ingénieur Logiciel – Alerion"
+  dates: "Janv. 2023 - Déc. 2024"
+  missions:
+    - title: "Module no-code pour la construction d’interfaces"
+      problem: "Chaque interface opérationnelle nécessitait plusieurs heures de développement."
+      solution: "Développement d’un module no-code intégré à la webapp."
+      result: "Réduction du temps de développement d’une interface de plusieurs heures à moins d’1 heure."
+      technical_skills: ["React", "JavaScript/TypeScript", "architecture front-end", "conception modulaire"]
+      soft_skills: ["Innovation", "pédagogie", "vulgarisation technique", "autonomie"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+    - title: "Refonte UI/UX de la webapp interne"
+      problem: "Manque de clarté et feedback limités entraînant des pertes de temps."
+      solution: "Refonte complète de l’interface et de l’expérience utilisateur."
+      result: "Réduction d’au moins 50% du temps perdu lié aux erreurs d’utilisation."
+      technical_skills: ["UX design", "UI design", "React", "ergonomie des interfaces"]
+      soft_skills: ["Empathie utilisateur", "sens du détail", "esprit critique", "créativité"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+    - title: "Intégration de Storybook pour la gestion des composants"
+      problem: "Forte probabilité de régressions UI et maintenance complexe."
+      solution: "Mise en place de Storybook pour documenter et tester les composants."
+      result: "Jusqu’à 30% de temps gagné sur la validation et la maintenance des composants."
+      technical_skills: ["Storybook", "tests UI", "documentation technique", "intégration continue"]
+      soft_skills: ["Rigueur", "organisation", "collaboration développeurs-designers", "orientation qualité"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+    - title: "Application de géolocalisation militaire"
+      problem: "Application fonctionnelle mais peu ergonomique, adoption freinée."
+      solution: "Nouvelle application centrée sur la simplicité, avec mode nuit et mode économie d’énergie."
+      result: "Satisfaction des équipes supérieure à 90%."
+      technical_skills: ["React Native", "Kotlin", "gestion de flux temps réel", "optimisation batterie"]
+      soft_skills: ["Adaptabilité", "écoute des besoins utilisateurs", "réactivité", "fiabilité"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+    - title: "Application Android pour le drone Anafi AI"
+      problem: "Le drone Anafi n’était pilotable qu’avec l’application officielle disponible uniquement sur iOS."
+      solution: "Développement d’une application Android compatible (React Native + Kotlin) intégrant la SDK du drone."
+      result: "Économie d’achat d’appareils iOS et extension du rayon de pilotage de quelques dizaines à plusieurs centaines de mètres."
+      technical_skills: ["Kotlin", "React Native", "SDK drone", "intégration matérielle-logicielle"]
+      soft_skills: ["Ingéniosité", "résolution de problèmes", "pragmatisme", "autonomie"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+    - title: "Application Android transformant smartphones/tablettes en manettes de contrôle"
+      problem: "Dispositifs de contrôle coûteux et longs à configurer."
+      solution: "Application Android transformant les appareils mobiles en manettes."
+      result: "Économie de plusieurs milliers d’euros et mise en service réduite à quelques minutes."
+      technical_skills: ["Kotlin", "communication Bluetooth/Wi-Fi", "développement embarqué"]
+      soft_skills: ["Orientation résultats", "créativité", "esprit pratique", "gestion des contraintes"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+    - title: "Module de planification de missions de photogrammétrie agricole"
+      problem: "Erreurs fréquentes et couverture partielle des zones étudiées."
+      solution: "Développement d’un module Python intégrant des algorithmes de planification."
+      result: "Amélioration de 90% de la qualité des images collectées."
+      technical_skills: ["Python", "algorithmes", "traitement de données géospatiales"]
+      soft_skills: ["Analyse", "rigueur scientifique", "logique", "esprit de synthèse"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+- period: "Auto-Formation"
+  dates: "Nov. 2021 - Août 2022"
+  missions:
+    - title: "Projet personnel full-stack"
+      problem: "Besoin de maîtriser rapidement une stack moderne web & mobile."
+      solution: "Réalisation d’un projet personnel complet en autonomie."
+      result: "Acquisition d’une expertise pratique full-stack (impact à préciser)."
+      technical_skills: ["React", "Node.js", "MongoDB", "développement full-stack"]
+      soft_skills: ["Curiosité", "autonomie", "persévérance", "auto-discipline", "capacité d’auto-apprentissage"]
+      achievements:
+        hyperlinks: []
+        images: []
+
+- period: "Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine"
+  dates: "2017 - 2021"
+  missions:
+    - title: "Impact du bruit d’annotation sur l’évaluation de classifieurs"
+      problem: "Le bruit introduit lors de l’annotation des données remet en question la fiabilité des évaluations de modèles de classification supervisée."
+      solution: "Revue bibliographique, implémentation d’une architecture neuronale profonde en PyTorch, expérimentations à grande échelle avec des dizaines de réseaux entraînés sur des centaines de milliers de données, algorithme d’introduction de bruit réaliste par catégories."
+      result: "Mémoire de plus de 150 pages et publication dans une revue scientifique (lien à ajouter)."
+      technical_skills: ["Deep Learning", "PyTorch", "réseaux de neurones", "expérimentation à grande échelle", "analyse statistique", "traitement de données massives", "recherche scientifique"]
+      soft_skills: ["Rigueur méthodologique", "esprit analytique", "persévérance", "gestion de projet long terme", "communication scientifique"]
+      achievements:
+        hyperlinks:
+          - url: "https://example.com/publication"
+            text: "Publication scientifique"
+        images: []
