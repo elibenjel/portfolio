@@ -7,6 +7,14 @@ The goal is to have a nice portfolio, with a polished look and fluid animations,
 that present who I am, what I am looking for, what is my expertise, and
 that showcase my achievements with visuals like images or videos.
 
+# Environment Setup
+
+When installing an npm package, you MUST use npm, and not another package manager.
+
+I already configured tailwindcss to work with vite. It is FORBIDDEN to change my tailwindcss setup without presenting me beforehand why it is needed. Specifically, we don't need postcss here, tailwindcss is configured as a vite plugin.
+
+I configured a venv with python and playwright installed, so that you can run the verification you need (cf. jules-scratch folder).
+
 # Rules
 
 - The data about me is all contained and structure in yaml files, in the data folder, and should be the only source of truth of the information to include in the portfolio.
