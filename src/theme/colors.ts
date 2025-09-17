@@ -11,16 +11,21 @@ import { tw } from '../utils/styling'
 export const colors = {
   // background colors
   background: {
-    primary: {
-      light: tw`bg-gray-300`,
-      medium: tw`bg-gray-600`,
-      dark: tw`bg-gray-900`,
-    },
+    primary: tw`bg-[#111111]`,
+    secondary: tw`bg-[#1f1f1f]`,
   },
   // text colors
   text: {
-    onPrimaryLight: tw`text-gray-700`,
-    onPrimaryMedium: tw`text-gray-100`,
-    onPrimaryDark: tw`text-gray-50`,
+    primary: tw`text-gray-50`,
+    secondary: tw`text-gray-400`,
+    accent: {
+      cyan: tw`text-[#00c7b4]`,
+      magenta: tw`text-[#ff00a0]`,
+      purple: tw`text-[#a700ff]`,
+    },
+  },
+  // border colors
+  border: {
+    primary: tw`border-gray-700`,
   },
 }
