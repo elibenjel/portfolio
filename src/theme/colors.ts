@@ -13,6 +13,11 @@ export const colors = {
   background: {
     primary: tw`bg-[#111111]`,
     secondary: tw`bg-[#1f1f1f]`,
+    accent: {
+      cyan: tw`bg-[#00c7b4]`,
+      magenta: tw`bg-[#ff00a0]`,
+      purple: tw`bg-[#a700ff]`,
+    },
   },
   // text colors
   text: {
