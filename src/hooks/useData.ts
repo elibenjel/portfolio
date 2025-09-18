@@ -1,0 +1,45 @@
+import journeyData from '~data/journey.yaml'
+
+export type Journey = {
+  period: string
+  dates: string
+  missions: {
+    title: string
+    problem: string
+    solution: string
+    result: string
+    technicalSkills: {
+      label: string
+      value: string
+    }[]
+    softSkills: {
+      label: string
+      value: string
+    }[]
+  }[]
+  achievements: {
+    hyperlinks: {
+      url: string
+      text: string
+    }[]
+    images: {
+      url: string
+      alt: string
+    }[]
+  }[]
+}[]
+
+export const useData = () => {
+  return {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    journey: journeyData.map((period: any) => ({
+      ...period,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      missions: period.missions.map((mission: any) => ({
+        ...mission,
+        technicalSkills: mission.technical_skills,
+        softSkills: mission.soft_skills,
+      })),
+    })) as Journey,
+  }
+}

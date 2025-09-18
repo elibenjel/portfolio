@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react'
-import GithubIcon from './icons/GithubIcon'
-import LinkedinIcon from './icons/LinkedinIcon'
-import LinkIcon from './icons/LinkIcon'
+
+import GithubIcon from '@/components/icons/GithubIcon'
+import LinkIcon from '@/components/icons/LinkIcon'
+import LinkedinIcon from '@/components/icons/LinkedinIcon'
 
 interface SidebarProps {
   children: ReactNode

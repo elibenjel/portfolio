@@ -1,113 +1,283 @@
 - period: "Projet de création d'entreprise - Surpreat"
-  dates: "2025 - en cours"
+  dates: '2025 - en cours'
   missions:
-    - title: "Développement d’une application mobile pour la restauration"
-      problem: "Le secteur de la restauration faisait face à des difficultés pour fluidifier l’expérience client et optimiser les opérations internes."
-      solution: "Conception et développement d’une application mobile avec un parcours utilisateur intuitif et des fonctionnalités adaptées aux restaurateurs."
-      result: "Première version opérationnelle facilitant la gestion des commandes et améliorant la satisfaction client (impact à préciser)."
-      technical_skills: ["React Native", "Expo", "Android", "conception produit", "intégration API"]
-      soft_skills: ["Esprit entrepreneurial", "autonomie", "créativité", "gestion de projet", "vision utilisateur"]
+    - title: 'Développement d’une application mobile pour la restauration'
+      problem: 'Le secteur de la restauration faisait face à des difficultés pour fluidifier l’expérience client et optimiser les opérations internes.'
+      solution: 'Conception et développement d’une application mobile avec un parcours utilisateur intuitif et des fonctionnalités adaptées aux restaurateurs.'
+      result: 'Première version opérationnelle facilitant la gestion des commandes et améliorant la satisfaction client (impact à préciser).'
+      technical_skills:
+        - label: 'React Native'
+          value: 0.8
+        - label: 'Expo'
+          value: 0.8
+        - label: 'Android'
+          value: 0.8
+        - label: 'conception produit'
+          value: 0.8
+        - label: 'intégration API'
+          value: 0.8
+      soft_skills:
+        - label: 'Esprit entrepreneurial'
+          value: 0.8
+        - label: 'autonomie'
+          value: 0.8
+        - label: 'créativité'
+          value: 0.8
+        - label: 'gestion de projet'
+          value: 0.8
+        - label: 'vision utilisateur'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-- period: "Ingénieur Logiciel – Alerion"
-  dates: "Janv. 2023 - Déc. 2024"
+- period: 'Ingénieur Logiciel – Alerion'
+  dates: 'Janv. 2023 - Déc. 2024'
   missions:
-    - title: "Module no-code pour la construction d’interfaces"
-      problem: "Chaque interface opérationnelle nécessitait plusieurs heures de développement."
-      solution: "Développement d’un module no-code intégré à la webapp."
-      result: "Réduction du temps de développement d’une interface de plusieurs heures à moins d’1 heure."
-      technical_skills: ["React", "JavaScript/TypeScript", "architecture front-end", "conception modulaire"]
-      soft_skills: ["Innovation", "pédagogie", "vulgarisation technique", "autonomie"]
+    - title: 'Module no-code pour la construction d’interfaces'
+      problem: 'Chaque interface opérationnelle nécessitait plusieurs heures de développement.'
+      solution: 'Développement d’un module no-code intégré à la webapp.'
+      result: 'Réduction du temps de développement d’une interface de plusieurs heures à moins d’1 heure.'
+      technical_skills:
+        - label: 'React'
+          value: 0.8
+        - label: 'JavaScript/TypeScript'
+          value: 0.8
+        - label: 'architecture front-end'
+          value: 0.8
+        - label: 'conception modulaire'
+          value: 0.8
+      soft_skills:
+        - label: 'Innovation'
+          value: 0.8
+        - label: 'pédagogie'
+          value: 0.8
+        - label: 'vulgarisation technique'
+          value: 0.8
+        - label: 'autonomie'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-    - title: "Refonte UI/UX de la webapp interne"
-      problem: "Manque de clarté et feedback limités entraînant des pertes de temps."
-      solution: "Refonte complète de l’interface et de l’expérience utilisateur."
-      result: "Réduction d’au moins 50% du temps perdu lié aux erreurs d’utilisation."
-      technical_skills: ["UX design", "UI design", "React", "ergonomie des interfaces"]
-      soft_skills: ["Empathie utilisateur", "sens du détail", "esprit critique", "créativité"]
+    - title: 'Refonte UI/UX de la webapp interne'
+      problem: 'Manque de clarté et feedback limités entraînant des pertes de temps.'
+      solution: 'Refonte complète de l’interface et de l’expérience utilisateur.'
+      result: 'Réduction d’au moins 50% du temps perdu lié aux erreurs d’utilisation.'
+      technical_skills:
+        - label: 'UX design'
+          value: 0.8
+        - label: 'UI design'
+          value: 0.8
+        - label: 'React'
+          value: 0.8
+        - label: 'ergonomie des interfaces'
+          value: 0.8
+      soft_skills:
+        - label: 'Empathie utilisateur'
+          value: 0.8
+        - label: 'sens du détail'
+          value: 0.8
+        - label: 'esprit critique'
+          value: 0.8
+        - label: 'créativité'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-    - title: "Intégration de Storybook pour la gestion des composants"
-      problem: "Forte probabilité de régressions UI et maintenance complexe."
-      solution: "Mise en place de Storybook pour documenter et tester les composants."
-      result: "Jusqu’à 30% de temps gagné sur la validation et la maintenance des composants."
-      technical_skills: ["Storybook", "tests UI", "documentation technique", "intégration continue"]
-      soft_skills: ["Rigueur", "organisation", "collaboration développeurs-designers", "orientation qualité"]
+    - title: 'Intégration de Storybook pour la gestion des composants'
+      problem: 'Forte probabilité de régressions UI et maintenance complexe.'
+      solution: 'Mise en place de Storybook pour documenter et tester les composants.'
+      result: 'Jusqu’à 30% de temps gagné sur la validation et la maintenance des composants.'
+      technical_skills:
+        - label: 'Storybook'
+          value: 0.8
+        - label: 'tests UI'
+          value: 0.8
+        - label: 'documentation technique'
+          value: 0.8
+        - label: 'intégration continue'
+          value: 0.8
+      soft_skills:
+        - label: 'Rigueur'
+          value: 0.8
+        - label: 'organisation'
+          value: 0.8
+        - label: 'collaboration développeurs-designers'
+          value: 0.8
+        - label: 'orientation qualité'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-    - title: "Application de géolocalisation militaire"
-      problem: "Application fonctionnelle mais peu ergonomique, adoption freinée."
-      solution: "Nouvelle application centrée sur la simplicité, avec mode nuit et mode économie d’énergie."
-      result: "Satisfaction des équipes supérieure à 90%."
-      technical_skills: ["React Native", "Kotlin", "gestion de flux temps réel", "optimisation batterie"]
-      soft_skills: ["Adaptabilité", "écoute des besoins utilisateurs", "réactivité", "fiabilité"]
+    - title: 'Application de géolocalisation militaire'
+      problem: 'Application fonctionnelle mais peu ergonomique, adoption freinée.'
+      solution: 'Nouvelle application centrée sur la simplicité, avec mode nuit et mode économie d’énergie.'
+      result: 'Satisfaction des équipes supérieure à 90%.'
+      technical_skills:
+        - label: 'React Native'
+          value: 0.8
+        - label: 'Kotlin'
+          value: 0.8
+        - label: 'gestion de flux temps réel'
+          value: 0.8
+        - label: 'optimisation batterie'
+          value: 0.8
+      soft_skills:
+        - label: 'Adaptabilité'
+          value: 0.8
+        - label: 'écoute des besoins utilisateurs'
+          value: 0.8
+        - label: 'réactivité'
+          value: 0.8
+        - label: 'fiabilité'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-    - title: "Application Android pour le drone Anafi AI"
-      problem: "Le drone Anafi n’était pilotable qu’avec l’application officielle disponible uniquement sur iOS."
-      solution: "Développement d’une application Android compatible (React Native + Kotlin) intégrant la SDK du drone."
-      result: "Économie d’achat d’appareils iOS et extension du rayon de pilotage de quelques dizaines à plusieurs centaines de mètres."
-      technical_skills: ["Kotlin", "React Native", "SDK drone", "intégration matérielle-logicielle"]
-      soft_skills: ["Ingéniosité", "résolution de problèmes", "pragmatisme", "autonomie"]
+    - title: 'Application Android pour le drone Anafi AI'
+      problem: 'Le drone Anafi n’était pilotable qu’avec l’application officielle disponible uniquement sur iOS.'
+      solution: 'Développement d’une application Android compatible (React Native + Kotlin) intégrant la SDK du drone.'
+      result: 'Économie d’achat d’appareils iOS et extension du rayon de pilotage de quelques dizaines à plusieurs centaines de mètres.'
+      technical_skills:
+        - label: 'Kotlin'
+          value: 0.8
+        - label: 'React Native'
+          value: 0.8
+        - label: 'SDK drone'
+          value: 0.8
+        - label: 'intégration matérielle-logicielle'
+          value: 0.8
+      soft_skills:
+        - label: 'Ingéniosité'
+          value: 0.8
+        - label: 'résolution de problèmes'
+          value: 0.8
+        - label: 'pragmatisme'
+          value: 0.8
+        - label: 'autonomie'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-    - title: "Application Android transformant smartphones/tablettes en manettes de contrôle"
-      problem: "Dispositifs de contrôle coûteux et longs à configurer."
-      solution: "Application Android transformant les appareils mobiles en manettes."
-      result: "Économie de plusieurs milliers d’euros et mise en service réduite à quelques minutes."
-      technical_skills: ["Kotlin", "communication Bluetooth/Wi-Fi", "développement embarqué"]
-      soft_skills: ["Orientation résultats", "créativité", "esprit pratique", "gestion des contraintes"]
+    - title: 'Application Android transformant smartphones/tablettes en manettes de contrôle'
+      problem: 'Dispositifs de contrôle coûteux et longs à configurer.'
+      solution: 'Application Android transformant les appareils mobiles en manettes.'
+      result: 'Économie de plusieurs milliers d’euros et mise en service réduite à quelques minutes.'
+      technical_skills:
+        - label: 'Kotlin'
+          value: 0.8
+        - label: 'communication Bluetooth/Wi-Fi'
+          value: 0.8
+        - label: 'développement embarqué'
+          value: 0.8
+      soft_skills:
+        - label: 'Orientation résultats'
+          value: 0.8
+        - label: 'créativité'
+          value: 0.8
+        - label: 'esprit pratique'
+          value: 0.8
+        - label: 'gestion des contraintes'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-    - title: "Module de planification de missions de photogrammétrie agricole"
-      problem: "Erreurs fréquentes et couverture partielle des zones étudiées."
-      solution: "Développement d’un module Python intégrant des algorithmes de planification."
-      result: "Amélioration de 90% de la qualité des images collectées."
-      technical_skills: ["Python", "algorithmes", "traitement de données géospatiales"]
-      soft_skills: ["Analyse", "rigueur scientifique", "logique", "esprit de synthèse"]
+    - title: 'Module de planification de missions de photogrammétrie agricole'
+      problem: 'Erreurs fréquentes et couverture partielle des zones étudiées.'
+      solution: 'Développement d’un module Python intégrant des algorithmes de planification.'
+      result: 'Amélioration de 90% de la qualité des images collectées.'
+      technical_skills:
+        - label: 'Python'
+          value: 0.8
+        - label: 'algorithmes'
+          value: 0.8
+        - label: 'traitement de données géospatiales'
+          value: 0.8
+      soft_skills:
+        - label: 'Analyse'
+          value: 0.8
+        - label: 'rigueur scientifique'
+          value: 0.8
+        - label: 'logique'
+          value: 0.8
+        - label: 'esprit de synthèse'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-- period: "Auto-Formation"
-  dates: "Nov. 2021 - Août 2022"
+- period: 'Auto-Formation'
+  dates: 'Nov. 2021 - Août 2022'
   missions:
-    - title: "Projet personnel full-stack"
-      problem: "Besoin de maîtriser rapidement une stack moderne web & mobile."
-      solution: "Réalisation d’un projet personnel complet en autonomie."
-      result: "Acquisition d’une expertise pratique full-stack (impact à préciser)."
-      technical_skills: ["React", "Node.js", "MongoDB", "développement full-stack"]
-      soft_skills: ["Curiosité", "autonomie", "persévérance", "auto-discipline", "capacité d’auto-apprentissage"]
+    - title: 'Projet personnel full-stack'
+      problem: 'Besoin de maîtriser rapidement une stack moderne web & mobile.'
+      solution: 'Réalisation d’un projet personnel complet en autonomie.'
+      result: 'Acquisition d’une expertise pratique full-stack (impact à préciser).'
+      technical_skills:
+        - label: 'React'
+          value: 0.8
+        - label: 'Node.js'
+          value: 0.8
+        - label: 'MongoDB'
+          value: 0.8
+        - label: 'développement full-stack'
+          value: 0.8
+      soft_skills:
+        - label: 'Curiosité'
+          value: 0.8
+        - label: 'autonomie'
+          value: 0.8
+        - label: 'persévérance'
+          value: 0.8
+        - label: 'auto-discipline'
+          value: 0.8
+        - label: 'capacité d’auto-apprentissage'
+          value: 0.8
       achievements:
         hyperlinks: []
         images: []
 
-- period: "Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine"
-  dates: "2017 - 2021"
+- period: 'Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine'
+  dates: '2017 - 2021'
   missions:
-    - title: "Impact du bruit d’annotation sur l’évaluation de classifieurs"
-      problem: "Le bruit introduit lors de l’annotation des données remet en question la fiabilité des évaluations de modèles de classification supervisée."
-      solution: "Revue bibliographique, implémentation d’une architecture neuronale profonde en PyTorch, expérimentations à grande échelle avec des dizaines de réseaux entraînés sur des centaines de milliers de données, algorithme d’introduction de bruit réaliste par catégories."
-      result: "Mémoire de plus de 150 pages et publication dans une revue scientifique (lien à ajouter)."
-      technical_skills: ["Deep Learning", "PyTorch", "réseaux de neurones", "expérimentation à grande échelle", "analyse statistique", "traitement de données massives", "recherche scientifique"]
-      soft_skills: ["Rigueur méthodologique", "esprit analytique", "persévérance", "gestion de projet long terme", "communication scientifique"]
+    - title: 'Impact du bruit d’annotation sur l’évaluation de classifieurs'
+      problem: 'Le bruit introduit lors de l’annotation des données remet en question la fiabilité des évaluations de modèles de classification supervisée.'
+      solution: 'Revue bibliographique, implémentation d’une architecture neuronale profonde en PyTorch, expérimentations à grande échelle avec des dizaines de réseaux entraînés sur des centaines de milliers de données, algorithme d’introduction de bruit réaliste par catégories.'
+      result: 'Mémoire de plus de 150 pages et publication dans une revue scientifique (lien à ajouter).'
+      technical_skills:
+        - label: 'Deep Learning'
+          value: 0.8
+        - label: 'PyTorch'
+          value: 0.8
+        - label: 'réseaux de neurones'
+          value: 0.8
+        - label: 'expérimentation à grande échelle'
+          value: 0.8
+        - label: 'analyse statistique'
+          value: 0.8
+        - label: 'traitement de données massives'
+          value: 0.8
+        - label: 'recherche scientifique'
+          value: 0.8
+      soft_skills:
+        - label: 'Rigueur méthodologique'
+          value: 0.8
+        - label: 'esprit analytique'
+          value: 0.8
+        - label: 'persévérance'
+          value: 0.8
+        - label: 'gestion de projet long terme'
+          value: 0.8
+        - label: 'communication scientifique'
+          value: 0.8
       achievements:
         hyperlinks:
-          - url: "https://example.com/publication"
-            text: "Publication scientifique"
+          - url: 'https://example.com/publication'
+            text: 'Publication scientifique'
         images: []

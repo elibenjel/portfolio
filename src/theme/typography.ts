@@ -23,6 +23,6 @@ export const typography = {
 
   // Links
   link: {
-    normal: tw`text-gray-400 hover:text-white font-['var(--font-family-sans)']`,
+    normal: tw`text-gray-400 hover:text-white hover:cursor-pointer font-['var(--font-family-sans)']`,
   },
 }
