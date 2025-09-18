@@ -24,5 +24,6 @@ dist-ssr
 *.sw?
 
 # python-related stuff
-jules-scratch/*
+jules/*
+!jules/.gitkeep
 venv
