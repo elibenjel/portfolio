@@ -1,7 +1,7 @@
 import DesktopLayout from './DesktopLayout'
 import NavBar from './components/NavBar'
+import Journey from './components/Journey'
 import { colors } from './theme/colors'
-import { typography } from './theme/typography'
 import { mergeClassNames } from './utils/styling'
 
 function App() {
@@ -14,12 +14,7 @@ function App() {
       )}
     >
       <DesktopLayout navBar={<NavBar />}>
-        <div className="space-y-8">
-          <h1 className={typography.heading.h1}>Portfolio</h1>
-          <p className={typography.paragraph.normal}>
-            Welcome to my portfolio. This is a placeholder for the main content.
-          </p>
-        </div>
+        <Journey />
       </DesktopLayout>
     </div>
   )

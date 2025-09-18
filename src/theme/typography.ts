@@ -11,18 +11,18 @@ import { tw } from '../utils/styling'
 export const typography = {
   // Headings
   heading: {
-    h1: tw`text-5xl font-bold`,
-    h2: tw`text-4xl font-bold`,
-    h3: tw`text-2xl font-semibold`,
+    h1: tw`text-5xl font-bold font-['var(--font-family-serif)']`,
+    h2: tw`text-4xl font-bold font-['var(--font-family-serif)']`,
+    h3: tw`text-2xl font-semibold font-['var(--font-family-serif)']`,
   },
   // Paragraphs
   paragraph: {
-    normal: tw`text-base`,
-    small: tw`text-sm`,
+    normal: tw`text-base font-['var(--font-family-sans)']`,
+    small: tw`text-sm font-['var(--font-family-sans)']`,
   },
 
   // Links
   link: {
-    normal: tw`text-blue-400 hover:text-blue-600 underline`,
+    normal: tw`text-gray-400 hover:text-white font-['var(--font-family-sans)']`,
   },
 }

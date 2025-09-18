@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import Sidebar from './components/Sidebar'
 
 interface DesktopLayoutProps {
   navBar: ReactNode
@@ -11,8 +12,8 @@ export default function DesktopLayout({
 }: DesktopLayoutProps) {
   return (
     <div className="flex h-screen">
-      <div className="w-1/4 p-4 border-r border-gray-800">{navBar}</div>
-      <div className="w-3/4 p-8 overflow-y-auto">{children}</div>
+      <Sidebar>{navBar}</Sidebar>
+      <main className="flex-1 p-8 overflow-y-auto">{children}</main>
     </div>
   )
 }
