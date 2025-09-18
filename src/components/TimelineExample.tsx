@@ -18,7 +18,7 @@ const TimelineExample: React.FC = () => {
     {
       id: '2',
       title: 'Auto-Formation',
-      startDate: new Date('2021-11-01'),
+      startDate: new Date('2022-01-01'),
       endDate: new Date('2022-08-31'),
       onPress: () => {
         console.log('Auto-Formation')
