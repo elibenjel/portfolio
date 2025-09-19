@@ -59,13 +59,9 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
             x2="100%"
             y2="0%"
           >
-            <stop offset="0%" stopColor="#00c7b4" />
-            <stop offset="50%" stopColor="#a700ff" />
-            <stop offset="100%" stopColor="#ff00a0" />
-          </linearGradient>
-          <linearGradient id="periodGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#00c7b4" stopOpacity="0.9" />
-            <stop offset="100%" stopColor="#ff00a0" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#F3BBAC" />
+            <stop offset="50%" stopColor="#D4A5E8" />
+            <stop offset="100%" stopColor="#ACE4F3" />
           </linearGradient>
 
           {/* Drop shadow filters */}
@@ -150,6 +146,17 @@ const TimelineSection = ({
   const textShift = 15
   const { language } = useLanguage()
   const opacity = isSelected || isHovered || isStatic ? 1 : 0
+  const handlePress = () => period && onPeriodPress?.(period)
+  const handleFocus = () => period && setHoveredPeriod?.(period.id)
+  const handleBlur = () => setHoveredPeriod?.(null)
+  const handleKeyDown = (e: React.KeyboardEvent<SVGPathElement>) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handlePress()
+      handleBlur()
+    }
+  }
+
   return (
     <g>
       <path
@@ -163,7 +170,7 @@ const TimelineSection = ({
         fill="url(#timelineGradient)"
         stroke="#ffffff"
         strokeWidth={isSelected || isHovered ? 1 : 0}
-        className={`cursor-pointer transition-all duration-500 ease-in-out ${
+        className={`cursor-pointer transition-all duration-500 ease-in-out focus:outline-none ${
           isHovered || isSelected
             ? 'drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]'
             : 'drop-shadow-[0_0_0_rgba(0,0,0,0)]'
@@ -173,9 +180,13 @@ const TimelineSection = ({
           transform: `scale(${isHovered ? 1.05 : 1})`,
           opacity,
         }}
-        onClick={() => period && onPeriodPress?.(period)}
-        onMouseEnter={() => period && setHoveredPeriod?.(period.id)}
-        onMouseLeave={() => setHoveredPeriod?.(null)}
+        tabIndex={period ? 0 : undefined}
+        onClick={handlePress}
+        onMouseEnter={handleFocus}
+        onMouseLeave={handleBlur}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
       />
 
       {/* Period label */}
