@@ -1,6 +1,6 @@
 export default function Timeline() {
   return (
-    <div className="flex align-center justify-center">
+    <div className="align-center flex justify-center">
       <h1>Timeline</h1>
     </div>
   )

@@ -1,0 +1,75 @@
+import * as React from 'react'
+
+import { mergeClassNames, tw } from '@/utils/styling'
+
+import icons from './icons'
+
+export function Icon({
+  name,
+  size = 24,
+  color = 'black',
+  shadow = false,
+  onPress,
+  style,
+}: {
+  name: keyof typeof icons
+  size?: number
+  color?: string
+  shadow?: boolean
+  onPress?: () => void
+  style?: React.CSSProperties
+}) {
+  const IconComponent = icons[name]
+  const [isClicked, setIsClicked] = React.useState(false)
+  const handleClick = onPress
+    ? () => {
+        onPress()
+        setIsClicked(true)
+        setTimeout(() => {
+          setIsClicked(false)
+        }, 200)
+      }
+    : undefined
+
+  const buttonClasses = {
+    base: tw`relative scale-100 origin-center transition-all duration-200 ease-in-out`,
+    interactable: onPress ? tw`cursor-pointer` : '',
+    hovered: onPress && !isClicked && tw`hover:scale-105`,
+    clicked: onPress && tw`scale-110`,
+  }
+
+  const filterId = shadow ? 'icon-shadow' : undefined
+  return (
+    <button
+      className={mergeClassNames(
+        buttonClasses.base,
+        buttonClasses.interactable,
+        buttonClasses.hovered,
+        isClicked && buttonClasses.clicked
+      )}
+      style={{
+        ...style,
+        width: size,
+        height: size,
+      }}
+      onClick={handleClick}
+    >
+      {filterId ? (
+        <svg width="0" height="0" style={{ position: 'absolute' }}>
+          <defs>
+            <filter id={filterId} x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow
+                dx="2"
+                dy="2"
+                stdDeviation="3"
+                floodColor="#000000"
+                floodOpacity="0.8"
+              />
+            </filter>
+          </defs>
+        </svg>
+      ) : null}
+      <IconComponent color={color} filter={filterId ? `url(#${filterId})` : undefined} />
+    </button>
+  )
+}

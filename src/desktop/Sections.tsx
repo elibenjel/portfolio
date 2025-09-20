@@ -10,17 +10,17 @@ interface SidebarProps {
 
 export default function Sidebar({ children }: SidebarProps) {
   return (
-    <aside className="w-72 p-8 border-r border-gray-800 flex flex-col space-y-8">
+    <aside className="flex w-72 flex-col space-y-8 border-r border-gray-800 p-8">
       <div className="flex-grow">{children}</div>
       <div className="flex space-x-4">
         <a href="#" aria-label="LinkedIn">
-          <LinkedinIcon className="w-6 h-6 text-gray-400 hover:text-white" />
+          <LinkedinIcon className="h-6 w-6 text-gray-400 hover:text-white" />
         </a>
         <a href="#" aria-label="GitHub">
-          <GithubIcon className="w-6 h-6 text-gray-400 hover:text-white" />
+          <GithubIcon className="h-6 w-6 text-gray-400 hover:text-white" />
         </a>
         <a href="#" aria-label="Personal Website">
-          <LinkIcon className="w-6 h-6 text-gray-400 hover:text-white" />
+          <LinkIcon className="h-6 w-6 text-gray-400 hover:text-white" />
         </a>
       </div>
     </aside>

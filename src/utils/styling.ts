@@ -1,4 +1,4 @@
-export const mergeClassNames = (...classes: (string | undefined)[]) => {
+export const mergeClassNames = (...classes: (string | false | undefined)[]) => {
   return classes.filter(Boolean).join(' ')
 }
 

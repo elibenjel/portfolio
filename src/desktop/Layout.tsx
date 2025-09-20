@@ -13,7 +13,7 @@ export default function Layout({
   renderSections: () => React.ReactNode
 }) {
   return (
-    <div className="flex h-screen">
+    <div className="flex h-screen min-w-0 flex-row overflow-hidden">
       <Sidebar>{renderSections()}</Sidebar>
       {section === 'about' && <About />}
       {section === 'journey' && <Journey />}

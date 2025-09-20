@@ -45,8 +45,8 @@ const TimelineExample: React.FC = () => {
   ]
 
   return (
-    <div className="w-full">
-      <h2 className="text-2xl font-bold text-center mb-8 text-gray-50">
+    <div className="flex w-full min-w-0 flex-col">
+      <h2 className="mb-8 text-center text-2xl font-bold text-gray-50">
         Professional Journey Timeline
       </h2>
       <Timeline periods={periods} />
