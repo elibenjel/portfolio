@@ -7,11 +7,11 @@ import { Icon } from './Icon'
 
 const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
   const [hoveredPeriod, setHoveredPeriod] = useState<string | null>(null)
-  const [selectedPeriod, setSelectedPeriod] = useState<string | null>(null)
   const periods = _periods.map(p => ({
     ...p,
     endDate: p.endDate ?? new Date(),
   }))
+  const [selectedPeriod, setSelectedPeriod] = useState<string>(periods.at(-1)!.id)
 
   // Calculate the total time span
   const allDates = periods.flatMap(p => [p.startDate, p.endDate]).filter(Boolean) as Date[]
@@ -21,17 +21,16 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
 
   // Calculate timeline dimensions
   const [containerWidth, setContainerWidth] = React.useState(0)
-  const containerRef = React.useRef<HTMLDivElement>(null)
   const scrollContainerRef = React.useRef<HTMLDivElement>(null)
   const oneYearWidth = 250
-  const timelineWidth = Math.max(
-    containerWidth,
-    (oneYearWidth * totalTimeSpan) / (1000 * 60 * 60 * 24 * 365)
-  )
   const timelineHeight = 80
   const arrowWidth = 0.02 * containerWidth
   const viewBoxPaddingVertical = 50
   const viewBoxPaddingHorizontal = 50
+  const timelineWidth = Math.max(
+    containerWidth - arrowWidth - viewBoxPaddingHorizontal * 2,
+    (oneYearWidth * totalTimeSpan) / (1000 * 60 * 60 * 24 * 365)
+  )
   const svgWidth = timelineWidth + arrowWidth + viewBoxPaddingHorizontal * 2
   const svgHeight = timelineHeight + viewBoxPaddingVertical * 2
   const fontSize = 1.2
@@ -60,10 +59,10 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
   }
 
   React.useEffect(() => {
-    if (containerRef.current) {
-      setContainerWidth(containerRef.current.clientWidth)
+    if (scrollContainerRef.current) {
+      setContainerWidth(scrollContainerRef.current.clientWidth)
     }
-  }, [containerRef])
+  }, [scrollContainerRef])
 
   // Smooth scroll to focused section
   React.useEffect(() => {
@@ -138,7 +137,7 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
     : undefined
 
   return (
-    <div className="relative w-full min-w-0 overflow-hidden" ref={containerRef}>
+    <div className="relative w-full min-w-0 overflow-hidden">
       <div className="scrollbar-none w-full min-w-0 overflow-x-auto" ref={scrollContainerRef}>
         <svg
           width={svgWidth}
