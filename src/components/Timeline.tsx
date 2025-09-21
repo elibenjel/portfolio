@@ -114,6 +114,7 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
         arrowWidth={arrowWidth}
         isSelected={isSelected}
         isHovered={isHovered}
+        isStatic={period.id === periods[0]?.id && selectedPeriod !== periods[1]?.id}
         onPeriodPress={handlePeriodPress}
         period={period}
         setHoveredPeriod={setHoveredPeriod}
