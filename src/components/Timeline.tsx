@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import * as React from 'react'
 
 import { useLanguage } from '@/hooks/useLanguage'
 
@@ -6,12 +6,50 @@ import type { TimelinePeriod, TimelineProps } from '../types'
 import { Icon } from './Icon'
 
 const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
-  const [hoveredPeriod, setHoveredPeriod] = useState<string | null>(null)
   const periods = _periods.map(p => ({
     ...p,
     endDate: p.endDate ?? new Date(),
   }))
-  const [selectedPeriod, setSelectedPeriod] = useState<string>(periods.at(-1)!.id)
+  const [drawingControls, setDrawingControls] = React.useState<{
+    selected: string
+    hovered: string | null
+    unhovered: Set<string>
+  }>({
+    selected: periods.at(-1)!.id,
+    hovered: null,
+    unhovered: new Set(),
+  })
+
+  const handleHover = (periodId: string | null) => {
+    setDrawingControls(prev => ({
+      ...prev,
+      hovered: periodId,
+      unhovered: new Set([...prev.unhovered].filter(id => id !== periodId)),
+    }))
+  }
+
+  const handleUnhover = (periodId: string) => {
+    setDrawingControls(prev => ({
+      ...prev,
+      hovered: null,
+      unhovered: new Set([...prev.unhovered, periodId]),
+    }))
+    setTimeout(() => {
+      setDrawingControls(prev => ({
+        ...prev,
+        unhovered: new Set([...prev.unhovered].filter(id => id !== periodId)),
+      }))
+    }, 500)
+  }
+
+  const handleSelect = (periodId: string) => {
+    setDrawingControls(prev => ({
+      ...prev,
+      selected: periodId,
+      hovered: null,
+      unhovered: new Set([]),
+    }))
+  }
 
   // Calculate the total time span
   const allDates = periods.flatMap(p => [p.startDate, p.endDate]).filter(Boolean) as Date[]
@@ -55,7 +93,7 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
 
   const handlePeriodPress = (period: TimelinePeriod) => {
     period.onPress?.()
-    setSelectedPeriod(period.id)
+    handleSelect(period.id)
   }
 
   React.useEffect(() => {
@@ -66,10 +104,10 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
 
   // Smooth scroll to focused section
   React.useEffect(() => {
-    if (selectedPeriod && scrollContainerRef.current) {
+    if (drawingControls.selected && scrollContainerRef.current) {
       // Find the SVG element for the hovered period
       const sectionElement = scrollContainerRef.current.querySelector(
-        `[data-period-id="${selectedPeriod}"]`
+        `[data-period-id="${drawingControls.selected}"]`
       ) as SVGGElement
 
       if (sectionElement) {
@@ -92,20 +130,20 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
         })
       }
     }
-  }, [selectedPeriod])
+  }, [drawingControls.selected])
 
-  const renderPeriod = (period: TimelinePeriod, key?: string) => {
+  const renderPeriod = (period: TimelinePeriod) => {
     const x = getPeriodPosition(period)
     const width = getPeriodWidth(period)
-    const isHovered = hoveredPeriod === period.id
-    const isSelected = selectedPeriod === period.id
+    const isHovered = drawingControls.hovered === period.id
+    const isSelected = drawingControls.selected === period.id
     const y = 0
     const height = timelineHeight
 
     /* Period section */
     return (
       <TimelineSection
-        key={key}
+        key={period.id}
         x={x}
         y={y}
         width={width}
@@ -113,29 +151,47 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
         arrowWidth={arrowWidth}
         isSelected={isSelected}
         isHovered={isHovered}
-        isStatic={period.id === periods[0]?.id && selectedPeriod !== periods[1]?.id}
         onPeriodPress={handlePeriodPress}
         period={period}
-        setHoveredPeriod={setHoveredPeriod}
+        onHover={handleHover}
+        onUnhover={handleUnhover}
         fontSize={fontSize}
       />
     )
   }
 
-  const currentIndex = periods.findIndex(p => p.id === selectedPeriod)
+  const selectedPeriod = periods.find(p => p.id === drawingControls.selected)!
+  const hoveredPeriod = periods.find(p => p.id === drawingControls.hovered)
+  const unhoveredPeriods = periods.filter(p => drawingControls.unhovered.has(p.id))
+  const currentIndex = periods.indexOf(selectedPeriod)
   const nextPeriod = periods[currentIndex + 1]
   const previousPeriod = periods[currentIndex - 1]
   const selectNextPeriod = nextPeriod
     ? () => {
-        setSelectedPeriod(nextPeriod.id)
+        handlePeriodPress(nextPeriod)
+        handleSelect(nextPeriod.id)
       }
     : undefined
   const selectPreviousPeriod = previousPeriod
     ? () => {
-        setSelectedPeriod(previousPeriod.id)
+        handlePeriodPress(previousPeriod)
+        handleSelect(previousPeriod.id)
       }
     : undefined
 
+  const orderedPeriods = [
+    ...periods.filter(
+      p =>
+        p.id !== drawingControls.selected &&
+        p.id !== drawingControls.hovered &&
+        !drawingControls.unhovered.has(p.id)
+    ),
+    ...unhoveredPeriods,
+    drawingControls.selected !== drawingControls.hovered &&
+      !drawingControls.unhovered.has(drawingControls.selected) &&
+      selectedPeriod,
+    drawingControls.hovered && hoveredPeriod,
+  ].filter(Boolean) as TimelinePeriod[]
   return (
     <div className="relative w-full min-w-0 overflow-hidden">
       <div className="scrollbar-none w-full min-w-0 overflow-x-auto" ref={scrollContainerRef}>
@@ -178,14 +234,10 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
             x={0}
             y={0}
             arrowWidth={arrowWidth}
-            isStatic={true}
           />
 
           {/* Period sections */}
-          {selectedPeriod && renderPeriod(periods.find(p => p.id === selectedPeriod)!)}
-          {[...periods]
-            .filter(p => p.id !== selectedPeriod)
-            .map(period => renderPeriod(period, period.id))}
+          {orderedPeriods.map(period => period && renderPeriod(period))}
         </svg>
         <Icon
           name="arrow-left"
@@ -228,10 +280,10 @@ const TimelineSection = ({
   arrowWidth,
   isHovered = false,
   isSelected = false,
-  isStatic = false,
   period,
   onPeriodPress,
-  setHoveredPeriod,
+  onHover,
+  onUnhover,
   fontSize = 1,
 }: {
   width: number
@@ -241,25 +293,22 @@ const TimelineSection = ({
   arrowWidth: number
   isHovered?: boolean
   isSelected?: boolean
-  isStatic?: boolean
   period?: TimelinePeriod
   onPeriodPress?: (period: TimelinePeriod) => void
-  setHoveredPeriod?: (period: string | null) => void
+  onHover?: (period: string | null) => void
+  onUnhover?: (period: string) => void
   fontSize?: number
 }) => {
   const { language } = useLanguage()
-  const opacity = isSelected || isHovered || isStatic ? 1 : 0
+  const [scale, setScale] = React.useState(1)
   const handlePress = () => period && onPeriodPress?.(period)
-  const handleHover = () => period && setHoveredPeriod?.(period.id)
+  const handleHover = () => period && onHover?.(period.id)
   const handleFocus = () => period && onPeriodPress?.(period)
-  const handleBlur = () => setHoveredPeriod?.(null)
-  const handleKeyDown = (e: React.KeyboardEvent<SVGPathElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault()
-      handlePress()
-      handleBlur()
-    }
-  }
+  const handleBlur = () => period && onUnhover?.(period.id)
+
+  React.useEffect(() => {
+    setScale(isHovered ? 1.02 : 1)
+  }, [isHovered, isSelected])
 
   return (
     <g
@@ -278,22 +327,16 @@ const TimelineSection = ({
               L ${x + width - arrowWidth} ${y} 
               Z`}
         fill="url(#timelineGradient)"
-        stroke="#ffffff"
-        strokeWidth={isSelected || isHovered ? 1 : 0}
-        className={`transition-all duration-500 ease-in-out focus:outline-none ${
-          isHovered || isSelected
-            ? 'drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]'
-            : 'drop-shadow-[0_0_0_rgba(0,0,0,0)]'
-        }`}
+        stroke="white"
+        className={`transition-all duration-500 ease-in-out focus:outline-none ${isHovered || isSelected ? 'drop-shadow-[0_0_10px_rgba(0,0,0,0.8)]' : 'drop-shadow-[0_0_0_rgba(0,0,0,0)]'}`}
         style={{
           transformOrigin: `${x + width / 2}px ${y + height / 2}px`,
-          transform: `scale(${isHovered ? 1.02 : 1})`,
-          opacity,
+          transform: `scale(${scale})`,
+          strokeOpacity: isHovered || isSelected ? 1 : 0,
         }}
         tabIndex={period ? 0 : undefined}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
       />
 
       {/* Period label */}
