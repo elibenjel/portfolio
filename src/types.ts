@@ -1,4 +1,4 @@
-export type Section = 'about' | 'journey' | 'contact'
+export type Section = 'about' | 'journey' | 'contact' | 'cover' | 'education'
 
 export interface TimelinePeriod {
   id: string

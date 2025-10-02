@@ -1,5 +1,7 @@
 - period: "Projet de création d'entreprise - Surpreat"
-  dates: '2025 - en cours'
+  dates:
+    start: '2025-01-01'
+    end: null
   missions:
     - title: 'Développement d’une application mobile pour la restauration'
       problem: 'Le secteur de la restauration faisait face à des difficultés pour fluidifier l’expérience client et optimiser les opérations internes.'
@@ -32,7 +34,9 @@
         images: []
 
 - period: 'Ingénieur Logiciel – Alerion'
-  dates: 'Janv. 2023 - Déc. 2024'
+  dates:
+    start: '2023-01-01'
+    end: '2024-12-31'
   missions:
     - title: 'Module no-code pour la construction d’interfaces'
       problem: 'Chaque interface opérationnelle nécessitait plusieurs heures de développement.'
@@ -213,7 +217,9 @@
         images: []
 
 - period: 'Auto-Formation'
-  dates: 'Nov. 2021 - Août 2022'
+  dates:
+    start: '2021-11-01'
+    end: '2022-08-31'
   missions:
     - title: 'Projet personnel full-stack'
       problem: 'Besoin de maîtriser rapidement une stack moderne web & mobile.'
@@ -244,7 +250,9 @@
         images: []
 
 - period: 'Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine'
-  dates: '2017 - 2021'
+  dates:
+    start: '2017-01-01'
+    end: '2021-12-31'
   missions:
     - title: 'Impact du bruit d’annotation sur l’évaluation de classifieurs'
       problem: 'Le bruit introduit lors de l’annotation des données remet en question la fiabilité des évaluations de modèles de classification supervisée.'

@@ -7,6 +7,10 @@ export type SectionProps = {
 }
 
 const sections = {
+  cover: {
+    fr: 'Accueil',
+    en: 'Cover',
+  },
   about: {
     fr: 'À propos',
     en: 'About',
@@ -14,6 +18,10 @@ const sections = {
   journey: {
     fr: 'Expériences',
     en: 'Work',
+  },
+  education: {
+    fr: 'Formation',
+    en: 'Education',
   },
   contact: {
     fr: 'Contact',
@@ -24,14 +32,16 @@ const sections = {
 export default function Sections({ onPress }: SectionProps) {
   const { language } = useLanguage()
   return (
-    <nav className="flex flex-col space-y-4">
-      <div className="flex flex-col space-y-2 items-start">
-        {Object.entries(sections).map(([section, value]) => (
-          <button className={typography.link.normal} onClick={() => onPress(section as Section)}>
-            {value[language]}
-          </button>
-        ))}
-      </div>
-    </nav>
+    <>
+      {Object.entries(sections).map(([section, value]) => (
+        <button
+          key={section}
+          className={typography.link.normal}
+          onClick={() => onPress(section as Section)}
+        >
+          {value[language]}
+        </button>
+      ))}
+    </>
   )
 }

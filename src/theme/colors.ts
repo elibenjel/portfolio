@@ -11,7 +11,7 @@ import { tw } from '../utils/styling'
 export const colors = {
   // background colors
   background: {
-    primary: tw`bg-[#111111]`,
+    primary: tw`bg-[#242020]`,
     secondary: tw`bg-[#1f1f1f]`,
     accent: {
       cyan: tw`bg-[#00c7b4]`,

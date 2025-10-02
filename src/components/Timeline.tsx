@@ -6,10 +6,13 @@ import type { TimelinePeriod, TimelineProps } from '../types'
 import { Icon } from './Icon'
 
 const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
-  const periods = _periods.map(p => ({
-    ...p,
-    endDate: p.endDate ?? new Date(),
-  }))
+  const periods = _periods
+    .slice()
+    .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+    .map(p => ({
+      ...p,
+      endDate: p.endDate ?? new Date(),
+    }))
   const [drawingControls, setDrawingControls] = React.useState<{
     selected: string
     hovered: string | null
@@ -59,19 +62,26 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
 
   // Calculate timeline dimensions
   const [containerWidth, setContainerWidth] = React.useState(0)
-  const scrollContainerRef = React.useRef<HTMLDivElement>(null)
+  const backgroundDivRef = React.useRef<HTMLDivElement>(null)
+  const foregroundDivRef = React.useRef<HTMLDivElement>(null)
   const oneYearWidth = 250
   const timelineHeight = 80
   const arrowWidth = 0.02 * containerWidth
   const viewBoxPaddingVertical = 50
-  const viewBoxPaddingHorizontal = 50
+  const viewBoxPaddingHorizontal = 200
   const timelineWidth = Math.max(
     containerWidth - arrowWidth - viewBoxPaddingHorizontal * 2,
     (oneYearWidth * totalTimeSpan) / (1000 * 60 * 60 * 24 * 365)
   )
   const svgWidth = timelineWidth + arrowWidth + viewBoxPaddingHorizontal * 2
   const svgHeight = timelineHeight + viewBoxPaddingVertical * 2
-  const fontSize = 1.2
+  const viewBox = [
+    -viewBoxPaddingHorizontal - arrowWidth,
+    -viewBoxPaddingVertical,
+    svgWidth,
+    svgHeight,
+  ]
+  const fontSize = 1.1
 
   // Helper function to calculate position based on date
   const getDatePosition = (date: Date) => {
@@ -97,21 +107,21 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
   }
 
   React.useEffect(() => {
-    if (scrollContainerRef.current) {
-      setContainerWidth(scrollContainerRef.current.clientWidth)
+    if (backgroundDivRef.current) {
+      setContainerWidth(backgroundDivRef.current.clientWidth)
     }
-  }, [scrollContainerRef])
+  }, [backgroundDivRef])
 
   // Smooth scroll to focused section
   React.useEffect(() => {
-    if (drawingControls.selected && scrollContainerRef.current) {
+    if (drawingControls.selected && foregroundDivRef.current) {
       // Find the SVG element for the hovered period
-      const sectionElement = scrollContainerRef.current.querySelector(
+      const sectionElement = foregroundDivRef.current.querySelector(
         `[data-period-id="${drawingControls.selected}"]`
       ) as SVGGElement
 
       if (sectionElement) {
-        const scrollContainer = scrollContainerRef.current
+        const scrollContainer = foregroundDivRef.current
 
         // Calculate the position of the section relative to the scroll container
         const sectionRect = sectionElement.getBoundingClientRect()
@@ -125,6 +135,10 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
 
         // Smooth scroll to the calculated position
         scrollContainer.scrollTo({
+          left: scrollLeft,
+          behavior: 'smooth',
+        })
+        backgroundDivRef.current?.scrollTo({
           left: scrollLeft,
           behavior: 'smooth',
         })
@@ -155,6 +169,24 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
         period={period}
         onHover={handleHover}
         onUnhover={handleUnhover}
+      />
+    )
+  }
+
+  const renderPeriodLabels = (period: TimelinePeriod) => {
+    const x = getPeriodPosition(period)
+    const isHovered = drawingControls.hovered === period.id
+    const isSelected = drawingControls.selected === period.id
+    const y = 0
+    return (
+      <TimelineLabels
+        key={period.id}
+        x={x}
+        y={y}
+        arrowWidth={arrowWidth}
+        isHovered={isHovered}
+        isSelected={isSelected}
+        period={period}
         fontSize={fontSize}
       />
     )
@@ -192,14 +224,20 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
       selectedPeriod,
     drawingControls.hovered && hoveredPeriod,
   ].filter(Boolean) as TimelinePeriod[]
+
   return (
     <div className="relative w-full min-w-0 overflow-hidden">
-      <div className="scrollbar-none w-full min-w-0 overflow-x-auto" ref={scrollContainerRef}>
-        <svg
-          width={svgWidth}
-          height={svgHeight}
-          viewBox={`-${viewBoxPaddingHorizontal + arrowWidth} -${viewBoxPaddingVertical} ${svgWidth} ${svgHeight}`}
-        >
+      <div className="pointer-events-none w-full min-w-0 overflow-hidden" ref={backgroundDivRef}>
+        <svg width={svgWidth} height={svgHeight} viewBox={viewBox.join(' ')}>
+          {/* Period labels */}
+          {orderedPeriods.map(period => period && renderPeriodLabels(period))}
+        </svg>
+      </div>
+      <div
+        className="fade-horizontal absolute inset-0 min-w-0 overflow-hidden"
+        ref={foregroundDivRef}
+      >
+        <svg width={svgWidth} height={svgHeight} viewBox={viewBox.join(' ')}>
           {/* Gradient definitions */}
           <defs>
             <linearGradient
@@ -210,9 +248,8 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
               x2="100%"
               y2="0%"
             >
-              <stop offset="0%" stopColor="#F3BBAC" />
-              <stop offset="50%" stopColor="#D4A5E8" />
-              <stop offset="100%" stopColor="#ACE4F3" />
+              <stop offset="0%" stopColor="#BEBFC5" />
+              <stop offset="100%" stopColor="#F5F5F5" />
             </linearGradient>
 
             {/* Drop shadow filters */}
@@ -239,33 +276,33 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
           {/* Period sections */}
           {orderedPeriods.map(period => period && renderPeriod(period))}
         </svg>
-        <Icon
-          name="arrow-left"
-          color={selectPreviousPeriod ? 'white' : 'gray'}
-          size={40}
-          shadow={!!selectPreviousPeriod}
-          onPress={selectPreviousPeriod}
-          style={{
-            position: 'absolute',
-            bottom: viewBoxPaddingVertical + timelineHeight / 2,
-            left: 0,
-            transform: 'translateY(50%)',
-          }}
-        />
-        <Icon
-          name="arrow-right"
-          color={selectNextPeriod ? 'white' : 'gray'}
-          size={40}
-          shadow={!!selectNextPeriod}
-          onPress={selectNextPeriod}
-          style={{
-            position: 'absolute',
-            bottom: viewBoxPaddingVertical + timelineHeight / 2,
-            right: 0,
-            transform: 'translateY(50%)',
-          }}
-        />
       </div>
+      <Icon
+        name="arrow-left"
+        color={selectPreviousPeriod ? 'white' : 'gray'}
+        size={40}
+        shadow={!!selectPreviousPeriod}
+        onPress={selectPreviousPeriod}
+        style={{
+          position: 'absolute',
+          bottom: viewBoxPaddingVertical + timelineHeight / 2,
+          left: 0,
+          transform: 'translateY(50%)',
+        }}
+      />
+      <Icon
+        name="arrow-right"
+        color={selectNextPeriod ? 'white' : 'gray'}
+        size={40}
+        shadow={!!selectNextPeriod}
+        onPress={selectNextPeriod}
+        style={{
+          position: 'absolute',
+          bottom: viewBoxPaddingVertical + timelineHeight / 2,
+          right: 0,
+          transform: 'translateY(50%)',
+        }}
+      />
     </div>
   )
 }
@@ -284,7 +321,6 @@ const TimelineSection = ({
   onPeriodPress,
   onHover,
   onUnhover,
-  fontSize = 1,
 }: {
   width: number
   height: number
@@ -299,7 +335,6 @@ const TimelineSection = ({
   onUnhover?: (period: string) => void
   fontSize?: number
 }) => {
-  const { language } = useLanguage()
   const [scale, setScale] = React.useState(1)
   const handlePress = () => period && onPeriodPress?.(period)
   const handleHover = () => period && onHover?.(period.id)
@@ -338,40 +373,60 @@ const TimelineSection = ({
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
-
-      {/* Period label */}
-      {period && (
-        <g>
-          <text
-            x={x - arrowWidth}
-            y={y}
-            textAnchor="start"
-            opacity={isHovered || isSelected ? 1 : 0.8}
-            className="fill-white text-sm font-medium"
-            filter="url(#textShadow)"
-            style={{
-              fontSize: `${fontSize}em`,
-              transform: `translateY(-${1.5 * fontSize}em)`,
-            }}
-          >
-            {period.title}
-          </text>
-          <text
-            x={x - arrowWidth}
-            y={y}
-            textAnchor="start"
-            className="fill-white text-sm font-medium"
-            opacity={isHovered || isSelected ? 1 : 0.8}
-            filter="url(#textShadow)"
-            style={{
-              fontSize: `${fontSize}em`,
-              transform: `translateY(-${0.5 * fontSize}em)`,
-            }}
-          >
-            {period.startDate.toLocaleDateString(language, { year: 'numeric', month: 'long' })}
-          </text>
-        </g>
-      )}
     </g>
+  )
+}
+
+const TimelineLabels = ({
+  x,
+  y,
+  arrowWidth,
+  isHovered = false,
+  isSelected = false,
+  period,
+  fontSize = 1,
+}: {
+  x: number
+  y: number
+  arrowWidth: number
+  isHovered?: boolean
+  isSelected?: boolean
+  period?: TimelinePeriod
+  fontSize?: number
+}) => {
+  const { language } = useLanguage()
+  return (
+    period && (
+      <g>
+        <text
+          x={x - arrowWidth}
+          y={y}
+          textAnchor="start"
+          opacity={isHovered || isSelected ? 1 : 0.8}
+          className="fill-white text-sm font-medium"
+          filter="url(#textShadow)"
+          style={{
+            fontSize: `${fontSize}em`,
+            transform: `translateY(-${1.8 * fontSize}em)`,
+          }}
+        >
+          {period.title}
+        </text>
+        <text
+          x={x - arrowWidth}
+          y={y}
+          textAnchor="start"
+          className="fill-white text-sm font-medium"
+          opacity={isHovered || isSelected ? 1 : 0.8}
+          filter="url(#textShadow)"
+          style={{
+            fontSize: `${fontSize}em`,
+            transform: `translateY(-${0.6 * fontSize}em)`,
+          }}
+        >
+          {period.startDate.toLocaleDateString(language, { year: 'numeric', month: 'long' })}
+        </text>
+      </g>
+    )
   )
 }

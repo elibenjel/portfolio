@@ -2,7 +2,10 @@ import journeyData from '~data/journey.yaml'
 
 export type Journey = {
   period: string
-  dates: string
+  dates: {
+    start: string
+    end: string | null
+  }
   missions: {
     title: string
     problem: string

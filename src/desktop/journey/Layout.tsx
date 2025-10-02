@@ -5,7 +5,7 @@ import Timeline from './Timeline'
 
 export default function Layout() {
   return (
-    <div className="align-center flex-1 justify-center p-8">
+    <div className="flex w-full flex-1 flex-col items-center p-8">
       <Timeline />
       <Missions />
       <Skills />
