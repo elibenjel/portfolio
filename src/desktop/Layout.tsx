@@ -20,7 +20,7 @@ export default function Layout({
   const startColor = 'rgba(255, 255, 255, 0.2)'
   const endColor = colors.background.primary
   return (
-    <div className="flex h-full w-full min-w-0 flex-col overflow-hidden">
+    <div className="flex h-screen w-screen flex-col">
       <div className="pointer-events-none absolute inset-0 h-full w-full">
         <svg
           className="h-full w-full"
@@ -62,7 +62,7 @@ export default function Layout({
         </div>
         <div className="flex-1" />
       </div>
-      <div className="flex w-full flex-1 flex-col items-center">
+      <div className="flex min-h-0 w-full flex-1 flex-col items-center">
         {section === 'cover' && <Cover />}
         {section === 'about' && <About />}
         {section === 'journey' && <Journey />}

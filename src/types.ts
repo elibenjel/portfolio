@@ -10,4 +10,5 @@ export interface TimelinePeriod {
 
 export interface TimelineProps {
   periods: TimelinePeriod[]
+  onPeriodSelect?: (period: TimelinePeriod) => void
 }

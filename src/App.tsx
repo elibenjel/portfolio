@@ -13,7 +13,7 @@ function App() {
   const isMobile = useIsMobile()
   const [section, setSection] = React.useState<Section>('journey')
   return (
-    <div className={mergeClassNames(colors.background.primary, colors.text.primary, 'h-screen')}>
+    <div className={mergeClassNames(colors.background.primary, colors.text.primary)}>
       {isMobile ? (
         <MobileLayout />
       ) : (

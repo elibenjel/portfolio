@@ -5,7 +5,7 @@ import { useLanguage } from '@/hooks/useLanguage'
 import type { TimelinePeriod, TimelineProps } from '../types'
 import { Icon } from './Icon'
 
-const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
+const Timeline: React.FC<TimelineProps> = ({ periods: _periods, onPeriodSelect }) => {
   const periods = _periods
     .slice()
     .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
@@ -53,6 +53,10 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods }) => {
       unhovered: new Set([]),
     }))
   }
+
+  React.useEffect(() => {
+    onPeriodSelect?.(periods.find(p => p.id === drawingControls.selected)!)
+  }, [drawingControls.selected, onPeriodSelect, periods])
 
   // Calculate the total time span
   const allDates = periods.flatMap(p => [p.startDate, p.endDate]).filter(Boolean) as Date[]
