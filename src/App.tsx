@@ -1,8 +1,5 @@
 import * as React from 'react'
 
-import { colors } from '@/theme/colors'
-import { mergeClassNames } from '@/utils/styling'
-
 import DesktopLayout from './desktop/Layout'
 import { useIsMobile } from './hooks/useIsMobile'
 import MobileLayout from './mobile/Layout'
@@ -13,7 +10,7 @@ function App() {
   const isMobile = useIsMobile()
   const [section, setSection] = React.useState<Section>('journey')
   return (
-    <div className={mergeClassNames(colors.background.primary, colors.text.primary)}>
+    <div className="bg-primary text-gray-50">
       {isMobile ? (
         <MobileLayout />
       ) : (

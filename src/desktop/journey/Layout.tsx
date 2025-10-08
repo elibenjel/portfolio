@@ -11,7 +11,6 @@ export default function Layout() {
   const { journey } = useData()
   const [selectedPeriod, setSelectedPeriod] = React.useState<string | null>(null)
   const missions = journey.find(period => period.period === selectedPeriod)?.missions ?? []
-  console.log(selectedPeriod)
   return (
     <div className="flex h-full min-h-0 w-full flex-1 flex-col items-center px-16 py-8">
       <div className="w-[75%] self-start">
@@ -27,7 +26,7 @@ export default function Layout() {
           onPeriodSelect={period => setSelectedPeriod(period.title)}
         />
       </div>
-      <div className="flex-1 overflow-hidden">
+      <div className="w-full flex-1 overflow-y-auto">
         <Missions missions={missions} />
       </div>
       <Skills />

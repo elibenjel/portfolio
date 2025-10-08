@@ -1,8 +1,8 @@
 import GithubIcon from '@/components/icons/GithubIcon'
 import LinkIcon from '@/components/icons/LinkIcon'
 import LinkedinIcon from '@/components/icons/LinkedinIcon'
-import { colors } from '@/theme/colors'
 import type { Section } from '@/types'
+import { colors } from '@/utils/styling'
 
 import About from './about/Layout'
 import Contact from './contact/Layout'
@@ -62,7 +62,7 @@ export default function Layout({
         </div>
         <div className="flex-1" />
       </div>
-      <div className="flex min-h-0 w-full flex-1 flex-col items-center">
+      <div className="flex min-h-0 w-full flex-1 flex-col items-center px-8 sm:px-16 md:px-16 lg:px-24 xl:px-32">
         {section === 'cover' && <Cover />}
         {section === 'about' && <About />}
         {section === 'journey' && <Journey />}

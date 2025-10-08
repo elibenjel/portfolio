@@ -1,5 +1,4 @@
 import { useLanguage } from '@/hooks/useLanguage'
-import { typography } from '@/theme/typography'
 import type { Section } from '@/types'
 
 export type SectionProps = {
@@ -34,11 +33,7 @@ export default function Sections({ onPress }: SectionProps) {
   return (
     <>
       {Object.entries(sections).map(([section, value]) => (
-        <button
-          key={section}
-          className={typography.link.normal}
-          onClick={() => onPress(section as Section)}
-        >
+        <button key={section} className="link-normal" onClick={() => onPress(section as Section)}>
           {value[language]}
         </button>
       ))}
