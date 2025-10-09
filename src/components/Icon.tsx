@@ -33,9 +33,9 @@ export function Icon({
 
   const buttonClasses = {
     base: tw`relative scale-100 origin-center transition-all duration-200 ease-in-out`,
-    interactable: onPress ? tw`cursor-pointer` : '',
-    hovered: onPress && !isClicked && tw`hover:scale-105`,
-    clicked: onPress && tw`scale-110`,
+    interactable: onPress ? tw`cursor-pointer opacity-80` : '',
+    hovered: onPress && !isClicked && tw`hover:scale-105 hover:opacity-100`,
+    clicked: onPress && isClicked && tw`scale-110 opacity-100`,
   }
 
   const filterId = shadow ? 'icon-shadow' : undefined

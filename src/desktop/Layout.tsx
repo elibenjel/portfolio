@@ -1,6 +1,4 @@
-import GithubIcon from '@/components/icons/GithubIcon'
-import LinkIcon from '@/components/icons/LinkIcon'
-import LinkedinIcon from '@/components/icons/LinkedinIcon'
+import { Icon } from '@/components/Icon'
 import type { Section } from '@/types'
 import { colors } from '@/utils/styling'
 
@@ -71,15 +69,9 @@ export default function Layout({
       </div>
       <div className="flex h-[100px] w-full flex-row items-center">
         <div className="flex flex-6 space-x-4 pl-8">
-          <a href="#" aria-label="LinkedIn">
-            <LinkedinIcon className="h-6 w-6 text-gray-400 hover:text-white" />
-          </a>
-          <a href="#" aria-label="GitHub">
-            <GithubIcon className="h-6 w-6 text-gray-400 hover:text-white" />
-          </a>
-          <a href="#" aria-label="Personal Website">
-            <LinkIcon className="h-6 w-6 text-gray-400 hover:text-white" />
-          </a>
+          <Icon name="linkedin" size={24} onPress={() => console.log('linkedin')} />
+          <Icon name="github" size={24} onPress={() => console.log('github')} />
+          <Icon name="link" size={24} onPress={() => console.log('link')} />
         </div>
         <div className="h-0.5 flex-4 bg-white opacity-50" />
       </div>

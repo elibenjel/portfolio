@@ -1,4 +1,20 @@
 /**
+ * Merge tailwindcss classes in a type-safe way.
+ * @param classes The classes to merge.
+ * @returns The merged classes.
+ */
+export const mergeClassNames = (...classes: (string | false | undefined)[]) => {
+  return classes.filter(Boolean).join(' ')
+}
+
+/**
+ * Tagged template function to define tailwindcss classes in a type-safe way.
+ * @param s Template string containing tailwindcss classes.
+ * @returns The string of tailwindcss classes.
+ */
+export const tw = (s: TemplateStringsArray) => s[0]
+
+/**
  * Get CSS custom property value from the document root
  * @param propertyName The CSS custom property name (without --)
  * @returns The computed value of the CSS custom property

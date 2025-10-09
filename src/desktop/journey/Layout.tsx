@@ -4,16 +4,27 @@ import Timeline from '@/components/Timeline'
 import { useData } from '@/hooks/useData'
 
 import Materials from './Materials'
-import Missions from './Missions'
+import Mission from './Mission'
+import MissionSelect from './MissionSelect'
 import Skills from './Skills'
 
 export default function Layout() {
   const { journey } = useData()
   const [selectedPeriod, setSelectedPeriod] = React.useState<string | null>(null)
+  const [selectedMissionIndex, setSelectedMissionIndex] = React.useState<number>(0)
+  const scrollContainerRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    setSelectedMissionIndex(0)
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop = 0
+    }
+  }, [selectedPeriod])
   const missions = journey.find(period => period.period === selectedPeriod)?.missions ?? []
+  const selectedMission = missions[selectedMissionIndex]
   return (
     <div className="flex h-full min-h-0 w-full flex-1 flex-col items-center px-16 py-8">
-      <div className="w-[75%] self-start">
+      <div className="flex min-h-0 w-full max-w-[1000px] flex-col items-center">
         <Timeline
           periods={journey.map(period => {
             return {
@@ -25,12 +36,28 @@ export default function Layout() {
           })}
           onPeriodSelect={period => setSelectedPeriod(period.title)}
         />
+        <div
+          ref={scrollContainerRef}
+          className="scrollbar-none flex w-full max-w-[80%] flex-1 flex-col gap-y-8 overflow-y-auto"
+        >
+          {selectedMission && (
+            <>
+              <div className="flex w-full flex-col items-center">
+                <MissionSelect
+                  key={selectedPeriod}
+                  maxIndex={missions.length}
+                  index={selectedMissionIndex}
+                  onIndexSelected={setSelectedMissionIndex}
+                />
+                <Mission mission={selectedMission} />
+              </div>
+              <Skills title="Compétences techniques" skills={selectedMission.technicalSkills} />
+              <Skills title="Compétences humaines" skills={selectedMission.softSkills} />
+              <Materials />
+            </>
+          )}
+        </div>
       </div>
-      <div className="w-full flex-1 overflow-y-auto">
-        <Missions missions={missions} />
-      </div>
-      <Skills />
-      <Materials />
     </div>
   )
 }
