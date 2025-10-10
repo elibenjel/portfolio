@@ -31,7 +31,15 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media:
+          - url: '/media/test-image.jpg'
+            type: 'image'
+          - url: '/media/test-image copy.jpg'
+            type: 'image'
+          - url: '/media/test-video.mp4'
+            type: 'video'
+          - url: '/media/test-image copy 4.jpg'
+            type: 'image'
 
 - period: 'Ingénieur Logiciel – Alerion'
   dates:
@@ -62,7 +70,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
     - title: 'Refonte UI/UX de la webapp interne'
       problem: 'Manque de clarté et feedback limités entraînant des pertes de temps.'
@@ -88,7 +96,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
     - title: 'Intégration de Storybook pour la gestion des composants'
       problem: 'Forte probabilité de régressions UI et maintenance complexe.'
@@ -114,7 +122,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
     - title: 'Application de géolocalisation militaire'
       problem: 'Application fonctionnelle mais peu ergonomique, adoption freinée.'
@@ -140,7 +148,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
     - title: 'Application Android pour le drone Anafi AI'
       problem: 'Le drone Anafi n’était pilotable qu’avec l’application officielle disponible uniquement sur iOS.'
@@ -166,7 +174,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
     - title: 'Application Android transformant smartphones/tablettes en manettes de contrôle'
       problem: 'Dispositifs de contrôle coûteux et longs à configurer.'
@@ -190,7 +198,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
     - title: 'Module de planification de missions de photogrammétrie agricole'
       problem: 'Erreurs fréquentes et couverture partielle des zones étudiées.'
@@ -214,7 +222,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
 - period: 'Auto-Formation'
   dates:
@@ -247,7 +255,7 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        images: []
+        media: []
 
 - period: 'Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine'
   dates:
@@ -288,4 +296,4 @@
         hyperlinks:
           - url: 'https://example.com/publication'
             text: 'Publication scientifique'
-        images: []
+        media: []

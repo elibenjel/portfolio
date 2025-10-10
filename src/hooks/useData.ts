@@ -1,5 +1,15 @@
 import journeyData from '~data/journey.yaml'
 
+export type MediaItem = {
+  url: string
+  type: 'image' | 'video'
+}
+
+export type Hyperlink = {
+  url: string
+  text: string
+}
+
 export type Journey = {
   period: string
   dates: {
@@ -19,18 +29,14 @@ export type Journey = {
       label: string
       value: string
     }[]
-  }[]
-  achievements: {
-    hyperlinks: {
-      url: string
-      text: string
-    }[]
-    images: {
-      url: string
-      alt: string
-    }[]
+    achievements: {
+      hyperlinks: Hyperlink[]
+      media: MediaItem[]
+    }
   }[]
 }[]
+
+console.log(journeyData)
 
 export const useData = () => {
   return {

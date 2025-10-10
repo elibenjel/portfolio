@@ -107,14 +107,6 @@
 
 @plugin "tailwind-scrollbar";
 
-.bg-gradient-radial {
-  background: radial-gradient(
-    circle at center,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-}
-
 .fade-horizontal {
   -webkit-mask-image: linear-gradient(
     to right,
@@ -131,6 +123,23 @@
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   mask-position: center;
+}
+
+/* Custom scrollbar */
+.scrollbar-styled::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-thumb {
+  background-color: var(--color-gray-600);
+  border-radius: 9999px;
+}
+
+.scrollbar-styled::-webkit-scrollbar-track {
+  background-color: var(--color-gray-200);
+  border-radius: 9999px;
+  margin: 2rem; /* make the track shorter */
 }
 
 #root {
