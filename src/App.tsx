@@ -8,13 +8,17 @@ import type { Section } from './types'
 
 function App() {
   const isMobile = useIsMobile()
-  const [section, setSection] = React.useState<Section>('journey')
+  const [section, setSection] = React.useState<Section>('cover')
   return (
     <div className="bg-primary text-gray-50">
       {isMobile ? (
         <MobileLayout />
       ) : (
-        <DesktopLayout section={section} renderSections={() => <Sections onPress={setSection} />} />
+        <DesktopLayout
+          section={section}
+          setSection={setSection}
+          renderSections={() => <Sections selected={section} onPress={setSection} />}
+        />
       )}
     </div>
   )

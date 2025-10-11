@@ -9,6 +9,7 @@ export function Icon({
   size = 24,
   color = 'black',
   shadow = false,
+  disabled = false,
   onPress,
   style,
 }: {
@@ -16,6 +17,7 @@ export function Icon({
   size?: number
   color?: string
   shadow?: boolean
+  disabled?: boolean
   onPress?: () => void
   style?: React.CSSProperties
 }) {
@@ -36,6 +38,7 @@ export function Icon({
     interactable: onPress ? tw`cursor-pointer opacity-80` : '',
     hovered: onPress && !isClicked && tw`hover:scale-105 hover:opacity-100`,
     clicked: onPress && isClicked && tw`scale-110 opacity-100`,
+    disabled: onPress && tw`opacity-50 cursor-not-allowed`,
   }
 
   const filterId = shadow ? 'icon-shadow' : undefined
@@ -43,9 +46,10 @@ export function Icon({
     <button
       className={mergeClassNames(
         buttonClasses.base,
-        buttonClasses.interactable,
-        buttonClasses.hovered,
-        isClicked && buttonClasses.clicked
+        !disabled && buttonClasses.interactable,
+        !disabled && buttonClasses.hovered,
+        !disabled && isClicked && buttonClasses.clicked,
+        disabled && buttonClasses.disabled
       )}
       style={{
         ...style,
@@ -69,7 +73,10 @@ export function Icon({
           </defs>
         </svg>
       ) : null}
-      <IconComponent color={color} filter={filterId ? `url(#${filterId})` : undefined} />
+      <IconComponent
+        color={color}
+        filter={filterId && !disabled ? `url(#${filterId})` : undefined}
+      />
     </button>
   )
 }

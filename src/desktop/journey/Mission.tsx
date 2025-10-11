@@ -10,12 +10,10 @@ export default function Mission({ mission }: { mission: Mission }) {
   const { ref: missionRef, isVisible } = useIsVisible<HTMLDivElement>(0.1)
   const delayedMission = useDelayedValue(mission, 10)
   const missionChanged = delayedMission !== mission
-  const inClasses = 'opacity-100 translate-y-0 transition-all duration-1000'
-  const outClasses = 'opacity-0 translate-y-4'
   return (
     <div
       ref={missionRef}
-      className={`flex h-full w-full flex-col items-center ${isVisible && !missionChanged ? inClasses : outClasses}`}
+      className={`flex h-full w-full flex-col items-center ${isVisible && !missionChanged ? 'animate-fade-up' : 'animate-fade-out'}`}
     >
       {mission && (
         <>

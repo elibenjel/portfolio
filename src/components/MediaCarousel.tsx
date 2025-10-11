@@ -101,7 +101,7 @@ export default function MediaCarousel({
           )
         })}
       </div>
-      <div className="flex flex-row justify-center gap-x-1">
+      <div className="flex flex-row items-center justify-center gap-x-1">
         <IndexSelect
           maxIndex={media.length}
           index={focusedMediaIndex}

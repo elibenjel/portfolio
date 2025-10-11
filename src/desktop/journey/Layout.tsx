@@ -24,7 +24,7 @@ export default function Layout() {
   const selectedMission = missions[selectedMissionIndex]
   return (
     <div className="flex h-full min-h-0 w-full flex-1 flex-col items-center px-16 py-4">
-      <div className="flex min-h-0 w-full max-w-[1000px] flex-col items-center">
+      <div className="animate-fade flex min-h-0 w-full max-w-[1000px] flex-col items-center">
         <Timeline
           periods={journey.map(period => {
             return {
@@ -38,7 +38,7 @@ export default function Layout() {
         />
         <div
           ref={scrollContainerRef}
-          className="scrollbar-styled flex w-full max-w-[80%] flex-1 flex-col gap-y-8 overflow-y-auto px-8"
+          className="scrollbar-styled flex w-full max-w-[80%] flex-1 flex-col gap-y-16 overflow-y-auto px-8"
         >
           {selectedMission && (
             <>

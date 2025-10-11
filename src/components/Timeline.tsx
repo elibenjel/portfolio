@@ -116,6 +116,17 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods, onPeriodSelect }
     }
   }, [backgroundDivRef])
 
+  React.useEffect(() => {
+    foregroundDivRef.current?.scrollTo({
+      left: foregroundDivRef.current.scrollWidth,
+      behavior: 'instant',
+    })
+    backgroundDivRef.current?.scrollTo({
+      left: backgroundDivRef.current.scrollWidth,
+      behavior: 'instant',
+    })
+  }, [])
+
   // Smooth scroll to focused section
   React.useEffect(() => {
     if (drawingControls.selected && foregroundDivRef.current) {

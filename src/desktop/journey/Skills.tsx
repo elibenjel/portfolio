@@ -24,12 +24,10 @@ export default function Skills({
   const { ref: skillsRef, isVisible } = useIsVisible<HTMLDivElement>(0.1)
   const delayedSkills = useDelayedValue(skills, 10)
   const skillsChanged = delayedSkills !== skills
-  const inClasses = 'opacity-100 translate-y-0 transition-all duration-1000'
-  const outClasses = 'opacity-0 translate-y-4'
   return (
     <div
       ref={skillsRef}
-      className={`flex w-full flex-col items-center ${isVisible && !skillsChanged ? inClasses : outClasses}`}
+      className={`flex w-full flex-col items-center ${isVisible && !skillsChanged ? 'animate-fade-up' : 'opacity-0'}`}
     >
       <h2 className="heading-h2 mb-8 w-full border-b border-gray-700 text-center">{title}</h2>
       <div className="grid w-full grid-cols-[max-content_auto_1fr] items-center gap-x-4 gap-y-4">
