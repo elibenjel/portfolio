@@ -1,19 +1,14 @@
-import * as React from 'react'
-
 import type { Journey } from '@/hooks/useData'
-import useDelayedValue from '@/hooks/useDelayedValue'
 import useIsVisible from '@/hooks/useIsVisible'
 
 type Mission = Journey[number]['missions'][number]
 
 export default function Mission({ mission }: { mission: Mission }) {
   const { ref: missionRef, isVisible } = useIsVisible<HTMLDivElement>(0.1)
-  const delayedMission = useDelayedValue(mission, 10)
-  const missionChanged = delayedMission !== mission
   return (
     <div
       ref={missionRef}
-      className={`flex h-full w-full flex-col items-center ${isVisible && !missionChanged ? 'animate-fade-up' : 'animate-fade-out'}`}
+      className={`flex h-full w-full flex-col items-center ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
     >
       {mission && (
         <>

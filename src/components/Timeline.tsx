@@ -6,13 +6,17 @@ import type { TimelinePeriod, TimelineProps } from '../types'
 import { Icon } from './Icon'
 
 const Timeline: React.FC<TimelineProps> = ({ periods: _periods, onPeriodSelect }) => {
-  const periods = _periods
-    .slice()
-    .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
-    .map(p => ({
-      ...p,
-      endDate: p.endDate ?? new Date(),
-    }))
+  const periods = React.useMemo(
+    () =>
+      _periods
+        .slice()
+        .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+        .map(p => ({
+          ...p,
+          endDate: p.endDate ?? new Date(),
+        })),
+    [_periods]
+  )
   const [drawingControls, setDrawingControls] = React.useState<{
     selected: string
     hovered: string | null

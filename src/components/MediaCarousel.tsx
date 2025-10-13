@@ -71,6 +71,7 @@ export default function MediaCarousel({
 
           return (
             <div
+              key={m.url}
               className="flex flex-shrink-0 flex-row items-center transition-all duration-500 ease-in-out"
               style={{
                 width: length,

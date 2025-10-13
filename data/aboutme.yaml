@@ -1,0 +1,25 @@
+name: 'Ilias Benjelloun'
+age: 30
+titles: ['Ingénieur Full Stack', 'Docteur en Informatique']
+country: 'France'
+email: 'ilias.benjelloun@mines-nancy.org'
+linkedin: 'https://www.linkedin.com/in/ilias-benjelloun/'
+github: 'https://github.com/ilias-benjelloun'
+description:
+  whoami: "Un ingénieur logiciel avec une passion pour construire des applications dans l'objectif de faciliter la vie des utilisateurs."
+  lookingfor: 'Des missions me permettant de mettre en pratique et de développer mes compétences.'
+skills:
+  web: ['React', 'TypeScript', 'Tailwind CSS', 'Vite']
+  mobile: ['React Native', 'Expo', 'Android']
+  backend&api: ['Node.js', 'Express', 'GraphQL', 'Google Maps API']
+  databases: ['PostgreSQL', 'Supabase', 'NoSQL', 'MongoDB']
+  devops: ['Docker', 'CI/CD', 'Github Actions', 'EAS Build']
+  soft:
+    [
+      'Esprit Entrepreneurial',
+      'Autonomie',
+      'Vision Utilisateur',
+      'Sens du Détail',
+      'Relationnel Facilitant',
+      'Pédagogie',
+    ]

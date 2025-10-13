@@ -32,7 +32,7 @@ export default function Sections({ selected, onPress }: SectionProps) {
       {Object.entries(sections).map(([section, value]) => (
         <button
           key={section}
-          className={`link-normal ${selected === section ? 'selected' : ''}`}
+          className={`link-normal text-nowrap ${selected === section ? 'selected' : ''}`}
           onClick={() => onPress(section as Section)}
         >
           {value[language]}

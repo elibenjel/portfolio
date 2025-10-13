@@ -1,14 +1,21 @@
 import * as React from 'react'
 
 import { Icon } from '@/components/Icon'
+import { useLanguage } from '@/hooks/useLanguage'
 import type { Section } from '@/types'
 import { colors } from '@/utils/styling'
 
+import Footer from './Footer'
 import About from './about/Layout'
 import Contact from './contact/Layout'
 import Cover from './cover/Layout'
 import Education from './education/Layout'
 import Journey from './journey/Layout'
+
+const languages = {
+  fr: 'Français',
+  en: 'English',
+}
 
 export default function Layout({
   section,
@@ -22,6 +29,7 @@ export default function Layout({
   const startColor = 'rgba(255, 255, 255, 0.2)'
   const endColor = colors.background.primary
   const [showCover, setShowCover] = React.useState(true)
+  const { language, setLanguage } = useLanguage()
   React.useEffect(() => {
     if (section !== 'cover') {
       setShowCover(false)
@@ -71,7 +79,7 @@ export default function Layout({
       <div className="relative min-h-0 w-full flex-1 px-8 sm:px-16 md:px-16 lg:px-24 xl:px-32">
         {
           <div
-            className={`flex h-full min-h-0 w-full flex-col items-center transition-all delay-500 duration-1500 ease-in-out ${showCover ? 'scale-50 opacity-0' : 'scale-100 opacity-100'}`}
+            className={`flex h-full min-h-0 w-full flex-col items-center transition-all delay-2500 duration-1500 ease-in-out ${showCover ? 'scale-50 opacity-0' : 'scale-100 opacity-100'}`}
           >
             {section === 'about' && <About />}
             {section === 'journey' && <Journey />}
@@ -82,10 +90,18 @@ export default function Layout({
         <Cover visible={showCover} onPress={() => setSection('about')}></Cover>
       </div>
       <div className="animate-fade animate-duration-2000 flex h-[100px] w-full flex-row items-center">
-        <div className="flex flex-6 space-x-4 pl-8">
-          <Icon name="linkedin" size={24} onPress={() => console.log('linkedin')} />
-          <Icon name="github" size={24} onPress={() => console.log('github')} />
-          <Icon name="link" size={24} onPress={() => console.log('link')} />
+        <div className="flex flex-6 items-center space-x-4 pl-8">
+          <div className="flex flex-row items-center space-x-1">
+            <Icon
+              name="language"
+              size={24}
+              color="white"
+              onPress={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+            />
+            <p className="text-sm text-white">{'-'}</p>
+            <p className="text-sm text-white">{languages[language]}</p>
+          </div>
+          <Footer />
         </div>
         <div className="h-0.5 flex-4 bg-white opacity-50" />
       </div>

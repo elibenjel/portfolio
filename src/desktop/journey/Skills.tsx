@@ -2,7 +2,6 @@ import * as React from 'react'
 
 import Gauge from '@/components/Gauge'
 import type { Journey } from '@/hooks/useData'
-import useDelayedValue from '@/hooks/useDelayedValue'
 import useIsVisible from '@/hooks/useIsVisible'
 import { colors } from '@/utils/styling'
 
@@ -22,12 +21,10 @@ export default function Skills({
   }
 
   const { ref: skillsRef, isVisible } = useIsVisible<HTMLDivElement>(0.1)
-  const delayedSkills = useDelayedValue(skills, 10)
-  const skillsChanged = delayedSkills !== skills
   return (
     <div
       ref={skillsRef}
-      className={`flex w-full flex-col items-center ${isVisible && !skillsChanged ? 'animate-fade-up' : 'opacity-0'}`}
+      className={`flex w-full flex-col items-center ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
     >
       <h2 className="heading-h2 mb-8 w-full border-b border-gray-700 text-center">{title}</h2>
       <div className="grid w-full grid-cols-[max-content_auto_1fr] items-center gap-x-4 gap-y-4">

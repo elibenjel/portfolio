@@ -1,4 +1,7 @@
+import aboutMeData from '~data/aboutme.yaml'
 import journeyData from '~data/journey.yaml'
+
+import * as React from 'react'
 
 export type MediaItem = {
   url: string
@@ -36,19 +39,38 @@ export type Journey = {
   }[]
 }[]
 
-console.log(journeyData)
+export type SkillDomain = 'web' | 'mobile' | 'backend&api' | 'databases' | 'devops' | 'soft'
+
+export type AboutMe = {
+  name: string
+  age: number
+  titles: string[]
+  country: string
+  email: string
+  linkedin: string
+  github: string
+  description: {
+    whoami: string
+    lookingfor: string
+  }
+  skills: Record<SkillDomain, string[]>
+}
 
 export const useData = () => {
-  return {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    journey: journeyData.map((period: any) => ({
-      ...period,
+  return React.useMemo(
+    () => ({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      missions: period.missions.map((mission: any) => ({
-        ...mission,
-        technicalSkills: mission.technical_skills,
-        softSkills: mission.soft_skills,
-      })),
-    })) as Journey,
-  }
+      journey: journeyData.map((period: any) => ({
+        ...period,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        missions: period.missions.map((mission: any) => ({
+          ...mission,
+          technicalSkills: mission.technical_skills,
+          softSkills: mission.soft_skills,
+        })),
+      })) as Journey,
+      aboutMe: aboutMeData as AboutMe,
+    }),
+    []
+  )
 }
