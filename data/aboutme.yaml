@@ -3,8 +3,8 @@ age: 30
 titles: ['Ingénieur Full Stack', 'Docteur en Informatique']
 country: 'France'
 email: 'ilias.benjelloun@mines-nancy.org'
-linkedin: 'https://www.linkedin.com/in/ilias-benjelloun/'
-github: 'https://github.com/ilias-benjelloun'
+linkedin: 'https://www.linkedin.com/in/ilias-benjelloun-mines-nancy/'
+github: 'https://github.com/elibenjel'
 description:
   whoami: "Un ingénieur logiciel avec une passion pour construire des applications dans l'objectif de faciliter la vie des utilisateurs."
   lookingfor: 'Des missions me permettant de mettre en pratique et de développer mes compétences.'

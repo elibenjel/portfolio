@@ -1,0 +1,15 @@
+- name: 'Doctorat en Intelligence Artificiel et Statistique'
+  location: 'Université de Lorraine, Nancy, France'
+  dates:
+    start: '2017-10-01'
+    end: '2021-11-30'
+- name: 'Master 2 en Sciences Cognitives'
+  location: 'Université de Lorraine, Nancy, France'
+  dates:
+    start: '2016-09-01'
+    end: '2017-06-30'
+- name: 'Ingénieur Civil des Mines'
+  location: 'Ecole Nationale Supérieure des Mines de Nancy, Nancy, France'
+  dates:
+    start: '2014-09-01'
+    end: '2017-06-30'

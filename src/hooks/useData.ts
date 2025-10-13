@@ -1,4 +1,5 @@
 import aboutMeData from '~data/aboutme.yaml'
+import educationData from '~data/education.yaml'
 import journeyData from '~data/journey.yaml'
 
 import * as React from 'react'
@@ -56,6 +57,15 @@ export type AboutMe = {
   skills: Record<SkillDomain, string[]>
 }
 
+export type Education = {
+  name: string
+  location: string
+  dates: {
+    start: string
+    end: string
+  }
+}[]
+
 export const useData = () => {
   return React.useMemo(
     () => ({
@@ -70,6 +80,7 @@ export const useData = () => {
         })),
       })) as Journey,
       aboutMe: aboutMeData as AboutMe,
+      education: educationData as Education,
     }),
     []
   )

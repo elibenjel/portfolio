@@ -259,8 +259,8 @@
 
 - period: 'Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine'
   dates:
-    start: '2017-01-01'
-    end: '2021-12-31'
+    start: '2017-10-01'
+    end: '2021-11-30'
   missions:
     - title: 'Impact du bruit d’annotation sur l’évaluation de classifieurs'
       problem: 'Le bruit introduit lors de l’annotation des données remet en question la fiabilité des évaluations de modèles de classification supervisée.'

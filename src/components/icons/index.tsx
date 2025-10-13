@@ -3,6 +3,7 @@ import ArrowLeft from './ArrowLeftIcon'
 import ArrowRight from './ArrowRightIcon'
 import DatabaseIcon from './DatabaseIcon'
 import DevOpsIcon from './DevOpsIcon'
+import EmailIcon from './EmailIcon'
 import GithubIcon from './GithubIcon'
 import HandShakeIcon from './HandShakeIcon'
 import LanguageIcon from './LanguageIcon'
@@ -24,6 +25,7 @@ const icons = {
   devops: DevOpsIcon,
   handshake: HandShakeIcon,
   language: LanguageIcon,
+  email: EmailIcon,
 } as const
 
 export default icons
