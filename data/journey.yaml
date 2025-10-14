@@ -5,18 +5,28 @@
   missions:
     - title: 'Développement d’une application mobile pour la restauration'
       problem: 'Le secteur de la restauration fait face à des difficultés pour fluidifier l’expérience client et optimiser les opérations internes.'
-      solution: 'Conception et développement d’une application mobile avec un parcours utilisateur intuitif et des fonctionnalités adaptées aux restaurateurs.'
-      result: 'Première version opérationnelle facilitant la gestion des commandes et améliorant la satisfaction client (impact à préciser).'
+      solution: 'Conception et développement de 2 applications mobiles pour les clients et les restaurateurs, un serveur backend en Kotlin (Spring Boot) et une base de données Supabase.'
+      result: 'Première version opérationnelle en 6 mois de développement solo, déployée et prête à tester en situation réelle.'
       technical_skills:
         - label: 'React Native'
           value: 0.8
         - label: 'Expo'
           value: 0.8
-        - label: 'Android'
-          value: 0.8
         - label: 'Conception Produit'
           value: 0.8
         - label: 'Intégration API'
+          value: 0.8
+        - label: 'Kotlin'
+          value: 0.8
+        - label: 'Spring Boot'
+          value: 0.8
+        - label: 'Docker'
+          value: 0.8
+        - label: 'CI/CD'
+          value: 0.8
+        - label: 'GraphQL'
+          value: 0.8
+        - label: 'Supabase'
           value: 0.8
       soft_skills:
         - label: 'Esprit entrepreneurial'
