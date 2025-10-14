@@ -1,7 +1,9 @@
 import * as React from 'react'
 
 import type { MediaItem } from '@/hooks/useData'
+import useIsVisible from '@/hooks/useIsVisible'
 
+import Image from './Image'
 import IndexSelect from './IndexSelect'
 
 export default function MediaCarousel({
@@ -13,6 +15,7 @@ export default function MediaCarousel({
   length: number
   spacing: number
 }) {
+  const { ref: mediaCarouselRef, isVisible } = useIsVisible<HTMLDivElement>(0.1)
   const [focusedMediaIndex, setFocusedMediaIndex] = React.useState(0)
   const videoRefs = React.useRef<(HTMLVideoElement | null)[]>([])
 
@@ -21,11 +24,11 @@ export default function MediaCarousel({
     videoRefs.current = videoRefs.current.slice(0, media.length)
   }, [media.length])
 
-  // Control video playback based on focusedMediaIndex
+  // Control video playback based on focusedMediaIndex and isVisible
   React.useEffect(() => {
     videoRefs.current.forEach((videoRef, index) => {
       if (videoRef) {
-        if (index === focusedMediaIndex) {
+        if (index === focusedMediaIndex && isVisible) {
           videoRef.play()
         } else {
           videoRef.pause()
@@ -33,10 +36,10 @@ export default function MediaCarousel({
         }
       }
     })
-  }, [focusedMediaIndex])
+  }, [focusedMediaIndex, isVisible])
 
   return (
-    <div className="flex w-full flex-col items-center gap-y-4">
+    <div ref={mediaCarouselRef} className="flex w-full flex-col items-center gap-y-4">
       <div
         className="flex flex-row overflow-hidden"
         style={{
@@ -72,7 +75,8 @@ export default function MediaCarousel({
           return (
             <div
               key={m.url}
-              className="flex flex-shrink-0 flex-row items-center transition-all duration-500 ease-in-out"
+              className="flex flex-shrink-0 cursor-pointer flex-row items-center transition-all duration-500 ease-in-out"
+              onClick={() => setFocusedMediaIndex(index)}
               style={{
                 width: length,
                 transform: `translateX(-${shift}px)`,
@@ -81,10 +85,10 @@ export default function MediaCarousel({
             >
               <div
                 className="flex flex-row items-center transition-all duration-500 ease-in-out"
-                style={{ scale }}
+                style={{ scale, pointerEvents: focusedMediaIndex === index ? 'auto' : 'none' }}
               >
                 {m.type === 'image' ? (
-                  <img src={m.url} alt={m.type} tabIndex={focusedMediaIndex === index ? 0 : -1} />
+                  <Image src={m.url} alt={m.type} tabIndex={focusedMediaIndex === index ? 0 : -1} />
                 ) : (
                   <video
                     ref={el => {

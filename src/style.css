@@ -165,6 +165,18 @@
   }
 }
 
+img:fullscreen {
+  object-fit: contain;
+  background-color: var(--color-gray-800);
+  scale: 1;
+}
+
+img::-webkit-full-screen {
+  object-fit: contain;
+  background-color: var(--color-gray-800);
+  scale: 1;
+}
+
 #root {
   margin: 0 auto;
   padding: 0;

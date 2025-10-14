@@ -32,13 +32,25 @@
       achievements:
         hyperlinks: []
         media:
-          - url: '/media/test-image.jpg'
-            type: 'image'
-          - url: '/media/test-image copy.jpg'
-            type: 'image'
-          - url: '/media/test-video.mp4'
+          - url: '/media/surpreat-demo.mp4'
             type: 'video'
-          - url: '/media/test-image copy 4.jpg'
+          - url: '/media/surpreat-compose-meal.jpg'
+            type: 'image'
+          - url: '/media/surpreat-bet.jpg'
+            type: 'image'
+          - url: '/media/surpreat-map.jpg'
+            type: 'image'
+          - url: '/media/surpreat-order.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-ongoing-workslot.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-agenda.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-create-workslot.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-manage-workslot.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-profile.jpg'
             type: 'image'
 
 - period: 'Ingénieur Logiciel – Alerion'
@@ -148,7 +160,17 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        media: []
+        media:
+          - url: '/media/bft-landing-screen.jpg'
+            type: 'image'
+          - url: '/media/bft-disabled.jpg'
+            type: 'image'
+          - url: '/media/bft-enabled.jpg'
+            type: 'image'
+          - url: '/media/bft-info.jpg'
+            type: 'image'
+          - url: '/media/bft-config.jpg'
+            type: 'image'
 
     - title: 'Application Android pour le drone Anafi AI'
       problem: 'Le drone Anafi n’était pilotable qu’avec l’application officielle disponible uniquement sur iOS.'
@@ -174,7 +196,11 @@
           value: 0.8
       achievements:
         hyperlinks: []
-        media: []
+        media:
+          - url: '/media/anafi-disconnected.jpg'
+            type: 'image'
+          - url: '/media/anafi-config.jpg'
+            type: 'image'
 
     - title: 'Application Android transformant smartphones/tablettes en manettes de contrôle'
       problem: 'Dispositifs de contrôle coûteux et longs à configurer.'
