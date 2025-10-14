@@ -148,6 +148,23 @@
   margin: 2rem; /* make the track shorter */
 }
 
+@theme {
+  --animate-fade-in-scale: fade-in-scale var(--default-animation-duration, 0.5s)
+    var(--default-animation-easing, ease-in-out) var(--default-animation-delay, 0s)
+    var(--default-animation-fill-mode, forwards);
+
+  @keyframes fade-in-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
 #root {
   margin: 0 auto;
   padding: 0;

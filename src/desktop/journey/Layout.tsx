@@ -40,7 +40,7 @@ export default function Layout() {
   const periodKey = selectedPeriod
   const missionKey = `${selectedPeriod}-${selectedMission.title}`
   return (
-    <div className="flex h-full min-h-0 w-full flex-1 flex-col items-center px-16 py-4">
+    <div className="animate-fade-in-scale flex h-full min-h-0 w-full flex-1 flex-col items-center px-16 py-4">
       <div className="animate-fade flex min-h-0 w-full max-w-[1000px] flex-col items-center">
         <Timeline periods={timelinePeriods} onPeriodSelect={handlePeriodSelect} />
         <div

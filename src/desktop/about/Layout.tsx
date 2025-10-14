@@ -18,7 +18,7 @@ export default function Layout() {
   const { aboutMe } = useData()
   const { language } = useLanguage()
   return (
-    <div className="scrollbar-styled animate-fade-up flex h-full min-h-0 w-full flex-col justify-between overflow-y-auto px-8">
+    <div className="scrollbar-styled animate-fade-in-scale flex h-full min-h-0 w-full flex-col justify-between overflow-y-auto px-8">
       <div className="flex h-[40%] min-h-[300px] w-full min-w-[1200px] flex-row items-center gap-x-8">
         <div className="flex h-full flex-col items-center rounded-md bg-gray-200 py-8">
           <div className="aspect-square overflow-hidden rounded-full">

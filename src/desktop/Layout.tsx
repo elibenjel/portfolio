@@ -79,7 +79,7 @@ export default function Layout({
       <div className="relative min-h-0 w-full flex-1 px-8 sm:px-16 md:px-16 lg:px-24 xl:px-32">
         {
           <div
-            className={`flex h-full min-h-0 w-full flex-col items-center transition-all delay-2500 duration-1500 ease-in-out ${showCover ? 'scale-50 opacity-0' : 'scale-100 opacity-100'}`}
+            className={`flex h-full min-h-0 w-full flex-col items-center ${showCover ? '' : 'animate-[fade-in-scale_1.5s_ease-out_2.5s_forwards] opacity-0'}`}
           >
             {section === 'about' && <About />}
             {section === 'journey' && <Journey />}
