@@ -1,13 +1,13 @@
 import * as React from 'react'
 
-import { useData } from '@/hooks/useData'
-import { useLanguage } from '@/hooks/useLanguage'
+import useData from '@/hooks/useData'
+import useLanguage from '@/hooks/useLanguage'
 
-export default function Layout() {
+export default function EducationLayout() {
   const { education } = useData()
   const { language } = useLanguage()
   return (
-    <div className="scrollbar-styled animate-fade-in-scale flex h-full min-h-0 w-full flex-col items-center justify-center overflow-y-auto px-8">
+    <div className="scrollbar-styled animate-grow flex h-full min-h-0 w-full flex-col items-center justify-center overflow-y-auto px-8">
       <div className="grid grid-cols-[auto] items-center justify-center space-y-12">
         {education.map(({ name, location, dates }, index) => (
           <React.Fragment key={name}>

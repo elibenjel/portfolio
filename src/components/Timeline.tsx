@@ -1,6 +1,7 @@
 import * as React from 'react'
 
-import { useLanguage } from '@/hooks/useLanguage'
+import useLanguage from '@/hooks/useLanguage'
+import useScrollState from '@/hooks/useScrollState'
 
 import type { TimelinePeriod, TimelineProps } from '../types'
 import { Icon } from './Icon'
@@ -72,6 +73,7 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods, onPeriodSelect }
   const [containerWidth, setContainerWidth] = React.useState(0)
   const backgroundDivRef = React.useRef<HTMLDivElement>(null)
   const foregroundDivRef = React.useRef<HTMLDivElement>(null)
+  const { canScrollLeft, canScrollRight } = useScrollState(foregroundDivRef)
   const oneYearWidth = 250
   const timelineHeight = 70
   const arrowWidth = timelineHeight / 5
@@ -253,7 +255,7 @@ const Timeline: React.FC<TimelineProps> = ({ periods: _periods, onPeriodSelect }
         </svg>
       </div>
       <div
-        className="fade-horizontal absolute inset-0 min-w-0 overflow-hidden"
+        className={`absolute inset-0 min-w-0 overflow-hidden ${canScrollLeft && canScrollRight ? 'fade-horizontal' : canScrollLeft ? 'fade-left' : canScrollRight ? 'fade-right' : ''}`}
         ref={foregroundDivRef}
       >
         <svg width={svgWidth} height={svgHeight} viewBox={viewBox.join(' ')}>

@@ -1,6 +1,6 @@
 import { Icon } from '@/components/Icon'
 import type { SkillDomain } from '@/hooks/useData'
-import { useLanguage } from '@/hooks/useLanguage'
+import useLanguage from '@/hooks/useLanguage'
 
 const domains = {
   fr: {
@@ -30,17 +30,41 @@ const iconNames = {
   soft: 'handshake',
 } as const
 
-export default function Skills({ domain, skills }: { domain: SkillDomain; skills: string[] }) {
+export default function Skills({
+  domain,
+  skills,
+  variant = 'on-dark',
+}: {
+  domain: SkillDomain
+  skills: string[]
+  variant?: 'on-dark' | 'on-light'
+}) {
   const { language } = useLanguage()
+  const colors =
+    variant === 'on-dark'
+      ? {
+          text: 'text-gray-400',
+          icon: 'white',
+          border: 'border-gray-700',
+        }
+      : {
+          text: 'text-gray-800',
+          icon: 'black',
+          border: 'border-gray-400',
+        }
   return (
     <div className="flex w-full flex-col items-center">
-      <div className="mb-8 flex w-full flex-row items-center justify-center gap-x-4 border-b border-gray-700">
-        <Icon name={iconNames[domain]} size={24} color="white" />
-        <h3 className="heading-h3 text-center">{domains[language][domain]}</h3>
+      <div
+        className={`mb-8 flex w-full flex-row items-center justify-center gap-x-4 border-b ${colors.border}`}
+      >
+        <Icon name={iconNames[domain]} size={24} color={colors.icon} />
+        <h3 className={`heading-h3 text-center ${colors.text}`}>{domains[language][domain]}</h3>
       </div>
       <div className="flex flex-row flex-wrap items-center justify-center gap-x-4">
         {skills.map(skill => (
-          <h4 className="heading-h4 text-gray-400">{skill}</h4>
+          <h4 key={skill} className={`heading-h4 ${colors.text}`}>
+            {skill}
+          </h4>
         ))}
       </div>
     </div>

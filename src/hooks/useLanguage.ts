@@ -2,7 +2,7 @@ import * as React from 'react'
 
 let language = 'fr'
 
-export const useLanguage = () => {
+export default function useLanguage() {
   const [, setLanguageChangedAt] = React.useState(Date.now())
   return {
     language: language as 'fr' | 'en',

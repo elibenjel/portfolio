@@ -1,5 +1,5 @@
 import TimelineComponent from '@/components/Timeline'
-import { useData } from '@/hooks/useData'
+import useData from '@/hooks/useData'
 
 export default function Timeline() {
   const { journey } = useData()

@@ -55,6 +55,7 @@ export function Icon({
         ...style,
         width: size,
         height: size,
+        color,
       }}
       onClick={handleClick}
     >
@@ -73,10 +74,7 @@ export function Icon({
           </defs>
         </svg>
       ) : null}
-      <IconComponent
-        color={color}
-        filter={filterId && !disabled ? `url(#${filterId})` : undefined}
-      />
+      <IconComponent filter={filterId && !disabled ? `url(#${filterId})` : undefined} />
     </button>
   )
 }

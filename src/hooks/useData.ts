@@ -66,7 +66,7 @@ export type Education = {
   }
 }[]
 
-export const useData = () => {
+export default function useData() {
   return React.useMemo(
     () => ({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

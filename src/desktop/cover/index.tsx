@@ -1,6 +1,4 @@
-import * as React from 'react'
-
-export default function Layout({ visible, onPress }: { visible: boolean; onPress: () => void }) {
+export default function Cover({ visible, onPress }: { visible: boolean; onPress: () => void }) {
   const leftDoorClass = !visible
     ? 'delay-1500 rotate-y-60 skew-y-10 origin-left -translate-y-10'
     : ''
@@ -28,7 +26,7 @@ export default function Layout({ visible, onPress }: { visible: boolean; onPress
           className={`absolute left-0 h-full w-[50%] transition-all duration-2000 ease-in-out ${leftDoorClass} overflow-hidden`}
         >
           <div
-            className={`absolute top-[50%] right-0 h-0 w-[1px] -translate-y-1/2 bg-gray-700 ${borderTransitionClass}`}
+            className={`absolute top-[50%] right-0 h-0 w-[1px] -translate-y-1/2 bg-gray-300 ${borderTransitionClass}`}
           />
           <h1 className="heading-h1 absolute top-[50%] right-0 translate-x-1/2 -translate-y-1/2 opacity-80 group-hover:opacity-100">
             PORTFOLIO
@@ -38,7 +36,7 @@ export default function Layout({ visible, onPress }: { visible: boolean; onPress
           className={`absolute right-0 h-full w-[50%] transition-all duration-2000 ease-in-out ${rightDoorClass} overflow-hidden`}
         >
           <div
-            className={`absolute top-[50%] left-0 h-0 w-[1px] -translate-y-1/2 bg-gray-700 ${borderTransitionClass}`}
+            className={`absolute top-[50%] left-0 h-0 w-[1px] -translate-y-1/2 bg-gray-300 ${borderTransitionClass}`}
           />
           <h1 className="heading-h1 absolute top-[50%] left-0 -translate-x-1/2 -translate-y-1/2 opacity-80 group-hover:opacity-100">
             PORTFOLIO

@@ -1,24 +1,14 @@
-import { useData } from '@/hooks/useData'
-import { useLanguage } from '@/hooks/useLanguage'
+import { description } from '@/constants'
+import useData from '@/hooks/useData'
+import useLanguage from '@/hooks/useLanguage'
 
 import Skills from './Skills'
 
-const description = {
-  fr: {
-    whoami: 'Je suis',
-    lookingfor: 'Je recherche',
-  },
-  en: {
-    whoami: 'I am',
-    lookingfor: 'I am looking for',
-  },
-} as const
-
-export default function Layout() {
+export default function AboutLayout() {
   const { aboutMe } = useData()
   const { language } = useLanguage()
   return (
-    <div className="scrollbar-styled animate-fade-in-scale flex h-full min-h-0 w-full flex-col justify-between overflow-y-auto px-8">
+    <div className="scrollbar-styled animate-grow flex h-full min-h-0 w-full flex-col justify-between overflow-y-auto px-8">
       <div className="flex h-[40%] min-h-[300px] w-full min-w-[1200px] flex-row items-center gap-x-8">
         <div className="flex h-full flex-col items-center rounded-md bg-gray-200 py-8">
           <div className="aspect-square overflow-hidden rounded-full">
