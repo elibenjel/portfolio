@@ -1,11 +1,11 @@
-const SVGComponent = ({ className }: { className?: string }) => (
+const SVGComponent = (svgProps: React.SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 24 24"
     height="100%"
     width="100%"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
-    className={className}
+    {...svgProps}
   >
     <path
       fill="currentColor"

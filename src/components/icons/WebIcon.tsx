@@ -1,11 +1,11 @@
-const SVGComponent = ({ className }: { className?: string }) => (
+const SVGComponent = (svgProps: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="100%"
     height="100%"
     viewBox="0 0 24 24"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
-    className={className}
+    {...svgProps}
   >
     <g id="style=bulk">
       <g id="web">

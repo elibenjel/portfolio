@@ -27,7 +27,7 @@ export default function Skills({
       className={`flex w-full flex-col items-center ${isVisible ? 'animate-fade-up' : 'opacity-0'}`}
     >
       <h2 className="heading-h2 mb-8 w-full border-b border-gray-700 text-center">{title}</h2>
-      <div className="grid w-full grid-cols-[max-content_auto_1fr] items-center gap-x-4 gap-y-4">
+      <div className="grid w-full grid-cols-[minmax(0,40%)_auto_1fr] items-center gap-x-4 gap-y-4">
         {skills.map(skill => (
           <React.Fragment key={skill.label}>
             <h4 className="heading-h4 text-gray-400">{skill.label}</h4>

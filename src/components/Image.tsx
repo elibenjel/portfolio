@@ -1,35 +1,46 @@
 import * as React from 'react'
 
+import { Dialog } from './Dialog'
+
 export default function Image({ src, alt, className, ...props }: React.ComponentProps<'img'>) {
-  const imgRef = React.useRef<HTMLImageElement | null>(null)
+  const [isDialogOpen, setIsDialogOpen] = React.useState(false)
 
-  const toggleFullscreen = () => {
-    const el = imgRef.current
-    if (!el) return
+  const openDialog = () => {
+    setIsDialogOpen(true)
+  }
 
-    if (document.fullscreenElement) {
-      document.exitFullscreen()
-    } else {
-      el.requestFullscreen().catch(err => {
-        console.error('Failed to enter fullscreen:', err)
-      })
-    }
+  const closeDialog = () => {
+    setIsDialogOpen(false)
   }
 
   return (
-    <img
-      ref={imgRef}
-      src={src}
-      alt={alt}
-      className={`cursor-zoom-in transition-transform hover:scale-105 ${className ?? ''}`}
-      onClick={toggleFullscreen}
-      style={{
-        maxWidth: '100%',
-        maxHeight: '100%',
-        borderRadius: '0.5rem',
-        ...props.style,
-      }}
-      {...props}
-    />
+    <>
+      <img
+        src={src}
+        alt={alt}
+        className={`cursor-zoom-in transition-transform hover:scale-105 ${className ?? ''}`}
+        onClick={openDialog}
+        style={{
+          maxWidth: '100%',
+          maxHeight: '100%',
+          borderRadius: '0.5rem',
+          ...props.style,
+        }}
+        {...props}
+      />
+      <Dialog visible={isDialogOpen} onDismiss={closeDialog}>
+        <div
+          className="bg-primary flex h-screen w-screen cursor-zoom-out items-center justify-center"
+          onClick={closeDialog}
+        >
+          <img
+            src={src}
+            alt={alt}
+            className="max-h-full max-w-full object-contain"
+            onClick={closeDialog}
+          />
+        </div>
+      </Dialog>
+    </>
   )
 }

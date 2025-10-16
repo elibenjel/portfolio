@@ -1,11 +1,11 @@
-export default function LinkIcon({ className }: { className?: string }) {
+export default function LinkIcon(svgProps: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="100%"
       height="100%"
       fill="currentColor"
-      className={className}
+      {...svgProps}
       viewBox="0 0 16 16"
     >
       <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />

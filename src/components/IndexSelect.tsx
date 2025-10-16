@@ -6,7 +6,7 @@ export default function IndexSelect({
   maxIndex,
   index,
   onIndexSelected,
-  color = 'white',
+  color = 'currentColor',
 }: {
   maxIndex: number
   index: number

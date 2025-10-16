@@ -1,4 +1,4 @@
-const SVGComponent = (svgProps: React.SVGProps<SVGSVGElement>) => (
+const SVGComponent = ({ className }: { className?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -8,9 +8,9 @@ const SVGComponent = (svgProps: React.SVGProps<SVGSVGElement>) => (
     id="Layer_1"
     viewBox="0 0 512.005 512.005"
     xmlSpace="preserve"
-    {...svgProps}
+    className={className}
   >
-    <g transform="rotate(-90),translate(0, 115)" transform-origin="center">
+    <g transform="scale(1, -1),translate(0, 115)" transform-origin="center">
       <path d="M392.173,1.626c-7.957-3.307-17.152-1.472-23.253,4.629L256.002,119.173L143.085,6.256    c-6.101-6.101-15.253-7.936-23.253-4.629c-7.979,3.285-13.163,11.093-13.163,19.712v108.139c0,5.717,2.304,11.179,6.336,15.168    l128,126.528c4.16,4.096,9.579,6.165,14.997,6.165c5.419,0,10.837-2.069,14.997-6.165l128-126.528    c4.053-3.989,6.336-9.451,6.336-15.168V21.338C405.335,12.72,400.151,4.912,392.173,1.626z" />
     </g>
   </svg>

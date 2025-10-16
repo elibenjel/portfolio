@@ -57,7 +57,7 @@ export function Icon({
         height: size,
         color,
       }}
-      onClick={handleClick}
+      onClick={disabled ? undefined : handleClick}
     >
       {filterId ? (
         <svg width="0" height="0" style={{ position: 'absolute' }}>
