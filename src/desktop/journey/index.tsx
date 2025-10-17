@@ -53,7 +53,6 @@ export default function Layout() {
   const missions = journey.find(period => period.id === selectedPeriodId)?.missions ?? []
   const selectedMission = missions[selectedMissionIndex]
   const periodKey = selectedPeriodId
-  console.log(selectedMission, selectedMissionIndex, missions.length)
   const missionKey = `${selectedPeriodId}-${selectedMission.title}`
   return (
     <div className="animate-grow flex h-full min-h-0 w-full flex-1 flex-col items-center px-16 py-4">

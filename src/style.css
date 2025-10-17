@@ -171,11 +171,11 @@
     }
   }
   .link-normal:hover {
-    color: white;
+    color: var(--color-slate-500);
   }
 
   .link-normal.selected {
-    color: white;
+    color: var(--color-slate-500);
   }
 
   .fade-left {

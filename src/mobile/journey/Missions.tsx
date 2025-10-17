@@ -1,10 +1,11 @@
 import * as React from 'react'
 
 import { Dialog } from '@/components/Dialog'
+import { Icon } from '@/components/Icon'
 import IndexSelect from '@/components/IndexSelect'
+import MediaCarousel from '@/components/MediaCarousel'
 import BrainIcon from '@/components/icons/BrainIcon'
 import StarIcon from '@/components/icons/StarIcon'
-import Achievements from '@/desktop/journey/Achievements'
 import Skills from '@/desktop/journey/Skills'
 import type { Journey } from '@/hooks/useData'
 import useLocalization from '@/providers/localization/hook'
@@ -63,7 +64,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
   return (
     <div className="relative flex w-full flex-col items-center gap-y-4">
       {missions.length > 1 && (
-        <div className="bg-primary sticky top-4 z-50 mt-4 flex max-w-full flex-row items-center justify-center rounded-full px-2 opacity-50">
+        <div className="bg-primary sticky top-4 z-50 mt-4 max-w-full rounded-full px-2 opacity-50">
           <IndexSelect
             index={selectedMissionIndex}
             onIndexSelected={handleMissionSelect}
@@ -147,12 +148,32 @@ export default function Missions({ missions }: { missions: Mission[] }) {
               }
               onDismiss={() => setVisibleDialog(null)}
             >
-              <div className="scrollbar-styled flex h-[80vh] w-[80vw] flex-col items-center justify-center overflow-y-auto rounded-md border-2 border-gray-700 bg-gray-200 p-8 shadow-lg">
-                <Achievements
-                  title={localizations[language].achievements}
-                  media={mission.achievements.media}
-                  hyperlinks={mission.achievements.hyperlinks}
-                />
+              <div className="scrollbar-styled flex max-h-[80vh] w-[80vw] flex-col items-center overflow-y-auto rounded-md border-2 border-gray-700 bg-gray-200 p-8 shadow-lg">
+                <div className={`flex w-full flex-col items-center overflow-x-hidden`}>
+                  <h2 className="heading-h2 mb-8 w-full border-b border-gray-700 text-center">
+                    {localizations[language].achievements}
+                  </h2>
+                  {mission.achievements.media.length > 0 && (
+                    <MediaCarousel media={mission.achievements.media} length={100} spacing={20} />
+                  )}
+                  {mission.achievements.hyperlinks.length > 0 && (
+                    <div className="flex w-full flex-col gap-y-4 px-8">
+                      {mission.achievements.hyperlinks.map((hyperlink, index) => (
+                        <div key={index} className="flex w-full flex-row items-center gap-x-3">
+                          <Icon name="link" size={48} color="currentColor" />
+                          <a
+                            href={hyperlink.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="link-normal"
+                          >
+                            {hyperlink.text}
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
             </Dialog>
           </div>
