@@ -17,15 +17,15 @@ export default function Mission({ mission }: { mission: Mission }) {
           </h2>
           <div className="flex h-full w-full flex-col items-center">
             <div className="grid grid-cols-[max-content_auto_1fr] gap-x-4 gap-y-4">
-              <h4 className="heading-h4 text-gray-400">Problème</h4>
+              <h4 className="text-gray-400">Problème</h4>
               <span className="text-gray-400">-</span>
               <p className="paragraph-normal">{mission.problem}</p>
 
-              <h4 className="heading-h4 text-gray-400">Solution</h4>
+              <h4 className="text-gray-400">Solution</h4>
               <span className="text-gray-400">-</span>
               <p className="paragraph-normal">{mission.solution}</p>
 
-              <h4 className="heading-h4 text-gray-400">Résultat</h4>
+              <h4 className="text-gray-400">Résultat</h4>
               <span className="text-gray-400">-</span>
               <p className="paragraph-normal">{mission.result}</p>
             </div>

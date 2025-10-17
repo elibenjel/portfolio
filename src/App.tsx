@@ -1,19 +1,19 @@
 import * as React from 'react'
 
 import DesktopLayout from './desktop'
-import useIsMobile from './hooks/useIsMobile'
+import useBreakpoints from './hooks/useBreakpoints'
 import MobileLayout from './mobile'
 import LocalizationProvider from './providers/localization/provider'
 import type { Section } from './types'
 import { colors } from './utils/styling'
 
 function App() {
-  const isMobile = useIsMobile()
+  const size = useBreakpoints()
   const [section, setSection] = React.useState<Section>('cover')
   const startColor = 'rgba(255, 255, 255, 0.2)'
   const endColor = colors.background.primary
   return (
-    <div className="bg-primary h-screen w-screen text-gray-50">
+    <div className={`bg-primary h-screen w-screen text-gray-50`}>
       <div className="pointer-events-none absolute inset-0 h-full w-full">
         <svg
           className="h-full w-full"
@@ -44,10 +44,10 @@ function App() {
         </svg>
       </div>
       <LocalizationProvider>
-        {isMobile ? (
-          <MobileLayout section={section} setSection={setSection} />
-        ) : (
+        {size === 'large' ? (
           <DesktopLayout section={section} setSection={setSection} />
+        ) : (
+          <MobileLayout section={section} setSection={setSection} />
         )}
       </LocalizationProvider>
     </div>

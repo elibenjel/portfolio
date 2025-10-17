@@ -64,7 +64,7 @@ export default function Skills({
       </div>
       <div className="flex flex-row flex-wrap items-center justify-center gap-x-4">
         {skills.map(skill => (
-          <h4 key={skill} className={`heading-h4 ${colors.text}`}>
+          <h4 key={skill} className={`${colors.text}`}>
             {skill}
           </h4>
         ))}

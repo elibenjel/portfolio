@@ -67,11 +67,11 @@ export default function MobileLayout({
         <LanguageSelect color="currentColor" />
       </div>
       <div
-        className={`relative flex h-full min-h-0 w-full flex-col overflow-hidden px-16 py-8 ${canScrollUp && canScrollDown ? 'fade-vertical' : canScrollUp ? 'fade-up' : canScrollDown ? 'fade-down' : ''}`}
+        className={`relative flex h-full min-h-0 w-full flex-col overflow-x-auto px-16 py-8 ${canScrollUp && canScrollDown ? 'fade-vertical' : canScrollUp ? 'fade-up' : canScrollDown ? 'fade-down' : ''}`}
       >
         <div
           ref={scrollContainerRef}
-          className={`flex h-full min-h-0 w-full flex-col items-center gap-y-16 opacity-0 ${showCover ? '' : 'animate-[grow_1.5s_ease-out_2.5s_forwards]'} scrollbar-none overflow-y-auto`}
+          className={`scrollbar-styled flex h-full min-h-0 w-full min-w-[220px] flex-col items-center gap-y-16 opacity-0 ${showCover ? '' : 'animate-[grow_1.5s_ease-out_2.5s_forwards]'} scrollbar-none overflow-y-auto`}
         >
           <AboutLayout />
           <JourneyLayout />

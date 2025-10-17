@@ -61,7 +61,16 @@ export default function Missions({ missions }: { missions: Mission[] }) {
     }
   }, [])
   return (
-    <div className="flex w-full flex-col items-center gap-y-4">
+    <div className="relative flex w-full flex-col items-center gap-y-4">
+      {missions.length > 1 && (
+        <div className="bg-primary sticky top-4 z-50 mt-4 flex flex-row items-center justify-center rounded-full px-2 opacity-50">
+          <IndexSelect
+            index={selectedMissionIndex}
+            onIndexSelected={handleMissionSelect}
+            maxIndex={missions.length}
+          />
+        </div>
+      )}
       <div
         ref={scrollContainerRef}
         className="scrollbar-none mt-4 flex w-full min-w-0 flex-row items-center gap-x-4 overflow-x-hidden rounded-md bg-gray-200"
@@ -78,15 +87,15 @@ export default function Missions({ missions }: { missions: Mission[] }) {
             <div className="h-[1px] w-full bg-gray-400" />
             <div className="flex h-full w-full flex-col items-center">
               <div className="grid grid-cols-[max-content_auto_1fr] gap-x-4 gap-y-4">
-                <h4 className="heading-h4 text-gray-600">{localizations[language].problem}</h4>
+                <h4 className="text-gray-600">{localizations[language].problem}</h4>
                 <span className="text-gray-600">-</span>
                 <p className="paragraph-normal text-gray-800">{mission.problem}</p>
 
-                <h4 className="heading-h4 text-gray-600">{localizations[language].solution}</h4>
+                <h4 className="text-gray-600">{localizations[language].solution}</h4>
                 <span className="text-gray-600">-</span>
                 <p className="paragraph-normal text-gray-800">{mission.solution}</p>
 
-                <h4 className="heading-h4 text-gray-600">{localizations[language].result}</h4>
+                <h4 className="text-gray-600">{localizations[language].result}</h4>
                 <span className="text-gray-600">-</span>
                 <p className="paragraph-normal text-gray-800">{mission.result}</p>
               </div>
@@ -95,7 +104,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
               {(mission.technicalSkills.length > 0 || mission.softSkills.length > 0) && (
                 <button
                   onClick={() => setVisibleDialog({ mission: mission.title, type: 'skills' })}
-                  className="bg-primary flex cursor-pointer flex-row items-center justify-center gap-x-2 rounded-full px-4 py-2 text-gray-200"
+                  className="paragraph-normal bg-primary flex cursor-pointer flex-row items-center justify-center gap-x-2 rounded-full px-4 py-2 text-gray-200"
                 >
                   <div className="h-6 w-6 text-white">
                     <BrainIcon />
@@ -107,7 +116,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
                 mission.achievements.hyperlinks.length > 0) && (
                 <button
                   onClick={() => setVisibleDialog({ mission: mission.title, type: 'achievements' })}
-                  className="bg-primary flex cursor-pointer flex-row items-center justify-center gap-x-2 rounded-full px-4 py-2 text-gray-200"
+                  className="paragraph-normal bg-primary flex cursor-pointer flex-row items-center justify-center gap-x-2 rounded-full px-4 py-2 text-gray-200"
                 >
                   <div className="h-6 w-6 text-white">
                     <StarIcon />
@@ -149,15 +158,6 @@ export default function Missions({ missions }: { missions: Mission[] }) {
           </div>
         ))}
       </div>
-      {missions.length > 1 && (
-        <div className="flex w-full flex-row items-center justify-center">
-          <IndexSelect
-            index={selectedMissionIndex}
-            onIndexSelected={handleMissionSelect}
-            maxIndex={missions.length}
-          />
-        </div>
-      )}
     </div>
   )
 }

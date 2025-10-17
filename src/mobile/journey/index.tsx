@@ -33,7 +33,7 @@ export default function JourneyLayout() {
               className="flex w-full flex-col items-center py-4"
             >
               <h3 className="heading-h3 text-center">{period.period}</h3>
-              <h4 className="heading-h4 text-center text-gray-400">
+              <h4 className="text-center text-gray-400">
                 {new Date(period.dates.start).toLocaleDateString(language, {
                   year: 'numeric',
                   month: 'long',

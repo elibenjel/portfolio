@@ -30,7 +30,7 @@ export default function Skills({
       <div className="grid w-full grid-cols-[minmax(0,40%)_auto_1fr] items-center gap-x-4 gap-y-4">
         {skills.map(skill => (
           <React.Fragment key={skill.label}>
-            <h4 className="heading-h4 text-gray-400">{skill.label}</h4>
+            <h4 className="text-gray-400">{skill.label}</h4>
             <span className="text-gray-400">-</span>
             <Gauge percentage={Number(skill.value)} color={pickColor()} />
           </React.Fragment>
