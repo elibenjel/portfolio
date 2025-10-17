@@ -58,7 +58,9 @@ export default function Skills({
         className={`mb-8 flex w-full flex-row items-center justify-center gap-x-4 border-b ${colors.border}`}
       >
         <Icon name={iconNames[domain]} size={24} color={colors.icon} />
-        <h3 className={`heading-h3 text-center ${colors.text}`}>{domains[language][domain]}</h3>
+        <h3 className={`heading-h3 text-center text-nowrap ${colors.text}`}>
+          {domains[language][domain]}
+        </h3>
       </div>
       <div className="flex flex-row flex-wrap items-center justify-center gap-x-4">
         {skills.map(skill => (

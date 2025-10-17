@@ -33,7 +33,7 @@ export default function DesktopLayout({
   }, [section])
 
   return (
-    <div className="flex h-full w-full flex-col">
+    <div className="flex h-full w-full flex-col overflow-hidden">
       <div className="animate-fade animate-duration-2000 flex h-[100px] w-full flex-row items-center">
         <div className="h-0.5 flex-4 bg-white opacity-50" />
         <div className="flex-3" />

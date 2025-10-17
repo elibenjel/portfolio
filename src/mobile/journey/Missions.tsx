@@ -14,9 +14,10 @@ export default function Missions({ missions }: { missions: Mission[] }) {
   const [selectedMissionIndex, setSelectedMissionIndex] = React.useState<number>(0)
   const scrollContainerRef = React.useRef<HTMLDivElement>(null)
   const missionsRef = React.useRef<(HTMLDivElement | null)[]>([])
-  const [isSkillsDialogVisible, setIsSkillsDialogVisible] = React.useState<boolean>(false)
-  const [isAchievementsDialogVisible, setIsAchievementsDialogVisible] =
-    React.useState<boolean>(false)
+  const [visibleDialog, setVisibleDialog] = React.useState<{
+    mission: string
+    type: 'skills' | 'achievements'
+  } | null>(null)
 
   function scrollSectionIntoViewXOnly(section: HTMLElement, container: HTMLElement) {
     const containerRect = container.getBoundingClientRect()
@@ -70,7 +71,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
             <div className="flex w-full flex-row items-center justify-center gap-x-4">
               {(mission.technicalSkills.length > 0 || mission.softSkills.length > 0) && (
                 <button
-                  onClick={() => setIsSkillsDialogVisible(true)}
+                  onClick={() => setVisibleDialog({ mission: mission.title, type: 'skills' })}
                   className="bg-primary flex cursor-pointer flex-row items-center justify-center gap-x-2 rounded-full px-4 py-2 text-gray-200"
                 >
                   <div className="h-6 w-6 text-white">
@@ -82,7 +83,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
               {(mission.achievements.media.length > 0 ||
                 mission.achievements.hyperlinks.length > 0) && (
                 <button
-                  onClick={() => setIsAchievementsDialogVisible(true)}
+                  onClick={() => setVisibleDialog({ mission: mission.title, type: 'achievements' })}
                   className="bg-primary flex cursor-pointer flex-row items-center justify-center gap-x-2 rounded-full px-4 py-2 text-gray-200"
                 >
                   <div className="h-6 w-6 text-white">
@@ -93,8 +94,8 @@ export default function Missions({ missions }: { missions: Mission[] }) {
               )}
             </div>
             <Dialog
-              visible={isSkillsDialogVisible}
-              onDismiss={() => setIsSkillsDialogVisible(false)}
+              visible={visibleDialog?.type === 'skills' && visibleDialog.mission === mission.title}
+              onDismiss={() => setVisibleDialog(null)}
             >
               <div className="scrollbar-styled flex h-[80vh] w-[80vw] flex-col items-center gap-y-8 overflow-y-auto rounded-md border-2 border-gray-700 bg-gray-200 p-16">
                 {mission.technicalSkills.length > 0 && (
@@ -106,8 +107,10 @@ export default function Missions({ missions }: { missions: Mission[] }) {
               </div>
             </Dialog>
             <Dialog
-              visible={isAchievementsDialogVisible}
-              onDismiss={() => setIsAchievementsDialogVisible(false)}
+              visible={
+                visibleDialog?.type === 'achievements' && visibleDialog.mission === mission.title
+              }
+              onDismiss={() => setVisibleDialog(null)}
             >
               <div className="scrollbar-styled flex h-[80vh] w-[80vw] flex-col items-center justify-center overflow-y-auto rounded-md border-2 border-gray-700 bg-gray-200 p-8 shadow-lg">
                 <Achievements
