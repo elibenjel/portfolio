@@ -27,6 +27,3 @@ dist-ssr
 jules/*
 !jules/.gitkeep
 venv
-
-# binaries
-public/media
