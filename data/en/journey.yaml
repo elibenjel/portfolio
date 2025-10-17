@@ -1,0 +1,311 @@
+- period: 'Startup Creation Project - Surpreat'
+  id: 'surpreat'
+  dates:
+    start: '2025-01-01'
+    end: null
+  missions:
+    - title: 'Development of a mobile application for restaurants'
+      problem: 'The restaurant sector faces difficulties in streamlining the customer experience and optimizing internal operations.'
+      solution: 'Design and development of 2 mobile applications for customers and restaurateurs, a Kotlin backend server (Spring Boot) and a Supabase database.'
+      result: 'First operational version in 6 months of solo development, deployed and ready to test in real conditions.'
+      technical_skills:
+        - label: 'React Native'
+          value: 1
+        - label: 'Expo'
+          value: 0.9
+        - label: 'Product Design'
+          value: 0.8
+        - label: 'TypeScript'
+          value: 0.9
+        - label: 'Kotlin'
+          value: 0.7
+        - label: 'Spring Boot'
+          value: 0.6
+        - label: 'Docker'
+          value: 0.3
+        - label: 'CI/CD'
+          value: 0.4
+        - label: 'GraphQL'
+          value: 0.6
+        - label: 'Supabase'
+          value: 0.8
+      soft_skills:
+        - label: 'Entrepreneurial spirit'
+          value: 0.8
+        - label: 'Autonomy'
+          value: 1
+        - label: 'Creativity'
+          value: 0.8
+        - label: 'Project Management'
+          value: 0.6
+        - label: 'User Vision'
+          value: 0.7
+      achievements:
+        hyperlinks: []
+        media:
+          - url: '/media/surpreat-demo.mp4'
+            type: 'video'
+          - url: '/media/surpreat-compose-meal.jpg'
+            type: 'image'
+          - url: '/media/surpreat-bet.jpg'
+            type: 'image'
+          - url: '/media/surpreat-map.jpg'
+            type: 'image'
+          - url: '/media/surpreat-order.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-ongoing-workslot.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-agenda.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-create-workslot.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-manage-workslot.jpg'
+            type: 'image'
+          - url: '/media/surpreat-backstore-profile.jpg'
+            type: 'image'
+
+- period: 'Software Engineer – Alerion'
+  id: 'alerion'
+  dates:
+    start: '2023-01-01'
+    end: '2024-12-31'
+  missions:
+    - title: 'No-code module for building interfaces'
+      problem: 'Each operational interface required several hours of development.'
+      solution: 'Development of a no-code module integrated into the webapp.'
+      result: 'Reduction of interface development time from several hours to less than 1 hour.'
+      technical_skills:
+        - label: 'React'
+          value: 1
+        - label: 'JavaScript'
+          value: 0.8
+        - label: 'Front-End Architecture'
+          value: 0.8
+        - label: 'Modular Design'
+          value: 0.6
+        - label: 'Real-Time Data Flow Management'
+          value: 0.7
+      soft_skills:
+        - label: 'Pedagogy'
+          value: 0.5
+        - label: 'Technical Communication'
+          value: 0.6
+        - label: 'Autonomy'
+          value: 1
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'UI/UX/DX improvement of internal webapp'
+      problem: 'Lack of clarity and feedback causing time losses during use, and complex maintenance with high probability of regressions.'
+      solution: 'Interface and user experience improvement, and implementation of Storybook to document and test components.'
+      result: 'Reduction of at least 50% of time lost due to usage errors, and productivity gain in component maintenance.'
+      technical_skills:
+        - label: 'UI/UX Design'
+          value: 0.8
+        - label: 'React'
+          value: 1
+        - label: 'Storybook'
+          value: 0.8
+        - label: 'UI Testing'
+          value: 0.8
+        - label: 'Technical Documentation'
+          value: 0.8
+      soft_skills:
+        - label: 'User empathy'
+          value: 0.7
+        - label: 'Attention to Detail'
+          value: 0.8
+        - label: 'Creativity'
+          value: 0.8
+        - label: 'Organization'
+          value: 0.7
+        - label: 'Quality Orientation'
+          value: 0.5
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Military geolocation application'
+      problem: 'Functional but unergonomic application, adoption hindered.'
+      solution: 'New application focused on simplicity, with night mode and power saving mode.'
+      result: 'Team satisfaction above 90%.'
+      technical_skills:
+        - label: 'React Native'
+          value: 0.9
+        - label: 'Kotlin'
+          value: 0.5
+        - label: 'Communication Protocols'
+          value: 0.8
+      soft_skills:
+        - label: 'Rigor'
+          value: 0.8
+        - label: 'User Needs Listening'
+          value: 0.8
+        - label: 'Reactivity'
+          value: 0.6
+      achievements:
+        hyperlinks: []
+        media:
+          - url: '/media/bft-landing-screen.jpg'
+            type: 'image'
+          - url: '/media/bft-disabled.jpg'
+            type: 'image'
+          - url: '/media/bft-enabled.jpg'
+            type: 'image'
+          - url: '/media/bft-info.jpg'
+            type: 'image'
+          - url: '/media/bft-config.jpg'
+            type: 'image'
+
+    - title: 'Android application for Anafi AI drone'
+      problem: 'The Anafi drone could only be piloted with the official application available only on iOS.'
+      solution: 'Development of a compatible Android application (React Native + Kotlin) integrating the drone SDK.'
+      result: 'Savings on iOS device purchases and extension of piloting range from a few dozen to several hundred meters.'
+      technical_skills:
+        - label: 'Kotlin'
+          value: 0.8
+        - label: 'React Native'
+          value: 0.9
+        - label: 'Ground SDK'
+          value: 0.8
+        - label: 'Hardware-Software Integration'
+          value: 0.7
+      soft_skills:
+        - label: 'Problem Solving'
+          value: 0.6
+        - label: 'Constraint Management'
+          value: 0.8
+        - label: 'Autonomy'
+          value: 1
+      achievements:
+        hyperlinks: []
+        media:
+          - url: '/media/anafi-disconnected.jpg'
+            type: 'image'
+          - url: '/media/anafi-config.jpg'
+            type: 'image'
+
+    - title: 'Android application transforming smartphones/tablets into control devices'
+      problem: 'Expensive control devices and long to configure.'
+      solution: 'Android application transforming mobile devices into controllers.'
+      result: 'Savings of several thousand euros and commissioning reduced to a few minutes.'
+      technical_skills:
+        - label: 'Kotlin'
+          value: 1
+        - label: 'WebSocket Communication'
+          value: 0.7
+        - label: 'Android System'
+          value: 0.8
+      soft_skills:
+        - label: 'Constraint management'
+          value: 0.9
+        - label: 'Autonomy'
+          value: 1
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Agricultural photogrammetry mission planning module'
+      problem: 'Frequent errors and partial coverage of studied areas.'
+      solution: 'Development of a Python module integrating planning algorithms.'
+      result: '90% improvement in the quality of collected images.'
+      technical_skills:
+        - label: 'Python'
+          value: 1
+        - label: 'Olympe'
+          value: 0.8
+        - label: 'Geospatial Data Processing'
+          value: 0.9
+      soft_skills:
+        - label: 'Experimental Approach'
+          value: 0.9
+        - label: 'Scientific Rigor'
+          value: 1
+      achievements:
+        hyperlinks: []
+        media: []
+
+- period: 'Self-Training'
+  id: 'self-training'
+  dates:
+    start: '2021-11-01'
+    end: '2022-08-31'
+  missions:
+    - title: 'Personal full-stack project'
+      problem: 'Need to quickly master a modern web & mobile stack.'
+      solution: 'Realization of a complete personal project independently.'
+      result: 'A functional full-stack web and mobile application on the subject of financial investment.'
+      technical_skills:
+        - label: 'React'
+          value: 0.9
+        - label: 'React Native'
+          value: 0.8
+        - label: 'Expo'
+          value: 0.7
+        - label: 'Node.js'
+          value: 0.7
+        - label: 'Express'
+          value: 0.7
+        - label: 'MongoDB'
+          value: 0.7
+        - label: 'Full-Stack Development'
+          value: 0.9
+      soft_skills:
+        - label: 'Curiosity'
+          value: 0.9
+        - label: 'Autonomy'
+          value: 1
+        - label: 'Perseverance'
+          value: 0.8
+        - label: 'Self-Discipline'
+          value: 0.8
+        - label: 'Self-Learning Ability'
+          value: 0.8
+      achievements:
+        hyperlinks: []
+        media: []
+
+- period: 'PhD in Artificial Intelligence and Statistics – University of Lorraine'
+  id: 'phd'
+  dates:
+    start: '2017-10-01'
+    end: '2021-11-30'
+  missions:
+    - title: 'Impact of annotation noise on classifier evaluation'
+      problem: 'Noise introduced during data annotation questions the reliability of supervised classification model evaluations.'
+      solution: 'Literature review, implementation of a deep neural architecture in PyTorch, large-scale experiments with dozens of networks trained on hundreds of thousands of data, realistic noise introduction algorithm by categories.'
+      result: 'Thesis of more than 150 pages and publication in a scientific journal.'
+      technical_skills:
+        - label: 'Deep Learning'
+          value: 0.9
+        - label: 'PyTorch'
+          value: 0.9
+        - label: 'Neural Networks'
+          value: 0.8
+        - label: 'Large-Scale Experimentation'
+          value: 0.8
+        - label: 'Statistical Analysis'
+          value: 0.9
+        - label: 'Massive Data Processing'
+          value: 0.9
+        - label: 'Scientific Research'
+          value: 1
+      soft_skills:
+        - label: 'Methodological Rigor'
+          value: 0.9
+        - label: 'Analytical Mind'
+          value: 0.8
+        - label: 'Perseverance'
+          value: 0.9
+        - label: 'Long-Term Project Management'
+          value: 0.7
+        - label: 'Scientific Communication'
+          value: 0.8
+      achievements:
+        hyperlinks:
+          - url: 'https://theses.fr/2021LORR0267'
+            text: 'PhD Thesis - Impact of Annotation Noise on Classifier Evaluation'
+          - url: 'https://link.springer.com/article/10.1007/s10462-023-10507-2'
+            text: 'Scientific Publication - Convolutional network fabric pruning with label noise'
+        media: []

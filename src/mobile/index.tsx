@@ -1,7 +1,8 @@
 import * as React from 'react'
 
 import { Icon } from '@/components/Icon'
-// import useLanguage from '@/hooks/useLanguage'
+import Footer from '@/desktop/Footer'
+import LanguageSelect from '@/desktop/LanguageSelect'
 import useScrollState from '@/hooks/useScrollState'
 import type { Section } from '@/types'
 
@@ -19,7 +20,6 @@ export default function MobileLayout({
   setSection: (section: Section) => void
 }) {
   const [showCover, setShowCover] = React.useState(true)
-  // const { language, setLanguage } = useLanguage()
   const scrollContainerRef = React.useRef<HTMLDivElement>(null)
   const { canScrollUp, canScrollDown } = useScrollState(scrollContainerRef)
   React.useEffect(() => {
@@ -62,51 +62,62 @@ export default function MobileLayout({
   }
 
   return (
-    <div
-      className={`relative flex h-full min-h-0 w-full flex-col overflow-hidden px-16 py-8 ${canScrollUp && canScrollDown ? 'fade-vertical' : canScrollUp ? 'fade-up' : canScrollDown ? 'fade-down' : ''}`}
-    >
-      <div
-        ref={scrollContainerRef}
-        className={`flex h-full min-h-0 w-full flex-col items-center gap-y-16 opacity-0 ${showCover ? '' : 'animate-[grow_1.5s_ease-out_2.5s_forwards]'} scrollbar-none overflow-y-auto`}
-      >
-        <AboutLayout />
-        <JourneyLayout />
-        <EducationLayout />
-        <ContactLayout />
+    <>
+      <div className="fixed top-2 right-2 z-50 rounded-full border-1 border-gray-800 bg-gray-200 px-2 py-1 text-gray-800 opacity-80 shadow-2xl">
+        <LanguageSelect color="currentColor" />
       </div>
       <div
-        className={`fixed top-0 bottom-0 left-0 flex w-16 py-8 opacity-0 ${showCover ? '' : 'animate-[grow_1.5s_ease-out_2.5s_forwards]'} flex-col justify-between`}
+        className={`relative flex h-full min-h-0 w-full flex-col overflow-hidden px-16 py-8 ${canScrollUp && canScrollDown ? 'fade-vertical' : canScrollUp ? 'fade-up' : canScrollDown ? 'fade-down' : ''}`}
       >
-        <div className="flex flex-1 flex-col items-center gap-y-2">
-          <Icon
-            name="double-arrow-up"
-            size={24}
-            color="white"
-            onPress={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
-          />
-          <Icon name="arrow-up" size={24} color="white" onPress={() => scrollToNextSection('up')} />
+        <div
+          ref={scrollContainerRef}
+          className={`flex h-full min-h-0 w-full flex-col items-center gap-y-16 opacity-0 ${showCover ? '' : 'animate-[grow_1.5s_ease-out_2.5s_forwards]'} scrollbar-none overflow-y-auto`}
+        >
+          <AboutLayout />
+          <JourneyLayout />
+          <EducationLayout />
+          <ContactLayout />
+          <Footer />
         </div>
-        <div className="flex flex-1 flex-col items-center justify-end gap-y-2">
-          <Icon
-            name="arrow-down"
-            size={24}
-            color="white"
-            onPress={() => scrollToNextSection('down')}
-          />
-          <Icon
-            name="double-arrow-down"
-            size={24}
-            color="white"
-            onPress={() =>
-              scrollContainerRef.current?.scrollTo({
-                top: scrollContainerRef.current.scrollHeight,
-                behavior: 'smooth',
-              })
-            }
-          />
+        <div
+          className={`fixed top-0 bottom-0 left-0 flex w-16 py-8 opacity-0 ${showCover ? '' : 'animate-[grow_1.5s_ease-out_2.5s_forwards]'} flex-col justify-between`}
+        >
+          <div className="flex flex-1 flex-col items-center gap-y-2">
+            <Icon
+              name="double-arrow-up"
+              size={24}
+              color="white"
+              onPress={() => scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'smooth' })}
+            />
+            <Icon
+              name="arrow-up"
+              size={24}
+              color="white"
+              onPress={() => scrollToNextSection('up')}
+            />
+          </div>
+          <div className="flex flex-1 flex-col items-center justify-end gap-y-2">
+            <Icon
+              name="arrow-down"
+              size={24}
+              color="white"
+              onPress={() => scrollToNextSection('down')}
+            />
+            <Icon
+              name="double-arrow-down"
+              size={24}
+              color="white"
+              onPress={() =>
+                scrollContainerRef.current?.scrollTo({
+                  top: scrollContainerRef.current.scrollHeight,
+                  behavior: 'smooth',
+                })
+              }
+            />
+          </div>
         </div>
+        <Cover visible={showCover} onPress={() => setSection('about')}></Cover>
       </div>
-      <Cover visible={showCover} onPress={() => setSection('about')}></Cover>
-    </div>
+    </>
   )
 }

@@ -1,7 +1,7 @@
-import useLanguage from '@/hooks/useLanguage'
+import useLocalization from '@/providers/localization/hook'
 
 export default function Footer() {
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   switch (language) {
     case 'fr':
       return (

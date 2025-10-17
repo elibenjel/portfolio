@@ -3,6 +3,7 @@ import * as React from 'react'
 import DesktopLayout from './desktop'
 import useIsMobile from './hooks/useIsMobile'
 import MobileLayout from './mobile'
+import LocalizationProvider from './providers/localization/provider'
 import type { Section } from './types'
 import { colors } from './utils/styling'
 
@@ -42,11 +43,13 @@ function App() {
           <circle cx="600" cy="500" r="300" fill="url(#grad2)" />
         </svg>
       </div>
-      {isMobile ? (
-        <MobileLayout section={section} setSection={setSection} />
-      ) : (
-        <DesktopLayout section={section} setSection={setSection} />
-      )}
+      <LocalizationProvider>
+        {isMobile ? (
+          <MobileLayout section={section} setSection={setSection} />
+        ) : (
+          <DesktopLayout section={section} setSection={setSection} />
+        )}
+      </LocalizationProvider>
     </div>
   )
 }

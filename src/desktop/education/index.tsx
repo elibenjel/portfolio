@@ -1,11 +1,11 @@
 import * as React from 'react'
 
 import useData from '@/hooks/useData'
-import useLanguage from '@/hooks/useLanguage'
+import useLocalization from '@/providers/localization/hook'
 
 export default function EducationLayout() {
   const { education } = useData()
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   return (
     <div className="scrollbar-styled animate-grow flex h-full min-h-0 w-full flex-col items-center justify-center overflow-y-auto px-8">
       <div className="grid grid-cols-[auto] items-center justify-center space-y-12">

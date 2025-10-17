@@ -1,0 +1,25 @@
+name: 'Ilias Benjelloun'
+age: 30
+titles: ['Full Stack Engineer', 'PhD in Computer Science']
+country: 'France'
+email: 'ilias.benjelloun@mines-nancy.org'
+linkedin: 'https://www.linkedin.com/in/ilias-benjelloun-mines-nancy/'
+github: 'https://github.com/elibenjel'
+description:
+  whoami: 'A software engineer passionate about creating web and mobile applications, and committed to the user experience of my products.'
+  lookingfor: 'Freelance missions allowing me to practice and develop my skills. Available immediately for remote work. Open to on-site missions depending on location and projects.'
+skills:
+  web: ['React', 'TypeScript', 'Tailwind CSS', 'Vite']
+  mobile: ['React Native', 'Expo', 'Android']
+  backend&api: ['Node.js', 'Express', 'GraphQL', 'Google Maps API']
+  databases: ['PostgreSQL', 'Supabase', 'NoSQL', 'MongoDB']
+  devops: ['Docker', 'CI/CD', 'Github Actions', 'EAS Build']
+  soft:
+    [
+      'Entrepreneurial Spirit',
+      'Autonomy',
+      'User Vision',
+      'Attention to Detail',
+      'Facilitating Relationships',
+      'Pedagogy',
+    ]

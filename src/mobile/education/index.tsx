@@ -1,16 +1,25 @@
 import * as React from 'react'
 
 import useData from '@/hooks/useData'
-import useLanguage from '@/hooks/useLanguage'
+import useLocalization from '@/providers/localization/hook'
+
+const localizations = {
+  fr: {
+    title: 'Formation',
+  },
+  en: {
+    title: 'Education',
+  },
+}
 
 export default function EducationLayout() {
   const { education } = useData()
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   return (
     <div data-section className="flex w-full flex-col items-center gap-y-16">
       <div className="flex w-full flex-row items-center gap-x-4">
         <div className="h-[1px] flex-1 bg-gray-700" />
-        <h2 className="heading-h2 text-center">Formation</h2>
+        <h2 className="heading-h2 text-center">{localizations[language].title}</h2>
         <div className="h-[1px] flex-1 bg-gray-700" />
       </div>
       <div className="grid grid-cols-[auto] items-center justify-center space-y-12">

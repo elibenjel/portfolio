@@ -1,6 +1,6 @@
 import { Icon } from '@/components/Icon'
 import type { SkillDomain } from '@/hooks/useData'
-import useLanguage from '@/hooks/useLanguage'
+import useLocalization from '@/providers/localization/hook'
 
 const domains = {
   fr: {
@@ -39,7 +39,7 @@ export default function Skills({
   skills: string[]
   variant?: 'on-dark' | 'on-light'
 }) {
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   const colors =
     variant === 'on-dark'
       ? {

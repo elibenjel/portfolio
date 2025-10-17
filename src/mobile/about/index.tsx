@@ -1,11 +1,11 @@
 import { description } from '@/constants'
 import Skills from '@/desktop/about/Skills'
 import useData from '@/hooks/useData'
-import useLanguage from '@/hooks/useLanguage'
+import useLocalization from '@/providers/localization/hook'
 
 export default function AboutLayout() {
   const { aboutMe } = useData()
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   return (
     <div className="flex flex-col items-center gap-y-16">
       <div data-section className="flex w-full flex-col items-center rounded-md bg-gray-200 py-8">
@@ -17,8 +17,8 @@ export default function AboutLayout() {
           />
         </div>
         <div className="flex flex-col items-center">
-          <h2 className="heading-h2 text-center text-black">{aboutMe.name}</h2>
-          <h3 className="heading-h3 text-center text-black">{aboutMe.country}</h3>
+          <h2 className="heading-h2 text-center text-gray-800">{aboutMe.name}</h2>
+          <h3 className="heading-h3 text-center text-gray-800">{aboutMe.country}</h3>
         </div>
       </div>
       <div data-section className="flex flex-1 flex-col items-center gap-y-8">

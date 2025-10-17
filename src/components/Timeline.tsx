@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import useLanguage from '@/hooks/useLanguage'
 import useScrollState from '@/hooks/useScrollState'
+import useLocalization from '@/providers/localization/hook'
 
 import type { TimelinePeriod, TimelineProps } from '../types'
 import { Icon } from './Icon'
@@ -415,7 +415,7 @@ const TimelineLabels = ({
   period?: TimelinePeriod
   fontSize?: number
 }) => {
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   return (
     period && (
       <g>

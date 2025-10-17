@@ -1,5 +1,5 @@
 import { sections } from '@/constants'
-import useLanguage from '@/hooks/useLanguage'
+import useLocalization from '@/providers/localization/hook'
 import type { Section } from '@/types'
 
 export type SectionProps = {
@@ -8,7 +8,7 @@ export type SectionProps = {
 }
 
 export default function Sections({ selected, onPress }: SectionProps) {
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   return (
     <>
       {Object.entries(sections).map(([section, value]) => (

@@ -1,21 +1,15 @@
 import * as React from 'react'
 
-import { Icon } from '@/components/Icon'
-import useLanguage from '@/hooks/useLanguage'
 import type { Section } from '@/types'
 
 import Footer from './Footer'
+import LanguageSelect from './LanguageSelect'
 import Sections from './Sections'
 import AboutLayout from './about'
 import ContactLayout from './contact'
 import Cover from './cover'
 import EducationLayout from './education'
 import JourneyLayout from './journey'
-
-const languages = {
-  fr: 'Français',
-  en: 'English',
-}
 
 export default function DesktopLayout({
   section,
@@ -25,7 +19,6 @@ export default function DesktopLayout({
   setSection: (section: Section) => void
 }) {
   const [showCover, setShowCover] = React.useState(true)
-  const { language, setLanguage } = useLanguage()
   React.useEffect(() => {
     if (section !== 'cover') {
       setShowCover(false)
@@ -55,16 +48,7 @@ export default function DesktopLayout({
       </div>
       <div className="animate-fade animate-duration-2000 flex h-[100px] w-full flex-row items-center">
         <div className="flex flex-6 items-center space-x-4 pl-8">
-          <div className="flex flex-row items-center space-x-1">
-            <Icon
-              name="language"
-              size={24}
-              color="white"
-              onPress={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-            />
-            <p className="text-sm text-white">{'-'}</p>
-            <p className="text-sm text-white">{languages[language]}</p>
-          </div>
+          <LanguageSelect />
           <Footer />
         </div>
         <div className="h-0.5 flex-4 bg-white opacity-50" />

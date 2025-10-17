@@ -7,7 +7,7 @@ linkedin: 'https://www.linkedin.com/in/ilias-benjelloun-mines-nancy/'
 github: 'https://github.com/elibenjel'
 description:
   whoami: "Un ingénieur logiciel passionné par la création d'applications web et mobile, et attaché à l'expérience utilisateur de mes produits."
-  lookingfor: 'Des missions en freelance me permettant de mettre en pratique et de développer mes compétences. Disponible immédiatement en distanciel. Ouvert à des missions en présentiel selon le lieu projets.'
+  lookingfor: 'Des missions en freelance me permettant de mettre en pratique et de développer mes compétences. Disponible immédiatement en distanciel. Ouvert à des missions en présentiel selon le lieu et les projets.'
 skills:
   web: ['React', 'TypeScript', 'Tailwind CSS', 'Vite']
   mobile: ['React Native', 'Expo', 'Android']

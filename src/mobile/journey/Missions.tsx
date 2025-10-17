@@ -7,10 +7,33 @@ import StarIcon from '@/components/icons/StarIcon'
 import Achievements from '@/desktop/journey/Achievements'
 import Skills from '@/desktop/journey/Skills'
 import type { Journey } from '@/hooks/useData'
+import useLocalization from '@/providers/localization/hook'
 
 type Mission = Journey[number]['missions'][number]
 
+const localizations = {
+  fr: {
+    problem: 'Problème',
+    solution: 'Solution',
+    result: 'Résultat',
+    skills: 'Compétences',
+    achievements: 'Réalisations',
+    technicalSkills: 'Compétences techniques',
+    softSkills: 'Compétences humaines',
+  },
+  en: {
+    problem: 'Problem',
+    solution: 'Solution',
+    result: 'Result',
+    skills: 'Skills',
+    achievements: 'Achievements',
+    technicalSkills: 'Technical Skills',
+    softSkills: 'Soft Skills',
+  },
+}
+
 export default function Missions({ missions }: { missions: Mission[] }) {
+  const { language } = useLocalization()
   const [selectedMissionIndex, setSelectedMissionIndex] = React.useState<number>(0)
   const scrollContainerRef = React.useRef<HTMLDivElement>(null)
   const missionsRef = React.useRef<(HTMLDivElement | null)[]>([])
@@ -51,19 +74,19 @@ export default function Missions({ missions }: { missions: Mission[] }) {
             }}
             className="flex h-full min-w-full flex-col items-center gap-y-4 px-8 py-4"
           >
-            <h3 className="heading-h3 text-center text-gray-800">{mission.title}</h3>
+            <h3 className="heading-h3 scale-90 text-center text-gray-800">{mission.title}</h3>
             <div className="h-[1px] w-full bg-gray-400" />
             <div className="flex h-full w-full flex-col items-center">
               <div className="grid grid-cols-[max-content_auto_1fr] gap-x-4 gap-y-4">
-                <h4 className="heading-h4 text-gray-600">Problème</h4>
+                <h4 className="heading-h4 text-gray-600">{localizations[language].problem}</h4>
                 <span className="text-gray-600">-</span>
                 <p className="paragraph-normal text-gray-800">{mission.problem}</p>
 
-                <h4 className="heading-h4 text-gray-600">Solution</h4>
+                <h4 className="heading-h4 text-gray-600">{localizations[language].solution}</h4>
                 <span className="text-gray-600">-</span>
                 <p className="paragraph-normal text-gray-800">{mission.solution}</p>
 
-                <h4 className="heading-h4 text-gray-600">Résultat</h4>
+                <h4 className="heading-h4 text-gray-600">{localizations[language].result}</h4>
                 <span className="text-gray-600">-</span>
                 <p className="paragraph-normal text-gray-800">{mission.result}</p>
               </div>
@@ -77,7 +100,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
                   <div className="h-6 w-6 text-white">
                     <BrainIcon />
                   </div>
-                  Compétences
+                  {localizations[language].skills}
                 </button>
               )}
               {(mission.achievements.media.length > 0 ||
@@ -89,7 +112,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
                   <div className="h-6 w-6 text-white">
                     <StarIcon />
                   </div>
-                  Réalisations
+                  {localizations[language].achievements}
                 </button>
               )}
             </div>
@@ -99,10 +122,13 @@ export default function Missions({ missions }: { missions: Mission[] }) {
             >
               <div className="scrollbar-styled flex h-[80vh] w-[80vw] flex-col items-center gap-y-8 overflow-y-auto rounded-md border-2 border-gray-700 bg-gray-200 p-16">
                 {mission.technicalSkills.length > 0 && (
-                  <Skills title="Compétences techniques" skills={mission.technicalSkills} />
+                  <Skills
+                    title={localizations[language].technicalSkills}
+                    skills={mission.technicalSkills}
+                  />
                 )}
                 {mission.softSkills.length > 0 && (
-                  <Skills title="Compétences humaines" skills={mission.softSkills} />
+                  <Skills title={localizations[language].softSkills} skills={mission.softSkills} />
                 )}
               </div>
             </Dialog>
@@ -114,7 +140,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
             >
               <div className="scrollbar-styled flex h-[80vh] w-[80vw] flex-col items-center justify-center overflow-y-auto rounded-md border-2 border-gray-700 bg-gray-200 p-8 shadow-lg">
                 <Achievements
-                  title="Réalisations"
+                  title={localizations[language].achievements}
                   media={mission.achievements.media}
                   hyperlinks={mission.achievements.hyperlinks}
                 />

@@ -1,8 +1,8 @@
-import aboutMeData from '~data/aboutme.yaml'
-import educationData from '~data/education.yaml'
-import journeyData from '~data/journey.yaml'
+import data from '~data'
 
 import * as React from 'react'
+
+import useLocalization from '@/providers/localization/hook'
 
 export type MediaItem = {
   url: string
@@ -15,6 +15,7 @@ export type Hyperlink = {
 }
 
 export type Journey = {
+  id: string
   period: string
   dates: {
     start: string
@@ -66,7 +67,17 @@ export type Education = {
   }
 }[]
 
+const sortSkills = (skills: { label: string; value: number }[]) => {
+  const sortedSkills = skills.slice()
+  sortedSkills.sort((a, b) => b.value - a.value)
+  return sortedSkills
+}
+
 export default function useData() {
+  const { language } = useLocalization()
+  const journeyData = React.useMemo(() => data[language].journey as Journey, [language])
+  const aboutMeData = React.useMemo(() => data[language].aboutMe as AboutMe, [language])
+  const educationData = React.useMemo(() => data[language].education as Education, [language])
   return React.useMemo(
     () => ({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -75,13 +86,13 @@ export default function useData() {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         missions: period.missions.map((mission: any) => ({
           ...mission,
-          technicalSkills: mission.technical_skills,
-          softSkills: mission.soft_skills,
+          technicalSkills: sortSkills(mission.technical_skills),
+          softSkills: sortSkills(mission.soft_skills),
         })),
       })) as Journey,
       aboutMe: aboutMeData as AboutMe,
       education: educationData as Education,
     }),
-    []
+    [journeyData, aboutMeData, educationData]
   )
 }

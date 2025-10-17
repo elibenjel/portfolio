@@ -2,14 +2,14 @@ import * as React from 'react'
 
 import { description } from '@/constants'
 import useData from '@/hooks/useData'
-import useLanguage from '@/hooks/useLanguage'
 import useScrollState from '@/hooks/useScrollState'
+import useLocalization from '@/providers/localization/hook'
 
 import Skills from './Skills'
 
 export default function AboutLayout() {
   const { aboutMe } = useData()
-  const { language } = useLanguage()
+  const { language } = useLocalization()
   const scrollContainerRef = React.useRef<HTMLDivElement>(null)
   const { canScrollUp, canScrollDown } = useScrollState(scrollContainerRef)
   return (

@@ -1,4 +1,5 @@
 - period: "Projet de création d'entreprise - Surpreat"
+  id: 'surpreat'
   dates:
     start: '2025-01-01'
     end: null
@@ -9,36 +10,36 @@
       result: 'Première version opérationnelle en 6 mois de développement solo, déployée et prête à tester en situation réelle.'
       technical_skills:
         - label: 'React Native'
-          value: 0.8
+          value: 1
         - label: 'Expo'
-          value: 0.8
+          value: 0.9
         - label: 'Conception Produit'
           value: 0.8
-        - label: 'Intégration API'
-          value: 0.8
+        - label: 'Typescript'
+          value: 0.9
         - label: 'Kotlin'
-          value: 0.8
+          value: 0.7
         - label: 'Spring Boot'
-          value: 0.8
+          value: 0.6
         - label: 'Docker'
-          value: 0.8
+          value: 0.3
         - label: 'CI/CD'
-          value: 0.8
+          value: 0.4
         - label: 'GraphQL'
-          value: 0.8
+          value: 0.6
         - label: 'Supabase'
           value: 0.8
       soft_skills:
         - label: 'Esprit entrepreneurial'
           value: 0.8
         - label: 'Autonomie'
-          value: 0.8
+          value: 1
         - label: 'Créativité'
           value: 0.8
         - label: 'Gestion de Projet'
-          value: 0.8
+          value: 0.6
         - label: 'Vision Utilisateur'
-          value: 0.8
+          value: 0.7
       achievements:
         hyperlinks: []
         media:
@@ -64,6 +65,7 @@
             type: 'image'
 
 - period: 'Ingénieur Logiciel – Alerion'
+  id: 'alerion'
   dates:
     start: '2023-01-01'
     end: '2024-12-31'
@@ -74,74 +76,52 @@
       result: 'Réduction du temps de développement d’une interface de plusieurs heures à moins d’1 heure.'
       technical_skills:
         - label: 'React'
-          value: 0.8
-        - label: 'JavaScript/TypeScript'
+          value: 1
+        - label: 'JavaScript'
           value: 0.8
         - label: 'Architecture Front-End'
           value: 0.8
         - label: 'Conception Modulaire'
-          value: 0.8
+          value: 0.6
+        - label: 'Gestion de Flux Temps Réel'
+          value: 0.7
       soft_skills:
-        - label: 'Innovation'
-          value: 0.8
         - label: 'Pédagogie'
-          value: 0.8
+          value: 0.5
         - label: 'Vulgarisation Technique'
-          value: 0.8
+          value: 0.6
         - label: 'Autonomie'
-          value: 0.8
+          value: 1
       achievements:
         hyperlinks: []
         media: []
 
-    - title: 'Refonte UI/UX de la webapp interne'
-      problem: 'Manque de clarté et feedback limités entraînant des pertes de temps.'
-      solution: 'Refonte complète de l’interface et de l’expérience utilisateur.'
-      result: 'Réduction d’au moins 50% du temps perdu lié aux erreurs d’utilisation.'
+    - title: 'Amélioration UI/UX/DX de la webapp interne'
+      problem: 'Manque de clarté et de feedback entraînant des pertes de temps lors de son utilisation, et maintenance complexe avec forte probabilité de régressions.'
+      solution: 'Amélioration de l’interface et de l’expérience utilisateur, et mise en place de Storybook pour documenter et tester les composants.'
+      result: 'Réduction d’au moins 50% du temps perdu lié aux erreurs d’utilisation, et gain de productivité sur la maintenance des composants.'
       technical_skills:
-        - label: 'UX design'
-          value: 0.8
-        - label: 'UI design'
+        - label: 'Design UI/UX'
           value: 0.8
         - label: 'React'
-          value: 0.8
-        - label: 'Ergonomie des Interfaces'
-          value: 0.8
-      soft_skills:
-        - label: 'Empathie utilisateur'
-          value: 0.8
-        - label: 'Sens du Détail'
-          value: 0.8
-        - label: 'Esprit Critique'
-          value: 0.8
-        - label: 'Créativité'
-          value: 0.8
-      achievements:
-        hyperlinks: []
-        media: []
-
-    - title: 'Intégration de Storybook pour la gestion des composants'
-      problem: 'Forte probabilité de régressions UI et maintenance complexe.'
-      solution: 'Mise en place de Storybook pour documenter et tester les composants.'
-      result: 'Jusqu’à 30% de temps gagné sur la validation et la maintenance des composants.'
-      technical_skills:
+          value: 1
         - label: 'Storybook'
           value: 0.8
         - label: 'Tests UI'
           value: 0.8
         - label: 'Documentation Technique'
           value: 0.8
-        - label: 'Intégration Continue'
-          value: 0.8
       soft_skills:
-        - label: 'Rigueur'
+        - label: 'Empathie utilisateur'
+          value: 0.7
+        - label: 'Sens du Détail'
+          value: 0.8
+        - label: 'Créativité'
           value: 0.8
         - label: 'Organisation'
-          value: 0.8
-        - label: 'Collaboration Développeurs-Designers'
-          value: 0.8
+          value: 0.7
         - label: 'Orientation Qualité'
-          value: 0.8
+          value: 0.5
       achievements:
         hyperlinks: []
         media: []
@@ -152,22 +132,18 @@
       result: 'Satisfaction des équipes supérieure à 90%.'
       technical_skills:
         - label: 'React Native'
-          value: 0.8
+          value: 0.9
         - label: 'Kotlin'
-          value: 0.8
-        - label: 'Gestion de Flux Temps Réel'
-          value: 0.8
-        - label: 'Optimisation Batterie'
+          value: 0.5
+        - label: 'Protocoles de Communication'
           value: 0.8
       soft_skills:
-        - label: 'Adaptabilité'
+        - label: 'Rigueur'
           value: 0.8
         - label: 'Écoute des Besoins Utilisateurs'
           value: 0.8
         - label: 'Réactivité'
-          value: 0.8
-        - label: 'Fiabilité'
-          value: 0.8
+          value: 0.6
       achievements:
         hyperlinks: []
         media:
@@ -190,20 +166,18 @@
         - label: 'Kotlin'
           value: 0.8
         - label: 'React Native'
-          value: 0.8
-        - label: 'SDK drone'
+          value: 0.9
+        - label: 'Ground SDK'
           value: 0.8
         - label: 'Intégration Matérielle-Logicielle'
-          value: 0.8
+          value: 0.7
       soft_skills:
-        - label: 'Ingéniosité'
-          value: 0.8
         - label: 'Résolution de Problèmes'
-          value: 0.8
-        - label: 'Pragmatisme'
+          value: 0.6
+        - label: 'Gestion des Contraintes'
           value: 0.8
         - label: 'Autonomie'
-          value: 0.8
+          value: 1
       achievements:
         hyperlinks: []
         media:
@@ -218,20 +192,16 @@
       result: 'Économie de plusieurs milliers d’euros et mise en service réduite à quelques minutes.'
       technical_skills:
         - label: 'Kotlin'
-          value: 0.8
-        - label: 'Communication Bluetooth/Wi-Fi'
-          value: 0.8
-        - label: 'Développement Embarqué'
+          value: 1
+        - label: 'Communication WebSocket'
+          value: 0.7
+        - label: 'Système Android'
           value: 0.8
       soft_skills:
-        - label: 'Orientation résultats'
-          value: 0.8
-        - label: 'Créativité'
-          value: 0.8
-        - label: 'Esprit Pratique'
-          value: 0.8
-        - label: 'Gestion des Contraintes'
-          value: 0.8
+        - label: 'Gestion des contraintes'
+          value: 0.9
+        - label: 'Autonomie'
+          value: 1
       achievements:
         hyperlinks: []
         media: []
@@ -242,25 +212,22 @@
       result: 'Amélioration de 90% de la qualité des images collectées.'
       technical_skills:
         - label: 'Python'
-          value: 0.8
-        - label: 'Algorithmes'
+          value: 1
+        - label: 'Olympe'
           value: 0.8
         - label: 'Traitement de Données Géospatiales'
-          value: 0.8
+          value: 0.9
       soft_skills:
-        - label: 'Analyse'
-          value: 0.8
+        - label: 'Approche Expérimentale'
+          value: 0.9
         - label: 'Rigueur Scientifique'
-          value: 0.8
-        - label: 'Logique'
-          value: 0.8
-        - label: 'Esprit de Synthèse'
-          value: 0.8
+          value: 1
       achievements:
         hyperlinks: []
         media: []
 
 - period: 'Auto-Formation'
+  id: 'self-training'
   dates:
     start: '2021-11-01'
     end: '2022-08-31'
@@ -271,18 +238,24 @@
       result: "Une application web et mobile full-stack fonctionnelle sur le sujet de l'investissement financier."
       technical_skills:
         - label: 'React'
+          value: 0.9
+        - label: 'React Native'
           value: 0.8
+        - label: 'Expo'
+          value: 0.7
         - label: 'Node.js'
-          value: 0.8
+          value: 0.7
+        - label: 'Express'
+          value: 0.7
         - label: 'MongoDB'
-          value: 0.8
+          value: 0.7
         - label: 'Développement Full-Stack'
-          value: 0.8
+          value: 0.9
       soft_skills:
         - label: 'Curiosité'
-          value: 0.8
+          value: 0.9
         - label: 'Autonomie'
-          value: 0.8
+          value: 1
         - label: 'Persévérance'
           value: 0.8
         - label: 'Auto-Discipline'
@@ -294,6 +267,7 @@
         media: []
 
 - period: 'Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine'
+  id: 'phd'
   dates:
     start: '2017-10-01'
     end: '2021-11-30'
@@ -304,32 +278,34 @@
       result: 'Mémoire de plus de 150 pages et publication dans une journal scientifique.'
       technical_skills:
         - label: 'Deep Learning'
-          value: 0.8
+          value: 0.9
         - label: 'PyTorch'
-          value: 0.8
+          value: 0.9
         - label: 'Réseaux de Neurones'
           value: 0.8
         - label: 'Expérimentation à Grande Échelle'
           value: 0.8
         - label: 'Analyse Statistique'
-          value: 0.8
+          value: 0.9
         - label: 'Traitement de Données Massives'
-          value: 0.8
+          value: 0.9
         - label: 'Recherche Scientifique'
-          value: 0.8
+          value: 1
       soft_skills:
         - label: 'Rigueur Méthodologique'
-          value: 0.8
+          value: 0.9
         - label: 'Esprit Analytique'
           value: 0.8
         - label: 'Persévérance'
-          value: 0.8
+          value: 0.9
         - label: 'Gestion de Projet Long Terme'
-          value: 0.8
+          value: 0.7
         - label: 'Communication Scientifique'
           value: 0.8
       achievements:
         hyperlinks:
-          - url: 'https://example.com/publication'
-            text: 'Publication scientifique'
+          - url: 'https://theses.fr/2021LORR0267'
+            text: "Mémoire de doctorat - Impact du Bruit d'Annotation sur l'Évaluation de Classifieurs"
+          - url: 'https://link.springer.com/article/10.1007/s10462-023-10507-2'
+            text: 'Publication scientifique - Convolutional network fabric pruning with label noise'
         media: []
