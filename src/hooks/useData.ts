@@ -1,4 +1,4 @@
-import data from '~data'
+import data from '~data/index'
 
 import * as React from 'react'
 

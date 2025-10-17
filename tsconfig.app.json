@@ -28,5 +28,5 @@
       "~data/*": ["data/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "data"]
 }

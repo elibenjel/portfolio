@@ -18,7 +18,7 @@ export default function AboutLayout() {
         <div className="flex h-full flex-col items-center rounded-md bg-gray-200 py-8">
           <div className="aspect-square overflow-hidden rounded-full">
             <img
-              src="/media/me.jpg"
+              src="media/me.jpg"
               alt="Me"
               className="h-full w-full object-cover object-[50%_2%]"
             />

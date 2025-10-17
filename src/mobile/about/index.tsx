@@ -10,11 +10,7 @@ export default function AboutLayout() {
     <div className="flex flex-col items-center gap-y-16">
       <div data-section className="flex w-full flex-col items-center rounded-md bg-gray-200 py-8">
         <div className="aspect-square h-[calc(min(50vw,30vh))] overflow-hidden rounded-full">
-          <img
-            src="/media/me.jpg"
-            alt="Me"
-            className="h-full w-full object-cover object-[50%_2%]"
-          />
+          <img src="media/me.jpg" alt="Me" className="h-full w-full object-cover object-[50%_2%]" />
         </div>
         <div className="flex flex-col items-center">
           <h2 className="heading-h2 text-center text-gray-800">{aboutMe.name}</h2>

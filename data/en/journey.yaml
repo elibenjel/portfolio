@@ -43,25 +43,25 @@
       achievements:
         hyperlinks: []
         media:
-          - url: '/media/surpreat-demo.mp4'
+          - url: 'media/surpreat-demo.mp4'
             type: 'video'
-          - url: '/media/surpreat-compose-meal.jpg'
+          - url: 'media/surpreat-compose-meal.jpg'
             type: 'image'
-          - url: '/media/surpreat-bet.jpg'
+          - url: 'media/surpreat-bet.jpg'
             type: 'image'
-          - url: '/media/surpreat-map.jpg'
+          - url: 'media/surpreat-map.jpg'
             type: 'image'
-          - url: '/media/surpreat-order.jpg'
+          - url: 'media/surpreat-order.jpg'
             type: 'image'
-          - url: '/media/surpreat-backstore-ongoing-workslot.jpg'
+          - url: 'media/surpreat-backstore-ongoing-workslot.jpg'
             type: 'image'
-          - url: '/media/surpreat-backstore-agenda.jpg'
+          - url: 'media/surpreat-backstore-agenda.jpg'
             type: 'image'
-          - url: '/media/surpreat-backstore-create-workslot.jpg'
+          - url: 'media/surpreat-backstore-create-workslot.jpg'
             type: 'image'
-          - url: '/media/surpreat-backstore-manage-workslot.jpg'
+          - url: 'media/surpreat-backstore-manage-workslot.jpg'
             type: 'image'
-          - url: '/media/surpreat-backstore-profile.jpg'
+          - url: 'media/surpreat-backstore-profile.jpg'
             type: 'image'
 
 - period: 'Software Engineer – Alerion'
@@ -147,15 +147,15 @@
       achievements:
         hyperlinks: []
         media:
-          - url: '/media/bft-landing-screen.jpg'
+          - url: 'media/bft-landing-screen.jpg'
             type: 'image'
-          - url: '/media/bft-disabled.jpg'
+          - url: 'media/bft-disabled.jpg'
             type: 'image'
-          - url: '/media/bft-enabled.jpg'
+          - url: 'media/bft-enabled.jpg'
             type: 'image'
-          - url: '/media/bft-info.jpg'
+          - url: 'media/bft-info.jpg'
             type: 'image'
-          - url: '/media/bft-config.jpg'
+          - url: 'media/bft-config.jpg'
             type: 'image'
 
     - title: 'Android application for Anafi AI drone'
@@ -181,9 +181,9 @@
       achievements:
         hyperlinks: []
         media:
-          - url: '/media/anafi-disconnected.jpg'
+          - url: 'media/anafi-disconnected.jpg'
             type: 'image'
-          - url: '/media/anafi-config.jpg'
+          - url: 'media/anafi-config.jpg'
             type: 'image'
 
     - title: 'Android application transforming smartphones/tablets into control devices'
