@@ -5,7 +5,7 @@ export type Size = 'large' | 'medium' | 'small'
 const getSize = (width: number, height: number) =>
   width < 600 ? 'small' : width < 1000 || height < 680 ? 'medium' : 'large'
 
-export default function useBreakpoints(breakpoint = { width: 1000, height: 680 }) {
+export default function useBreakpoints() {
   const [size, setSize] = React.useState<Size>(
     typeof window !== 'undefined' ? getSize(window.innerWidth, window.innerHeight) : 'small'
   )
@@ -20,7 +20,7 @@ export default function useBreakpoints(breakpoint = { width: 1000, height: 680 }
 
     window.addEventListener('resize', handler)
     return () => window.removeEventListener('resize', handler)
-  }, [breakpoint])
+  }, [])
 
   return size
 }

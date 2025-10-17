@@ -63,7 +63,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
   return (
     <div className="relative flex w-full flex-col items-center gap-y-4">
       {missions.length > 1 && (
-        <div className="bg-primary sticky top-4 z-50 mt-4 flex flex-row items-center justify-center rounded-full px-2 opacity-50">
+        <div className="bg-primary sticky top-4 z-50 mt-4 flex max-w-full flex-row items-center justify-center rounded-full px-2 opacity-50">
           <IndexSelect
             index={selectedMissionIndex}
             onIndexSelected={handleMissionSelect}
@@ -100,7 +100,7 @@ export default function Missions({ missions }: { missions: Mission[] }) {
                 <p className="paragraph-normal text-gray-800">{mission.result}</p>
               </div>
             </div>
-            <div className="flex w-full flex-row items-center justify-center gap-x-4">
+            <div className="flex w-full flex-row flex-wrap items-center justify-center gap-x-4 gap-y-2">
               {(mission.technicalSkills.length > 0 || mission.softSkills.length > 0) && (
                 <button
                   onClick={() => setVisibleDialog({ mission: mission.title, type: 'skills' })}

@@ -12,8 +12,8 @@ export default function EducationLayout() {
         {education.map(({ name, location, dates }, index) => (
           <React.Fragment key={name}>
             <div className="flex flex-col items-center gap-y-2">
-              <h2 className="heading-h3">{name}</h2>
-              <p className="text-lg text-gray-400">
+              <h3 className="heading-h3">{name}</h3>
+              <p className="paragraph-normal text-center text-lg text-gray-400">
                 <span className="capitalize">
                   {new Date(dates.start).toLocaleDateString(language, {
                     year: 'numeric',
@@ -28,7 +28,7 @@ export default function EducationLayout() {
                   })}
                 </span>
               </p>
-              <p className="text-lg text-gray-400">{location}</p>
+              <p className="paragraph-normal text-center text-lg text-gray-400">{location}</p>
             </div>
             {index < education.length - 1 && <div className="h-[1px] w-full bg-gray-700" />}
           </React.Fragment>

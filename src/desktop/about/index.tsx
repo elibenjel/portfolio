@@ -37,20 +37,22 @@ export default function AboutLayout() {
             <div className="flex flex-col items-center gap-y-4">
               <div className="flex w-full flex-row items-center gap-x-4">
                 <div className="h-[1px] flex-1 bg-gray-700" />
-                <p className="text-normal scale-120 font-bold">{description[language].whoami}</p>
+                <p className="paragraph-normal scale-120 font-bold">
+                  {description[language].whoami}
+                </p>
                 <div className="h-[1px] flex-1 bg-gray-700" />
               </div>
-              <p className="text-normal text-center">{aboutMe.description.whoami}</p>
+              <p className="paragraph-normal text-center">{aboutMe.description.whoami}</p>
             </div>
             <div className="flex flex-col items-center gap-y-4">
               <div className="flex w-full flex-row items-center gap-x-4">
                 <div className="h-[1px] flex-1 bg-gray-700" />
-                <p className="text-normal scale-120 font-bold">
+                <p className="paragraph-normal scale-120 font-bold">
                   {description[language].lookingfor}
                 </p>
                 <div className="h-[1px] flex-1 bg-gray-700" />
               </div>
-              <p className="text-normal text-center">{aboutMe.description.lookingfor}</p>
+              <p className="paragraph-normal text-center">{aboutMe.description.lookingfor}</p>
             </div>
           </div>
         </div>
