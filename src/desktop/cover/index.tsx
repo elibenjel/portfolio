@@ -19,7 +19,8 @@ export default function Cover({ visible, onPress }: { visible: boolean; onPress:
   return (
     <div
       className={`animate-fade-up group absolute inset-0 cursor-pointer items-center justify-center ${containerClass} overflow-hidden`}
-      onClick={() => onPress()}
+      onMouseDown={() => onPress()}
+      onTouchStart={() => onPress()}
     >
       <div className={`absolute inset-0 ${outScaleTransitionClass}`}>
         <div
