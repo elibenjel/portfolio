@@ -70,28 +70,55 @@
     start: '2023-01-01'
     end: '2024-12-31'
   missions:
-    - title: 'No-code module for building interfaces'
-      problem: 'Each operational interface required several hours of development.'
-      solution: 'Development of a no-code module integrated into the webapp.'
-      result: 'Reduction of interface development time from several hours to less than 1 hour.'
+    - title: 'Generalist Engineer'
+      context: 'Role of generalist engineer in an engineering firm specialized in designing robotic solutions for various domains, frequently in collaboration with the military sector.'
+      environment: 'Multidisciplinary team of 7 people - Agile method - regular sprints of 1 to 2 weeks'
       technical_skills:
-        - label: 'React'
-          value: 1
-        - label: 'JavaScript'
-          value: 0.8
-        - label: 'Front-End Architecture'
-          value: 0.8
-        - label: 'Modular Design'
+        - label: 'Discord'
+          value: 0.7
+        - label: 'GitLab'
+          value: 0.7
+        - label: 'Figma / UXPin'
           value: 0.6
-        - label: 'Real-Time Data Flow Management'
+        - label: 'Agile'
+          value: 0.6
+        - label: 'CI/CD'
+          value: 0.6
+        - label: 'Technical Documentation'
           value: 0.7
       soft_skills:
-        - label: 'Pedagogy'
-          value: 0.5
-        - label: 'Technical Communication'
+        - label: 'Teamwork'
+          value: 0.7
+        - label: 'Adaptability'
           value: 0.6
-        - label: 'Autonomy'
-          value: 1
+        - label: 'Communication'
+          value: 0.8
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Syracuse Project'
+      context: 'Development of a complete solution for automated mirabelle harvesting using a custom robotic system.'
+      environment: 'Multidisciplinary team of 7 people, V-model'
+      contributions: 'Writing technical requirements for the module concerning operation control interfaces. Organizing field trials for the project and writing the deliverable on the results obtained. Design and development of the specified interfaces'
+      technical_skills:
+        - label: 'Discord'
+          value: 0.7
+        - label: 'GitLab'
+          value: 0.7
+        - label: 'Figma / UXPin'
+          value: 0.6
+        - label: 'V-model'
+          value: 0.6
+      soft_skills:
+        - label: 'Teamwork'
+          value: 0.7
+        - label: 'Project Management'
+          value: 0.6
+        - label: 'Synthesis skills'
+          value: 0.7
+        - label: 'Pedagogy'
+          value: 0.8
       achievements:
         hyperlinks: []
         media: []
@@ -99,7 +126,7 @@
     - title: 'UI/UX/DX improvement of internal webapp'
       problem: 'Lack of clarity and feedback causing time losses during use, and complex maintenance with high probability of regressions.'
       solution: 'Interface and user experience improvement, and implementation of Storybook to document and test components.'
-      result: 'Reduction of at least 50% of time lost due to usage errors, and productivity gain in component maintenance.'
+      result: 'Reduction of 50% of usage errors, and productivity gain in component maintenance.'
       technical_skills:
         - label: 'UI/UX Design'
           value: 0.8
@@ -107,8 +134,14 @@
           value: 1
         - label: 'Storybook'
           value: 0.8
+        - label: 'Figma / UXPin'
+          value: 0.6
         - label: 'UI Testing'
           value: 0.8
+        - label: 'Agile'
+          value: 0.7
+        - label: 'GitLab Issue Board'
+          value: 0.7
         - label: 'Technical Documentation'
           value: 0.8
       soft_skills:
@@ -127,12 +160,16 @@
         media: []
 
     - title: 'Military geolocation application'
-      problem: 'Functional but unergonomic application, adoption hindered.'
-      solution: 'New application focused on simplicity, with night mode and power saving mode.'
+      problem: 'Existing functional but unergonomic application, adoption hindered.'
+      solution: 'New application focused on simplicity, with night mode and power saving mode. Constraint of sending messages via VMF encoding. Native development in Kotlin with background operation requirement. Writing documentation on application usage.'
       result: 'Team satisfaction above 90%.'
       technical_skills:
         - label: 'React Native'
           value: 0.9
+        - label: 'Expo'
+          value: 0.8
+        - label: 'Android'
+          value: 0.7
         - label: 'Kotlin'
           value: 0.5
         - label: 'Communication Protocols'
@@ -144,6 +181,8 @@
           value: 0.8
         - label: 'Reactivity'
           value: 0.6
+        - label: 'Autonomy'
+          value: 0.8
       achievements:
         hyperlinks: []
         media:
@@ -206,10 +245,37 @@
         hyperlinks: []
         media: []
 
+    - title: 'No-code module for building interfaces'
+      problem: 'Each operational interface required several hours of development.'
+      solution: 'Development of a no-code module integrated into the webapp.'
+      result: 'Reduction of interface development time from several hours to less than 1 hour.'
+      technical_skills:
+        - label: 'React'
+          value: 1
+        - label: 'JavaScript'
+          value: 0.8
+        - label: 'Front-End Architecture'
+          value: 0.8
+        - label: 'Modular Design'
+          value: 0.6
+        - label: 'Real-Time Data Flow Management'
+          value: 0.7
+      soft_skills:
+        - label: 'Pedagogy'
+          value: 0.5
+        - label: 'Technical Communication'
+          value: 0.6
+        - label: 'Autonomy'
+          value: 1
+      achievements:
+        hyperlinks: []
+        media: []
+
     - title: 'Agricultural photogrammetry mission planning module'
-      problem: 'Frequent errors and partial coverage of studied areas.'
-      solution: 'Development of a Python module integrating planning algorithms.'
-      result: '90% improvement in the quality of collected images.'
+      context: 'One objective of the Syracuse project was to develop a module for monitoring the harvesting mission by simulating the environment and robotic vectors operating within it. Photogrammetry was used to construct the 3D model of the orchard.'
+      problem: 'Manual drone piloting for image collection did not allow effective and repeatable coverage of studied areas. Manual use of Meshroom software for image processing led to processing errors and time losses.'
+      solution: 'Development of a Python module integrating mission planning algorithms for the drone, and automating the use of Meshroom via its API.'
+      result: '90% improvement in the quality of collected images, and optimization of image processing time.'
       technical_skills:
         - label: 'Python'
           value: 1
@@ -217,11 +283,38 @@
           value: 0.8
         - label: 'Geospatial Data Processing'
           value: 0.9
+        - label: 'Meshroom'
+          value: 0.7
       soft_skills:
         - label: 'Experimental Approach'
           value: 0.9
         - label: 'Scientific Rigor'
           value: 1
+        - label: 'Complex Tool Handling'
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Unreal Engine 5 integration as simulation engine for the Syracuse project'
+      problem: 'Farmers using the Syracuse solution need sufficient visual feedback to monitor the proper progress of harvesting.'
+      solution: 'Integration of Unreal Engine 5 into the internal web application, so as to be able to build and present a digital twin of the robot as well as the orchard.'
+      result: 'First development phase allowing connection of a UE5 simulation to the internal web application, using the Remote Control API to send operation data in real time to the simulation and move objects accordingly.'
+      technical_skills:
+        - label: 'Unreal Engine 5'
+          value: 0.4
+        - label: 'Python'
+          value: 0.8
+        - label: 'API Integration'
+          value: 0.7
+        - label: '3D Simulation'
+          value: 0.5
+      soft_skills:
+        - label: 'Curiosity'
+          value: 0.9
+        - label: 'Autonomy'
+          value: 0.9
+        - label: 'Complex Tool Handling'
+          value: 0.9
       achievements:
         hyperlinks: []
         media: []

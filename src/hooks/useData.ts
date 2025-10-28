@@ -23,9 +23,12 @@ export type Journey = {
   }
   missions: {
     title: string
-    problem: string
-    solution: string
-    result: string
+    context?: string
+    environment?: string
+    contributions?: string
+    problem?: string
+    solution?: string
+    result?: string
     technicalSkills: {
       label: string
       value: string

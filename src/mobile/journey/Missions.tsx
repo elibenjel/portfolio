@@ -14,6 +14,9 @@ type Mission = Journey[number]['missions'][number]
 
 const localizations = {
   fr: {
+    context: 'Contexte',
+    environment: 'Environnement',
+    contributions: 'Contributions',
     problem: 'Problème',
     solution: 'Solution',
     result: 'Résultat',
@@ -23,6 +26,9 @@ const localizations = {
     softSkills: 'Compétences humaines',
   },
   en: {
+    context: 'Context',
+    environment: 'Environment',
+    contributions: 'Contributions',
     problem: 'Problem',
     solution: 'Solution',
     result: 'Result',
@@ -88,17 +94,53 @@ export default function Missions({ missions }: { missions: Mission[] }) {
             <div className="h-[1px] w-full bg-gray-400" />
             <div className="flex h-full w-full flex-col items-center">
               <div className="grid grid-cols-[max-content_auto_1fr] gap-x-4 gap-y-4">
-                <h4 className="text-gray-600">{localizations[language].problem}</h4>
-                <span className="text-gray-600">-</span>
-                <p className="paragraph-normal text-gray-800">{mission.problem}</p>
+                {mission.context && (
+                  <>
+                    <h4 className="text-gray-600">{localizations[language].context}</h4>
+                    <span className="text-gray-600">-</span>
+                    <p className="paragraph-normal text-gray-800">{mission.context}</p>
+                  </>
+                )}
 
-                <h4 className="text-gray-600">{localizations[language].solution}</h4>
-                <span className="text-gray-600">-</span>
-                <p className="paragraph-normal text-gray-800">{mission.solution}</p>
+                {mission.environment && (
+                  <>
+                    <h4 className="text-gray-600">{localizations[language].environment}</h4>
+                    <span className="text-gray-600">-</span>
+                    <p className="paragraph-normal text-gray-800">{mission.environment}</p>
+                  </>
+                )}
 
-                <h4 className="text-gray-600">{localizations[language].result}</h4>
-                <span className="text-gray-600">-</span>
-                <p className="paragraph-normal text-gray-800">{mission.result}</p>
+                {mission.contributions && (
+                  <>
+                    <h4 className="text-gray-600">{localizations[language].contributions}</h4>
+                    <span className="text-gray-600">-</span>
+                    <p className="paragraph-normal text-gray-800">{mission.contributions}</p>
+                  </>
+                )}
+
+                {mission.problem && (
+                  <>
+                    <h4 className="text-gray-600">{localizations[language].problem}</h4>
+                    <span className="text-gray-600">-</span>
+                    <p className="paragraph-normal text-gray-800">{mission.problem}</p>
+                  </>
+                )}
+
+                {mission.solution && (
+                  <>
+                    <h4 className="text-gray-600">{localizations[language].solution}</h4>
+                    <span className="text-gray-600">-</span>
+                    <p className="paragraph-normal text-gray-800">{mission.solution}</p>
+                  </>
+                )}
+
+                {mission.result && (
+                  <>
+                    <h4 className="text-gray-600">{localizations[language].result}</h4>
+                    <span className="text-gray-600">-</span>
+                    <p className="paragraph-normal text-gray-800">{mission.result}</p>
+                  </>
+                )}
               </div>
             </div>
             <div className="flex w-full flex-row flex-wrap items-center justify-center gap-x-4 gap-y-2">

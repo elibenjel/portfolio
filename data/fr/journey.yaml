@@ -70,6 +70,163 @@
     start: '2023-01-01'
     end: '2024-12-31'
   missions:
+    - title: 'Ingénieur Polyvalent'
+      context: 'Rôle d’ingénieur polyvalent dans un bureau d’études spécialisé dans la conception de solutions robotiques pour des domaines variés, fréquemment en collaboration avec le secteur militaire.'
+      environment: 'Equipe pluridisciplinaire de 7 personnes - Méthode Agile - fonctionnement par sprints réguliers de 1 à 2 semaines'
+      technical_skills:
+        - label: 'Discord'
+          value: 0.7
+        - label: 'GitLab'
+          value: 0.7
+        - label: 'Figma / UXPin'
+          value: 0.6
+        - label: 'Agile'
+          value: 0.6
+        - label: 'CI/CD'
+          value: 0.6
+        - label: 'Documentation Technique'
+          value: 0.7
+      soft_skills:
+        - label: 'Travail en équipe'
+          value: 0.7
+        - label: 'Adaptabilité'
+          value: 0.6
+        - label: 'Communication'
+          value: 0.8
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Projet Syracuse'
+      context: 'Développement d’une solution complète de récolte de mirabelle automatisée à l’aide d’un système robotique sur mesure.'
+      environment: 'Equipe pluridisciplinaire de 7 personnes, cycle en V'
+      contributions: 'Rédaction d’exigences techniques pour le module concernant les interfaces de contrôle de l’opération. Organisation des essais terrains pour le projet et rédaction du livrable sur les résultats obtenus. Conception et développement des interfaces spécifiées'
+      technical_skills:
+        - label: 'Discord'
+          value: 0.7
+        - label: 'GitLab'
+          value: 0.7
+        - label: 'Figma / UXPin'
+          value: 0.6
+        - label: 'Cycle en V'
+          value: 0.6
+      soft_skills:
+        - label: 'Travail en équipe'
+          value: 0.7
+        - label: 'Gestion de Projet'
+          value: 0.6
+        - label: 'Esprit de Synthèse'
+          value: 0.7
+        - label: 'Pédagogie'
+          value: 0.8
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Amélioration UI/UX/DX de la webapp interne'
+      problem: 'Manque de clarté et de feedback entraînant des pertes de temps lors de son utilisation, et maintenance complexe avec forte probabilité de régressions.'
+      solution: 'Amélioration de l’interface et de l’expérience utilisateur, et mise en place de Storybook pour documenter et tester les composants.'
+      result: 'Réduction de 50% des erreurs d’utilisation, et gain de productivité sur la maintenance des composants.'
+      technical_skills:
+        - label: 'Design UI/UX'
+          value: 0.8
+        - label: 'React'
+          value: 1
+        - label: 'Storybook'
+          value: 0.8
+        - label: 'Figma / UXPin'
+          value: 0.6
+        - label: 'Tests UI'
+          value: 0.8
+        - label: 'Agile'
+          value: 0.7
+        - label: 'GitLab Issue Board'
+          value: 0.7
+        - label: 'Documentation Technique'
+          value: 0.8
+      soft_skills:
+        - label: 'Empathie utilisateur'
+          value: 0.7
+        - label: 'Sens du Détail'
+          value: 0.8
+        - label: 'Créativité'
+          value: 0.8
+        - label: 'Organisation'
+          value: 0.7
+        - label: 'Orientation Qualité'
+          value: 0.5
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Application de géolocalisation militaire'
+      problem: 'Application existante fonctionnelle mais peu ergonomique, adoption freinée.'
+      solution: 'Nouvelle application centrée sur la simplicité, avec mode nuit et mode économie d’énergie. Contrainte d’envoi des messages par encodage VMF. Développement natif en Kotlin avec nécessité de fonctionnement en background. Rédaction de documentation sur l’usage de l’application.'
+      result: 'Satisfaction des équipes supérieure à 90%.'
+      technical_skills:
+        - label: 'React Native'
+          value: 0.9
+        - label: 'Expo'
+          value: 0.8
+        - label: 'Android'
+          value: 0.7
+        - label: 'Kotlin'
+          value: 0.5
+        - label: 'Protocoles de Communication'
+          value: 0.8
+      soft_skills:
+        - label: 'Rigueur'
+          value: 0.8
+        - label: 'Écoute des Besoins Utilisateurs'
+          value: 0.8
+        - label: 'Réactivité'
+          value: 0.6
+        - label: 'Autonomie'
+          value: 0.8
+      achievements:
+        hyperlinks: []
+        media:
+          - url: 'media/bft-landing-screen.jpg'
+            type: 'image'
+          - url: 'media/bft-disabled.jpg'
+            type: 'image'
+          - url: 'media/bft-enabled.jpg'
+            type: 'image'
+          - url: 'media/bft-info.jpg'
+            type: 'image'
+          - url: 'media/bft-config.jpg'
+            type: 'image'
+
+    - title: 'Application Android pour le drone Anafi AI'
+      problem: 'Aucune application Android ne permettait de piloter le drone Anafi. L’application officielle n’existait que sur iOS.'
+      solution: 'Développement d’une application Android compatible (React Native + Kotlin) intégrant la SDK du drone.'
+      result: 'Économie d’achat d’appareils iOS et extension du rayon de pilotage de quelques dizaines à plusieurs centaines de mètres.'
+      technical_skills:
+        - label: 'Kotlin'
+          value: 0.8
+        - label: 'React Native'
+          value: 0.9
+        - label: 'Ground SDK'
+          value: 0.8
+        - label: 'Intégration Matérielle-Logicielle'
+          value: 0.7
+        - label: 'Figma / UXPin'
+          value: 0.7
+      soft_skills:
+        - label: 'Résolution de Problèmes'
+          value: 0.6
+        - label: 'Gestion des Contraintes'
+          value: 0.8
+        - label: 'Autonomie'
+          value: 1
+      achievements:
+        hyperlinks: []
+        media:
+          - url: 'media/anafi-disconnected.jpg'
+            type: 'image'
+          - url: 'media/anafi-config.jpg'
+            type: 'image'
+
     - title: 'Module no-code pour la construction d’interfaces'
       problem: 'Chaque interface opérationnelle nécessitait plusieurs heures de développement.'
       solution: 'Développement d’un module no-code intégré à la webapp.'
@@ -96,99 +253,9 @@
         hyperlinks: []
         media: []
 
-    - title: 'Amélioration UI/UX/DX de la webapp interne'
-      problem: 'Manque de clarté et de feedback entraînant des pertes de temps lors de son utilisation, et maintenance complexe avec forte probabilité de régressions.'
-      solution: 'Amélioration de l’interface et de l’expérience utilisateur, et mise en place de Storybook pour documenter et tester les composants.'
-      result: 'Réduction d’au moins 50% du temps perdu lié aux erreurs d’utilisation, et gain de productivité sur la maintenance des composants.'
-      technical_skills:
-        - label: 'Design UI/UX'
-          value: 0.8
-        - label: 'React'
-          value: 1
-        - label: 'Storybook'
-          value: 0.8
-        - label: 'Tests UI'
-          value: 0.8
-        - label: 'Documentation Technique'
-          value: 0.8
-      soft_skills:
-        - label: 'Empathie utilisateur'
-          value: 0.7
-        - label: 'Sens du Détail'
-          value: 0.8
-        - label: 'Créativité'
-          value: 0.8
-        - label: 'Organisation'
-          value: 0.7
-        - label: 'Orientation Qualité'
-          value: 0.5
-      achievements:
-        hyperlinks: []
-        media: []
-
-    - title: 'Application de géolocalisation militaire'
-      problem: 'Application fonctionnelle mais peu ergonomique, adoption freinée.'
-      solution: 'Nouvelle application centrée sur la simplicité, avec mode nuit et mode économie d’énergie.'
-      result: 'Satisfaction des équipes supérieure à 90%.'
-      technical_skills:
-        - label: 'React Native'
-          value: 0.9
-        - label: 'Kotlin'
-          value: 0.5
-        - label: 'Protocoles de Communication'
-          value: 0.8
-      soft_skills:
-        - label: 'Rigueur'
-          value: 0.8
-        - label: 'Écoute des Besoins Utilisateurs'
-          value: 0.8
-        - label: 'Réactivité'
-          value: 0.6
-      achievements:
-        hyperlinks: []
-        media:
-          - url: 'media/bft-landing-screen.jpg'
-            type: 'image'
-          - url: 'media/bft-disabled.jpg'
-            type: 'image'
-          - url: 'media/bft-enabled.jpg'
-            type: 'image'
-          - url: 'media/bft-info.jpg'
-            type: 'image'
-          - url: 'media/bft-config.jpg'
-            type: 'image'
-
-    - title: 'Application Android pour le drone Anafi AI'
-      problem: 'Le drone Anafi n’était pilotable qu’avec l’application officielle disponible uniquement sur iOS.'
-      solution: 'Développement d’une application Android compatible (React Native + Kotlin) intégrant la SDK du drone.'
-      result: 'Économie d’achat d’appareils iOS et extension du rayon de pilotage de quelques dizaines à plusieurs centaines de mètres.'
-      technical_skills:
-        - label: 'Kotlin'
-          value: 0.8
-        - label: 'React Native'
-          value: 0.9
-        - label: 'Ground SDK'
-          value: 0.8
-        - label: 'Intégration Matérielle-Logicielle'
-          value: 0.7
-      soft_skills:
-        - label: 'Résolution de Problèmes'
-          value: 0.6
-        - label: 'Gestion des Contraintes'
-          value: 0.8
-        - label: 'Autonomie'
-          value: 1
-      achievements:
-        hyperlinks: []
-        media:
-          - url: 'media/anafi-disconnected.jpg'
-            type: 'image'
-          - url: 'media/anafi-config.jpg'
-            type: 'image'
-
     - title: 'Application Android transformant smartphones/tablettes en manettes de contrôle'
       problem: 'Dispositifs de contrôle coûteux et longs à configurer.'
-      solution: 'Application Android transformant les appareils mobiles en manettes.'
+      solution: 'Application Android transformant les appareils mobiles en controlleurs pour appareils robotiques, en remontant les évènements d’appui bouton à l’application web.'
       result: 'Économie de plusieurs milliers d’euros et mise en service réduite à quelques minutes.'
       technical_skills:
         - label: 'Kotlin'
@@ -207,9 +274,10 @@
         media: []
 
     - title: 'Module de planification de missions de photogrammétrie agricole'
-      problem: 'Erreurs fréquentes et couverture partielle des zones étudiées.'
-      solution: 'Développement d’un module Python intégrant des algorithmes de planification.'
-      result: 'Amélioration de 90% de la qualité des images collectées.'
+      context: 'Un objectif du projet Syracuse était de développer un module de suivi de la mission de récolte par simulation de l’environnement et des vecteurs robotiques y évoluant. La photogrammétrie était utilisée pour construire le modèle 3D du verger.'
+      problem: 'La récolte d’images par pilotage manuel du drone ne permettait pas de couvrir les zones étudiées de manière efficace et répétable. Le traitement des images par usage manuel du logiciel Meshroom induisait des erreurs de traitement et des pertes de temps.'
+      solution: 'Développement d’un module Python intégrant des algorithmes de planification de mission pour le drone, et automatisant l’usage de Meshroom via son API.'
+      result: 'Amélioration de 90% de la qualité des images collectées, et optimisation du temps de traitement des images.'
       technical_skills:
         - label: 'Python'
           value: 1
@@ -217,11 +285,38 @@
           value: 0.8
         - label: 'Traitement de Données Géospatiales'
           value: 0.9
+        - label: 'Meshroom'
+          value: 0.7
       soft_skills:
         - label: 'Approche Expérimentale'
           value: 0.9
         - label: 'Rigueur Scientifique'
           value: 1
+        - label: 'Prise en Main d’Outils Complexes'
+      achievements:
+        hyperlinks: []
+        media: []
+
+    - title: 'Intégration de Unreal Engine 5 en tant que moteur de simulation pour le projet Syracuse'
+      problem: 'Les agriculteurs utilisant la solution Syracuse ont besoin d’un retour visuel suffisant pour surveiller le bon déroulement de la récolte.'
+      solution: 'Intégration de Unreal Engine 5 à l’application web interne, de sorte à pouvoir construire et présenter un jumeau numérique du robot ainsi que du verger.'
+      result: 'Première phase de développement permettant de connecter une simulation UE5 à l’application web interne, en utilisant l’API Remote Control pour envoyer en temps réel les données de l’opération à la simulation et y déplacer les objets en conséquence.'
+      technical_skills:
+        - label: 'Unreal Engine 5'
+          value: 0.4
+        - label: 'Python'
+          value: 0.8
+        - label: 'Intégration API'
+          value: 0.7
+        - label: 'Simulation 3D'
+          value: 0.5
+      soft_skills:
+        - label: 'Curiosité'
+          value: 0.9
+        - label: 'Autonomie'
+          value: 0.9
+        - label: 'Prise en Main d’Outils Complexes'
+          value: 0.9
       achievements:
         hyperlinks: []
         media: []
