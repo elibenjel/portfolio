@@ -370,7 +370,7 @@
     - title: 'Impact du bruit d’annotation sur l’évaluation de classifieurs'
       problem: 'Le bruit introduit lors de l’annotation des données remet en question la fiabilité des évaluations de modèles de classification supervisée.'
       solution: 'Revue bibliographique, implémentation d’une architecture neuronale profonde en PyTorch, expérimentations à grande échelle avec des dizaines de réseaux entraînés sur des centaines de milliers de données, algorithme d’introduction de bruit réaliste par catégories.'
-      result: 'Mémoire de plus de 150 pages et publication dans une journal scientifique.'
+      result: 'Mémoire de plus de 150 pages et publication dans un journal scientifique.'
       technical_skills:
         - label: 'Deep Learning'
           value: 0.9
