@@ -27,3 +27,7 @@ dist-ssr
 jules/*
 !jules/.gitkeep
 venv
+
+# local data files
+reactive.resume.json
+resume.json

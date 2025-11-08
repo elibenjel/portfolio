@@ -361,7 +361,7 @@
         hyperlinks: []
         media: []
 
-- period: 'Doctorat en Intelligence Artificiel et Statistique – Université de Lorraine'
+- period: 'Doctorat en Intelligence Artificielle et Statistique – Université de Lorraine'
   id: 'phd'
   dates:
     start: '2017-10-01'
